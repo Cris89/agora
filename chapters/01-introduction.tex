@@ -1,0 +1,43 @@
+\chapter{Introduction}
+
+\section{Problem and Motivations}
+
+\lettrine{N}{owadays}, increasingly accurate climate forecasts, biomedical researches, business analytics, astrophysics studies or, in general, Big Data related problems require huge computing performance in order to obtain significant results; for these reasons, High Performance Computing technologies have been continuously sped up and, now, their next target is the Exascale level, that is the capability of at least one exaFLOPS, equal to a billion billion FLOPS (FLoating Point Operations Per Second), which is the order of processing power of the human brain at neural level, based on H. Markram et al. study (\cite{markram2011introducing}).
+
+To raise computing performances, multicore scaling era has produced, over time, frequency and power increase; it's impossible to follow this trend anymore, due to the beginning of the Dark Silicon era (\cite{esmaeilzadeh2011dark}) and the failure of the Dennard Scaling (\cite{dennard1974design}): in 1974, Robert H. Dennard provided a more granular view of the famous Moore's Law (\cite{moore1998cramming}) about the doubling of the number of transistors in a dense integrated circuit approximately every two years; this trend produced faster processors because, as transistors got smaller, their power density was constant, so that the power use was proportional with area: as transistors got smaller, so necessarily did voltage and current, giving the possibility to increase frequency. The ability to drop voltage and current, in order to let the transistors operate reliably, has broken down; static power (the power consumed when the transistor is not switching) has increased its contribution in the overall power consumption, with an importance similar to the dynamic power (the power consumed when the transistor changes its value), producing serious thermal issues and realistic breakdowns. This scenario implicates the impossibility to power-on all the components of a circuit at the nominal operating voltage due to Thermal Design Power (TDP) constraints.
+
+Due to these physical problems, systems energy efficiency has become essential; even if, every approximately 1.5 years computation per kilowatt-hour have doubled over time (\cite{koomey2011implications}), Subramaniam et al. investigation (\cite{subramaniam2013trends}) suggests that there will be the need of an energy efficiency improvement at a higher rate than current trends, in order to reach the target consumed power of 20 MW for Exascale systems, established by DARPA report (\cite{bergman2008exascale}).
+
+Efficiency has become very important also for electricity consumption of data centers: in fact, just the US data centers are expected to consume 140 billion kWh in 2020, from 61 billion kWh in 2006 and 91 billion kWh in 2013 (\cite{site:NRDC2015}), since the amount of information managed by worldwide data centers will grow 50-fold while the number of total servers will increase only 10-fold (\cite{gantz2011extracting}).
+
+It is straightforward therefore that green and heterogeneous approaches have to be applied in order to reach all these achievements where, for instance, multiple Central Processing Units (CPUs), General-Purpose computing on Graphics Processing Units (GPGPUs) and Many Integrated Cores accelerators (MICs) coexist and work together in a parallel system architecture; for these reasons, \textit{TOP500 Green Supercomputers} (\cite{site:topGreen500}) demonstrates the large interest in green architectures, ranking and updating the world top 500 supercomputers by energy efficiency.
+
+There exists various approaches in order to deal with these problems, from both hardware and software point of view; for instance, Power Consumption Management consists of various techniques such as Dynamic Voltage and Frequency Scaling (DVFS) and Thermal-aware or Thermal-management technologies in order to deal with the Dark Silicon issue (\cite{mittal2014power}); another important concept is Approximate Computing (\cite{mittal2016survey}), that focuses on balancing computation quality and expended effort, both at programming level and in different processing units; this thesis deals with this last technique, exploited at software level, oriented to tunable High Performance Computing applications that follow the so called \textit{Autonomic Computing} research project (\cite{kephart2003vision}).
+
+The underlying structure on which this theory is based is the Monitor-Analyze-Plan-Execute feedback loop: these systems have the capability to manage themselves, given high-level objectives and application knowledge in terms of possible configurations, made by parameters values (such as, for instance, the number of threads or processes involved, possible various kind of compiler optimization levels, application-specific variables values, etc.) and the corresponding metrics of interest values (such as, for instance, power consumption, throughput, output error with respect to a target value, etc.); this information assembles application Design Space.
+
+Since, for these kind of programs, the multitude of parameters and their corresponding set of values makes Design Space huge and since, in general, computation time is not negligible, an exhaustive search is practically unfeasible, so there are Design Space Exploration techniques that aim at provide approximated Pareto points, namely those configurations that solve better than others a typical multi-objective optimization problem (for instance, keeping throughput above some value while limiting output error and power consumption within a prearranged interval).
+
+Typically, this knowledge is built at design-time; after that, it is passed to a dynamic autotuner that has the ability to choose, from time to time, the best possible set of parameters values (also called \textit{software knobs}) with respect to current goals and requirements that might change during execution.
+
+One of the leading researches in this area is the ANTAREX project (\cite{silvano2016antarex}) that aspires to express by LARA (\cite{cardoso2012lara, cardoso2014performance}), a Domain Specific Language (DSL), the application self-adaptivity and to autotune, at runtime, applications oriented to green and heterogeneous HPC systems, up to the Exascale level.
+
+
+
+
+
+\section{Objectives}
+
+The main objective of this work is to fulfil applications Design Space Exploration at runtime, collecting all the information about used parameters values and related performances in terms of associated metrics of interest; through this data and Machine Learning techniques, we aim to predict applications complete model, made by the whole possible configurations list; finally the model is transmitted to the online dynamic autotuner, that can finally set up related program execution in the best way, according to current goals and requirements.
+
+Agorà purpose is the ability to wisely manage multiple tunable applications that run inside a parallel architecture; we want not only to simultaneously superve different programs, but also to share Design Space Exploration phase among all those nodes that run the same application, hence speeding up this process.
+
+Any kind of prior offline phase and design-time knowledge, that separates applications from their execution in runtime autotuning mode, is therefore avoided; Agorà makes autotuning completely independent from both application type and technical specifications about the machine in which program is executed; in fact, Agorà doesn't have to know this information before it starts and the final complete model will be suitable regardless autotuner objectives.
+
+
+
+
+
+\section{Thesis structure}
+
+\textit{ [Da fare in ultimo, quando tutta la struttura della tesi è chiara] }
