@@ -1,0 +1,9 @@
+\chapter*{Abstract}
+
+\lettrine{C}{ompute} and data intensive problems, such as universe or microbiological studies, are pushing High Performance Computing architectures to achieve the Exascale level, that is the capability to process a billion billion calculations per second.
+
+These applications manage huge inputs and they can be set up by multiple parameters that influence execution; since power consumption issues and energy efficiency have become essential, there exist various techniques that try to improve these aspects, keeping quality of results however acceptable: for instance, Approximate Computing strategies, both at software or hardware level, balance computation quality and expended effort, in order to respect applications goals and requirements and to maximize overall efficiency.
+
+The Design Space of all possible configurations, for these kind of applications, is very wide and, therefore, it can't be explored exhaustively: having full knowledge about both parameter values and corresponding metric of interest results (such as, for instance, throughput, power consumption or output precision) is almost impracticable.
+
+This thesis has focused on the development of a framework, Agorà, that is able to drive online Design Space Exploration through an initial subset of configurations, with the aim to predict application complete model through Machine Learning techniques; the result is used by an autotuner to dynamically adapt program execution with the best configuration that satisfies current goals and requirements. Main Agorà advantages are the elimination of any offline phase nor design-time knowledge and the capability to manage multiple running applications at the same time.

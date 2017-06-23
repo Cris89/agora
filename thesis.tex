@@ -47,7 +47,6 @@
 \usepackage{algorithmic}
 \usepackage{algorithm}
 \usepackage{longtable}
-\usepackage[T1]{fontenc} 
 \usepackage[latin1, utf8x]{inputenc}
 
 
@@ -57,8 +56,17 @@
 
 \usepackage{indentfirst}
 
+% font sans serif
+% \usepackage{arev}
+% \usepackage[T1]{fontenc}
+
+% font serif
+\usepackage{DejaVuSerif}
+\usepackage[T1]{fontenc}
+
+
 \usepackage{setspace}
-\renewcommand{\baselinestretch}{2} 
+\renewcommand{\baselinestretch}{1.5}
 
 
 
@@ -104,14 +112,6 @@
 \cleardoublepage
 \newpage
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Acknowledgement
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{chapters/acknowledge}
-
-\cleardoublepage
-\newpage
-
 \pagestyle{fancy}
 % change numbering into Roman numbers for the introductory part
 \setcounter{page}{1}
@@ -120,7 +120,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Abstract
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{chapters/abstract}
+\input{chapters/abstractENG}
+\input{chapters/abstractITA}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % TOC
@@ -141,6 +142,14 @@
 \input{chapters/05-framework}
 \input{chapters/06-exp}
 \input{chapters/07-conclusion}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Acknowledgement
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{chapters/acknowledge}
+
+\cleardoublepage
+\newpage
 
 %\cleardoublepage
 %\listoffigures
