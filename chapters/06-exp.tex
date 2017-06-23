@@ -51,7 +51,7 @@ Application parameters can assume these values:
         \midrule
         $param_1$ & 1, 50, 150, 300, 450, 700, 800 \\
         $param_2$ & 1, 50, 100, 150, 200 \\
-        $param_3$ & 10, 80, 150, 220, 290, 360, 430, 500, 570, 640, 710, 780, 850 \\
+        $param_3 (\cdot 10)$ & 1, 8, 15, 22, 29, 36, 43, 50, 57, 64, 71, 78, 85 \\
         \bottomrule 
     
     \end{tabular}
@@ -128,8 +128,8 @@ As already stated in \ref{expSetup}, this application has two parameters: \texti
         \toprule
         Parameters & Values \\
         \midrule
-        num\_threads & 1, 2, 3, 4, 5, 6, 7, 8 \\
-        num\_trials ($\cdot 10^3$) & 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000 \\
+        $num\_threads$ & 1, 2, 3, 4, 5, 6, 7, 8 \\
+        $num\_trials (\cdot 10^4)$ & 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 \\
         \bottomrule 
     
     \end{tabular}
@@ -163,7 +163,13 @@ In this paragraph we show experimental results for both versions of synthetic ap
 
 \subsubsection{Models prediction quality}\label{deltaErrorExplanation}
 
-Concerning model prediction goodness, both synthetic application versions have been executed several times with the introduction of all noise weights (\textit{1\%, 5\%, 15\%, 10, 25\%} and \textit{50\%}), focusing on the prediction of throughput metric, that is the one affected by \textit{noisePercentage} value; a Face Centered Central Composite Desing of Experiments with one Center Point has been used, firstly gathering 1 repetition, then 5 repetitions and finally 10 repetitions for each DoE configuration during Design Space Exploration phase; for each predicted Operating Point for each application setting, we have calculated a \textit{deltaError} measure, that is how much the predicted metric value distances itself from the corresponding exact measure of the related reference model, in percentage; next figures summarize results:
+Concerning model prediction goodness, both synthetic application versions have been executed several times with the introduction of all noise weights (\textit{1\%, 5\%, 15\%, 10, 25\%} and \textit{50\%}), focusing on the prediction of throughput metric, that is the one affected by \textit{noisePercentage} value; a Face Centered Central Composite Desing of Experiments with one Center Point has been used, firstly gathering 1 repetition, then 5 repetitions and finally 10 repetitions for each DoE configuration during Design Space Exploration phase; for each predicted metric value \textit{m} for each application setting, we have calculated a \textit{deltaError} measure:
+
+\[
+deltaError(m) = \dfrac{\left\vert predictedValue(m) - referenceValue(m) \right\vert \cdot 100}{\left\vert referenceValue(m) \right\vert}
+\]
+
+where $predictedValue(m)$ and $referenceValue(m)$ have explicit meaning; so, metric value \textit{deltaError} stands for how much the predicted metric value distances itself from the corresponding exact measure of the related reference model, in percentage; next figures summarize results:
 
 
 
