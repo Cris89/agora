@@ -1,4 +1,4 @@
-\chapter{Experimental results}
+\chapter{Experimental results}\label{exps}
 
 \lettrine{I}{n} order to demonstrate tesiCris validity, we have done some tests on various applications and scenarios. Firstly, we present the structure of programs we have used to do experiments; after that, we show test types and corresponding results.
 
@@ -151,7 +151,7 @@ The number of Operating Points is therefore 80; figure \ref{fig::swaptionsOPs} s
 
 
 
-\section{Experimental campaign}
+\section{Experimental campaign}\label{campaign}
 
 We want to demonstrate tesiCris validity; for both synthetic application versions and \textit{Swaption}, we have focused our attention on models prediction goodness in various scenarios; we have studied execution times, especially for Design Space Exploration phases with one and more than one executing applications at the same time, highlighting benefits in sharing DSE; we have revealed applications behavior during execution on different cases; next paragraphs shows results, firstly for synthetic applications, finally for the real one.
 
@@ -181,7 +181,7 @@ where $predictedValue(m)$ and $referenceValue(m)$ have explicit meaning; so, met
     
     \includegraphics[width = \textwidth]{deltaErrorRangesSynth1spark1}
     
-     \caption{\textit{deltaError} results for synthetic application version 1; used RSM: 1st version of implemented GLR ("transformations by functions", see \ref{regrTransforms}); each stacked bar shows \textit{deltaError} results for a particular application configuration, with respect to \textit{noisePercentage} value and number of collected OP repetitions during DSE phase; on y-axis: number of configurations \hbox{[ \% ]}}
+     \caption{\textit{deltaError} results for throughput metric of synthetic application version 1; used RSM: 1st version of implemented GLR ("transformations by functions", see \ref{regrTransforms}); each stacked bar shows OPs percentages with corresponding throughput \textit{deltaError} within prearranged intervals for a particular application configuration, with respect to \textit{noisePercentage} value and number of collected OP repetitions during DSE phase; on y-axis: number of OPs \hbox{[ \% ]}}
     
     \label{fig::synth1spark1::intervals}
     
@@ -193,7 +193,7 @@ where $predictedValue(m)$ and $referenceValue(m)$ have explicit meaning; so, met
     
     \includegraphics[width = \textwidth]{deltaErrorMeansSynth1spark1}
     
-    \caption{\textit{deltaError} mean values for synthetic application version 1; used RSM: 1st version of implemented GLR ("transformations by functions", see \ref{regrTransforms}); each bar shows \textit{deltaError} mean for a particular application configuration, with respect to \textit{noisePercentage} value and number of collected OP repetitions during DSE phase; on y-axis: \textit{deltaError} mean [ \% ]}
+    \caption{\textit{deltaError} mean values for throughput metric of synthetic application version 1; used RSM: 1st version of implemented GLR ("transformations by functions", see \ref{regrTransforms}); each bar shows throughput \textit{deltaError} mean for a particular application configuration, with respect to \textit{noisePercentage} value and number of collected OP repetitions during DSE phase; on y-axis: \textit{deltaError} mean [ \% ]}
     
     \label{fig::synth1spark1::means}
     
@@ -209,7 +209,7 @@ where $predictedValue(m)$ and $referenceValue(m)$ have explicit meaning; so, met
     
     \includegraphics[width = \textwidth]{deltaErrorRangesSynth1spark2}
     
-     \caption{\textit{deltaError} results for synthetic application version 1; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order", see \ref{regrTransforms}); each stacked bar shows \textit{deltaError} results for a particular application configuration, with respect to \textit{noisePercentage} value and number of collected OP repetitions during DSE phase; on y-axis: number of configurations [ \% ]}
+     \caption{\textit{deltaError} results for throughput metric of synthetic application version 1; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order", see \ref{regrTransforms}); each stacked bar shows OPs percentages with corresponding throughput \textit{deltaError} within prearranged intervals for a particular application configuration, with respect to \textit{noisePercentage} value and number of collected OP repetitions during DSE phase; on y-axis: number of OPs [ \% ]}
     
     \label{fig::synth1spark2::intervals}
     
@@ -221,7 +221,7 @@ where $predictedValue(m)$ and $referenceValue(m)$ have explicit meaning; so, met
     
     \includegraphics[width = \textwidth]{deltaErrorMeansSynth1spark2}
     
-    \caption{\textit{deltaError} mean values for synthetic application version 1; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order", see \ref{regrTransforms}); each bar shows \textit{deltaError} mean for a particular application configuration, with respect to \textit{noisePercentage} value and number of collected OP repetitions during DSE phase; on y-axis: \textit{deltaError} mean [ \% ]}
+    \caption{\textit{deltaError} mean values for throughput metric of synthetic application version 1; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order", see \ref{regrTransforms}); each bar shows throughput \textit{deltaError} mean for a particular application configuration, with respect to \textit{noisePercentage} value and number of collected OP repetitions during DSE phase; on y-axis: \textit{deltaError} mean [ \% ]}
     
     \label{fig::synth1spark2::means}
     
@@ -237,7 +237,7 @@ where $predictedValue(m)$ and $referenceValue(m)$ have explicit meaning; so, met
     
     \includegraphics[width = \textwidth]{deltaErrorRangesSynth2spark2}
     
-     \caption{\textit{deltaError} results for synthetic application version 2; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order", see \ref{regrTransforms}); each stacked bar shows \textit{deltaError} results for a particular application configuration, with respect to \textit{noisePercentage} value and number of collected OP repetitions during DSE phase; on y-axis: number of configurations [ \% ]}
+     \caption{\textit{deltaError} results for throughput metric of synthetic application version 2; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order", see \ref{regrTransforms}); each stacked bar shows OPs percentages with corresponding throughput \textit{deltaError} within prearranged intervals for a particular application configuration, with respect to \textit{noisePercentage} value and number of collected OP repetitions during DSE phase; on y-axis: number of OPs [ \% ]}
     
     \label{fig::synth2spark2::intervals}
     
@@ -249,7 +249,7 @@ where $predictedValue(m)$ and $referenceValue(m)$ have explicit meaning; so, met
     
     \includegraphics[width = \textwidth]{deltaErrorMeansSynth2spark2}
     
-    \caption{\textit{deltaError} mean values for synthetic application version 2; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order", see \ref{regrTransforms}); each bar shows \textit{deltaError} mean for a particular application configuration, with respect to \textit{noisePercentage} value and number of collected OP repetitions during DSE phase; on y-axis: \textit{deltaError} mean [ \% ]}
+    \caption{\textit{deltaError} mean values for throughput metric of synthetic application version 2; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order", see \ref{regrTransforms}); each bar shows throughput \textit{deltaError} mean for a particular application configuration, with respect to \textit{noisePercentage} value and number of collected OP repetitions during DSE phase; on y-axis: \textit{deltaError} mean [ \% ]}
     
     \label{fig::synth2spark2::means}
     

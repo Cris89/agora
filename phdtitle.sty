@@ -15,6 +15,7 @@
 \newcommand{\advisor}[1]{\def\@advisor{#1}}
 \newcommand{\coadOne}[1]{\def\@coadOne{#1}}
 \newcommand{\coadTwo}[1]{\def\@coadTwo{#1}}
+\newcommand{\matricola}[1]{\def\@matricola{#1}}
 \newcommand{\tutor}[1]{\def\@tutor{#1}}
 \newcommand{\supervisor}[1]{\def\@supervisor{#1}}
 \newcommand{\titleimage}[1]{\def\@titleimage{#1}}
@@ -31,8 +32,8 @@
     \end{center}
   \end{figure}
 %\vspace*{-0.2cm}
-  \large{\sc Politecnico di Milano\\%}\\
-  %\normalsize
+  \large{\textsc{POLITECNICO DI MILANO}\\%}\\
+  \small
   \@department\\
   %\large{\sc 
   \@phdprogram}\\
@@ -49,15 +50,19 @@
   \normalsize M.Sc Thesis of:\\
   \large \textbf{\@author}\\
 \end{flushright}
-\vspace*{0.5cm}
+\begin{flushright}
+  \normalsize Student ID:\\
+  \large \textbf{\@matricola}\\
+\end{flushright}
+\vspace*{0.1cm}
 \begin{flushleft}
   \normalsize Advisor:\\
  \large \textbf{Prof. \@advisor}\\
 \end{flushleft}
 \begin{flushleft}
   \normalsize Co-Advisors:\\
-  \large \textbf{Prof. \@coadOne}\\
   \large \textbf{Eng. \@coadTwo}\\
+  \large \textbf{Prof. \@coadOne}\\
 \end{flushleft}
 %\begin{flushleft}
 %  \normalsize The Chair of the Doctoral Program:\\

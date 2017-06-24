@@ -42,7 +42,7 @@
 \usepackage{paralist}
 \usepackage{bibentry}
 %\usepackage[algochapter]{algorithm2e}
-\usepackage[bookmarks=true,pdftex=false,bookmarksopen=true,pdfborder={0,0,0}]{hyperref}
+\usepackage[bookmarks=true,pdftex=false,bookmarksopen=true,pdfborder={0,0,0},hidelinks]{hyperref}
 \usepackage{lscape}
 \usepackage{algorithmic}
 \usepackage{algorithm}
@@ -91,11 +91,12 @@
 
 \nobibliography*
 
-\department {Dipartimento di Elettronica,Informatica e Bioingegneria}
-\phdprogram{Master thesis}
+\department {\normalfont{DIPARTIMENTO DI ELETTRONICA, INFORMAZIONE E BIOINGEGNERIA\\COMPUTER SCIENCE AND ENGINEERING - INGEGNERIA INFORMATICA}} %{Dipartimento di Elettronica, Informatica e Bioingegneria}
+\phdprogram{\normalfont{MASTER THESIS}}
 
 \author{Cristiano Di Marco}
-\title{A distributed framework supporting runtime autotuning for HPC applications}
+\matricola{835911}
+\title{A DISTRIBUTED FRAMEWORK\\SUPPORTING RUNTIME AUTOTUNING\\FOR HPC APPLICATIONS} %{A distributed framework supporting runtime autotuning for HPC applications}
 \advisor{Cristina Silvano}
 \coadOne{Gianluca Palermo}
 \coadTwo{Davide Gadioli}
@@ -111,6 +112,14 @@
 \maketitle
 
 \pagestyle{empty}
+
+\cleardoublepage
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Dedica
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{chapters/dedica}
 
 \cleardoublepage
 \newpage
@@ -145,6 +154,9 @@
 \input{chapters/05-framework}
 \input{chapters/06-exp}
 \input{chapters/07-conclusion}
+
+\cleardoublepage
+\newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Acknowledgement

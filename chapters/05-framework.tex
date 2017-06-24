@@ -1,11 +1,11 @@
-\chapter{Agorà: proposed framework}
+\chapter{Agorà: proposed framework}\label{agora}
 
-\lettrine{I}{n} this chapter, technical implementation of the proposed framework is illustrated, dividing the overall workflow in all possible use cases; in the last part, a sketch application shows how tesiCris client module is integrated and how it works.
+\lettrine{C}{hapter} 5 shows technical implementation of the proposed framework, dividing the overall workflow in all possible use cases; in the last part, a sketch application explains how tesiCris client module is integrated and how it works.
 
 
 \section{Introduction}
 
-tesiCris implements all possible situations that can happen in a scenario as the one described in the previous chapter (\ref{meth}).
+tesiCris implements all possible situations that can happen in a scenario as the one described in the previous chapter (\ref{methodology}).
 
 The MQTT protocol (\cite{banks2014mqtt}) makes possible all the communications among components: tesiCris uses Eclipse Paho MQTT Python Client and Eclipse Paho MQTT C Client for managing messages exchange (\cite{o2014paho}), while it uses Eclipse Mos\-quitto as broker (\cite{light2013mosquitto}). The Machine Learning library MLlib by Apache Spark\textsuperscript{TM} (\cite{spark2015apache}) is used to predict the applications complete models.
 
@@ -43,7 +43,7 @@ The starting point is the creation of the server\_listener module, that is in ch
 \begin{figure}[H]
 
     \centering
-    \includegraphics[width = 0.8\textwidth]{server_listener_subscription}
+    \includegraphics[width = \textwidth]{server_listener_subscription}
     \caption{server\_listener subscription}
     
 \end{figure}
@@ -63,7 +63,7 @@ A node starts running a program; the related client module notifies this event, 
 \begin{figure}[H]
 
     \centering
-    \includegraphics[width = 0.8\textwidth]{new_unknown}
+    \includegraphics[width = \textwidth]{new_unknown}
     \caption{New unknown application arrival example; a dedicated ser\-ver\_handler is created by the server\_listener}
     
 \end{figure}
@@ -83,7 +83,7 @@ At the beginning, the client module subscribes to some topics that are needed to
 \begin{figure}[H]
 
     \centering
-    \includegraphics[width = 0.8\textwidth]{client_subs}
+    \includegraphics[width = \textwidth]{client_subs}
     \caption{client MQTT subscriptions example}
     
 \end{figure}
@@ -107,7 +107,7 @@ The server\_handler subscribes to some topics in order to manage correctly all t
 \begin{figure}[H]
 
     \centering
-    \includegraphics[width = 0.8\textwidth]{handler_subs}
+    \includegraphics[width = \textwidth]{handler_subs}
     \caption{server\_handler MQTT subscriptions example}
     
 \end{figure}
@@ -120,7 +120,7 @@ When the server\_listener is informed that a new node has started running an app
 \begin{figure}[H]
 
     \centering
-    \includegraphics[width = 0.8\textwidth]{new_known}
+    \includegraphics[width = \textwidth]{new_known}
     \caption{New known application arrival example; client ID is sent by the server\_listener to the corresponding server\_handler}
     
 \end{figure}
@@ -136,7 +136,7 @@ At each predetermined time interval, clients make a request to their application
 \begin{figure}[H]
 
     \centering
-    \includegraphics[width = 0.8\textwidth]{req}
+    \includegraphics[width = \textwidth]{req}
     \caption{Client request example}
     
 \end{figure}
@@ -167,7 +167,7 @@ The server\_handler doesn't know anything about the application it is managing, 
 \begin{figure}[H]
 
     \centering
-    \includegraphics[width = 0.8\textwidth]{info_req}
+    \includegraphics[width = \textwidth]{info_req}
     \caption{Application information request by \textit{AgoràRemoteAppHandler} example}
     
 \end{figure}
@@ -190,7 +190,7 @@ The server\_handler has computed DoE configurations, so it is driving Design Spa
 \begin{figure}[H]
 
     \centering
-    \includegraphics[width = 0.8\textwidth]{conf}
+    \includegraphics[width = \textwidth]{conf}
     \caption{Configuration dispatch by \textit{AgoràRemoteAppHandler} example}
     \label{fig:conf}
     
@@ -206,7 +206,7 @@ The server\_handler module has gathered all the needed OPs related to DoE config
 \begin{figure}[H]
 
     \centering
-    \includegraphics[width = 0.8\textwidth]{doe_model}
+    \includegraphics[width = \textwidth]{doe_model}
     \caption{Partial model dispatch by \textit{AgoràRemoteAppHandler} example}
     \label{fig:doe_model}
     
@@ -221,7 +221,7 @@ The server\_handler owns the complete OP list, obtained through the Generalized 
 \begin{figure}[H]
 
     \centering
-    \includegraphics[width = 0.8\textwidth]{model}
+    \includegraphics[width = \textwidth]{model}
     \caption{Complete model dispatch by \textit{AgoràRemoteApplicationHandler} example}
     \label{fig:model}
     
@@ -356,7 +356,7 @@ All the information is sent by clients on topic "tesiCris\slash{}\textit{[appNam
 \begin{figure}[H]
 
     \centering
-    \includegraphics[width = 0.8\textwidth]{info_send}
+    \includegraphics[width = \textwidth]{info_send}
     \caption{Application information dispatch by \textit{AgoràLocalAppHandler} example}
     \label{fig:info_send}
     
@@ -379,7 +379,7 @@ After the execution, client module arranges the obtained Operating Point, compos
 \begin{figure}[H]
 
     \centering
-    \includegraphics[width = 0.8\textwidth]{op}
+    \includegraphics[width = \textwidth]{op}
     \caption{Operating Point dispatch by \textit{AgoràLocalAppHandler} example}
     \label{fig:op}
     
@@ -402,7 +402,7 @@ If a client disconnects for some reason, the server\_handler receives a message 
 \begin{figure}[H]
 
     \centering
-    \includegraphics[width = 0.8\textwidth]{client_disc}
+    \includegraphics[width = \textwidth]{client_disc}
     \caption{client disconnection example}
     
 \end{figure}
@@ -412,7 +412,7 @@ Particular attention has to be taken if the disconnected client is the one that,
 \begin{figure}[H]
 
     \centering
-    \includegraphics[width = 0.8\textwidth]{infoclient_disc}
+    \includegraphics[width = \textwidth]{infoclient_disc}
     \caption{Disconnection of \textit{AgoràLocalAppHandler} that was sending application information example}
     
 \end{figure}
@@ -428,7 +428,7 @@ If the server\_handler disconnects, clients receive a message on topic "tesiCris
 \begin{figure}[H]
 
     \centering
-    \includegraphics[width = 0.8\textwidth]{server_disc}
+    \includegraphics[width = \textwidth]{server_disc}
     \caption{server\_handler disconnection example}
     
 \end{figure}
@@ -460,7 +460,7 @@ The server\_handler is driving Design Space Exploration phase, sending configura
 \begin{figure}[H]
 
     \centering
-    \includegraphics[width = 0.8\textwidth]{DSEinternal}
+    \includegraphics[width = \textwidth]{DSEinternal}
     \caption{server\_handler disconnection with client internal state equal to \textit{DSE} example}
     
 \end{figure}
