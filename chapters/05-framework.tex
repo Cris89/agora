@@ -5,9 +5,9 @@
 
 \section{Introduction}
 
-Agorà implements all possible situations that can happen in a scenario as the one described in the previous chapter (\ref{methodology}).
+Agorà implements all possible situations that can happen in a scenario as the one described in the previous chapter \ref{methodology}.
 
-The MQTT protocol (\cite{banks2014mqtt}) makes possible all the communications among components: Agorà uses Eclipse Paho MQTT Python Client and Eclipse Paho MQTT C Client for managing messages exchange (\cite{o2014paho}), while it uses Eclipse Mos\-quitto as broker (\cite{light2013mosquitto}). The Machine Learning library MLlib by Apache Spark\textsuperscript{TM} (\cite{spark2015apache}) is used to predict the applications complete models.
+The MQTT protocol (\cite{banks2014mqtt}) makes possible all the communications among components: Agorà uses Eclipse Paho MQTT Python Client and Eclipse Paho MQTT C Client for managing messages exchange (\cite{o2014paho}), while it uses Eclipse Mos\-quitto as broker (\cite{light2013mosquitto}). The Machine Learning library MLlib by Apache Spark\textsuperscript{TM} (\cite{spark2015apache}) is used to predict application complete models.
 
 The next technical use cases implementation makes use of application \textit{Swaptions} as reference, taken from the PARSEC benchmark suite (\cite{bienia2008parsec}). This application is a workload which prices a portfolio of swaptions through Monte Carlo simulations; it has two tunable parameters, the number of threads (variable \textit{num\_threads}, from 1 to 8) and the number of trials for the simulation (variable \textit{num\_trials}, from 100.000 to 1.000.000 with a step of 100.000), while metrics of interest are throughput (variable \textit{avg\_throughput}), as the number of priced swaptions per second, and error (variable \textit{avg\_error}), computed as:
 
@@ -17,7 +17,7 @@ avg\_error = \dfrac{\sum_{s \in pricedSwaptions} \left\vert StandDevRef(s) - Sta
 
 where $StandDevRef(s)$ is the reference standard deviation for swaption $s$, $StandDev(s)$ is the evaluated one and $pricedSwaptions$ represents all swaptions that are priced every computing cycle; so, metric $avg\_error$ stands for the average of differences between standard deviation of priced swaptions using evaluated configuration with respect to the reference one (standard deviation for 1.000.000 trials).
 
-Agorà has been interconnected to the mARGOt autotuner (\cite{gadioli2015application}), that exploits design-time knowledge to dynamically adapt applications behavior during execution; mARGOt represents this information as a list of Operating Points (OPs): an OP is made by a set of parameters values, also called software knobs, in union with the associated performance (metrics of interest values), profiled at design-time; Agorà improvement is to build application knowledge at runtime, with an online distributed Design Space Exploration phase in which a subset of OPs are collected, in order to predict the complete model, made by the entire Operating Point list.
+Agorà has been interconnected to mARGOt autotuner (\cite{gadioli2015application}), that exploits design-time knowledge to dynamically adapt applications behavior during execution; mARGOt represents this information as a list of Operating Points (OPs): an OP is made by a set of parameters values, also called software knobs, in union with the associated performance (metrics of interest values), profiled at design-time; Agorà improvement is to build application knowledge at runtime, with an online distributed Design Space Exploration phase in which a subset of OPs are collected, in order to predict the complete model, made by the entire Operating Point list.
 
 Agorà could work in union with other autotuners that, using application knowledge in terms of configurations and associated performances, have the capability to dynamically adapt applications behavior during execution.
 
@@ -58,7 +58,7 @@ An application can be already known by the AgoràRemoteDispatcher module or a pr
 
 \subsubsection{Unknown application}
 
-A node starts running a program; the related AgoràLocalAppHandler module notifies this event, publishing on topic "agora/apps" a string composed of the application name and the machine hostname plus the Process IDentifier (PID), with format "\textit{[appName] [hostname]\_[PID]}", so that the AgoràLocalAppHandler can be univocally recognized in the future; the message is dispatched to the AgoràRemoteDispatcher, that creates a dedicated AgoràRemoteAppHandler for that application:
+A node starts running a program; the related AgoràLocalAppHandler module notifies this event, publishing on topic "agora/apps" a string composed of the application name and the machine hostname plus the Process IDentifier (PID), with format "\textit{[appName] [hostname]\_[PID]}", so that the AgoràLocalAppHandler can be univocally recognized in the future; the message is received by the AgoràRemoteDispatcher, that creates a dedicated AgoràRemoteAppHandler for that application:
 
 \begin{figure}[H]
 
@@ -96,7 +96,7 @@ The AgoràRemoteAppHandler subscribes to some topics in order to manage correctl
     
     \item "agora/\textit{[appName]}/req", in order to manage all the requests made by AgoràLocalAppHandler modules during program execution (see \ref{clientReq});
     
-    \item "agora/\textit{[appName]}/info/\#", in order to receive all the available application information, such as parameters name and values (see \ref{client_info}); the real topic will be with format "agora\slash{}\textit{[appName]}\slash{}info\slash{}\textit{[host\-name]\_ [PID]}", therefore AgoràRemoteAppHandler can store the ID of the node that is sending application information, in order to react properly to a possible crash during this phase (see \ref{client_disc});
+    \item "agora/\textit{[appName]}/info/\#", in order to receive all the available application information, such as parameters name and values (see \ref{client_info}); the real topic will be with format "agora\slash{}\textit{[appName]}\slash{}info\slash{}\textit{[host\-name]\_ [PID]}", therefore AgoràRemoteAppHandler can store the ID of the node that is sending application information, in order to react properly to node possible crash during this phase (see \ref{client_disc});
     
     \item "agora/\textit{[appName]}/disconnection", in order to correctly react to a possible node disconnection (see \ref{client_disc});
     
@@ -180,7 +180,7 @@ The AgoràRemoteAppHandler is receiving application information, so in this case
 
 \subsubsection{AgoràRemoteAppHandler \textit{buildingDoE} internal state}
 
-The AgoràRemoteAppHandler, according to the received Design of Experiments type (see \ref{client_info}), is building the set of configurations that will be distributed to AgoràLocalAppHandler modules during Design Space Exploration phase; also in this case it discards all possible AgoràLocalAppHandler module requests.
+The AgoràRemoteAppHandler, according to the received Design of Experiments type (see \ref{client_info}), is building the set of configurations that are going to be distributed to AgoràLocalAppHandler modules during Design Space Exploration phase; also in this case it discards all possible AgoràLocalAppHandler module requests.
 
 
 \subsubsection{AgoràRemoteAppHandler \textit{DSE} internal state}\label{dse_conf}
@@ -212,7 +212,7 @@ The AgoràRemoteAppHandler module has gathered all the needed OPs related to DoE
     
 \end{figure}
 
-Taking figure \ref{fig:doe_model} as reference, the first sent OP has parameters\linebreak $num\_threads = 1$ and $num\_trials = 100.000$, with metrics $avg\_error = 217,3312$ and $avg\_throughput = 6,737362$; the AgoràLocalAppHandler module sets up mARGOt autotuner with this OP list, so the application is executed with the best Operating Point that fulfils current goals and requirements.
+Taking figure \ref{fig:doe_model} as reference, the first sent OP has parameters\linebreak $num\_threads = 1$ and $num\_trials = 100.000$, with metrics $avg\_error = 217,3312$ and $avg\_throughput = 6,737362$; the AgoràLocalAppHandler module sets up mARGOt autotuner with this OP list, so the application is executed with the best Operating Point that fulfills current goals and requirements.
 
 \subsubsection{AgoràRemoteAppHandler \textit{autotuning} internal state}\label{modelSend}
 
@@ -239,7 +239,7 @@ From this point on, AgoràLocalAppHandler stops making requests to the AgoràRem
 
 It has been shown that, if an AgoràRemoteAppHandler receives a request from a node but its internal state is unknown, it requests application information (see \ref{req_info}); the AgoràRemoteAppHandler saves both the identifier of the first AgoràLocalAppHandler that replies and all data it receives; other possible replies from other AgoràLocalAppHandler modules are discarded.
 
-Mandatory information that cilent modules have to send is:
+Mandatory information that AgoràLocalAppHandler modules have to send is:
 
 \begin{enumerate}
 
@@ -289,7 +289,7 @@ There are some optional information that AgoràLocalAppHandler modules can send 
     
     \end{enumerate}
     
-    Design of Experiments concepts are explained in chapter \ref{doe}.
+    We refer to chapter \ref{doe} for Design of Experiments detailed information.
     
     e.g. payload: "DoE fcccdExtra"
     
@@ -498,7 +498,7 @@ The integration code required to use Agorà framework with mARGOt autotuner is w
 
     \item AgoràLocalAppHandler module and mARGOt autotuner instantiation and initialization (lines 9-10): the AgoràLocalAppHandler module saves all application information and sets up mARGOt autotuner with a default Operating Point; if nothing happens, the application is executed with this configuration;
     
-    \item Operating Points knowledge update (line 14): AgoràLocalAppHandler module updates, from time to time, its internal knowledge about application configurations that are sent by the AgoràRemoteAppHandler; before mARGOt autotuner sets up application parameters (line 16), AgoràLocalAppHandler checks mARGOt knowledge with respect to its internal one: if they are different, mARGOt configurations are updated. In this way, for instance, if the AgoràLocalAppHandler module receives a new configuration during Design Space Exploration phase (see \ref{dse_conf}), mARGOt knowledge is set up with this data, so the application is forced to be executed with the corresponding parameters values; if, for instance, the complete model is received (see \ref{modelSend}), mARGOt internal knowledge is set up with all this information, so the autotuner can choose the best Operating Point that fulfils application current goals and requirements;
+    \item Operating Points knowledge update (line 14): AgoràLocalAppHandler module updates, from time to time, its internal knowledge about application configurations that are sent by the AgoràRemoteAppHandler; before mARGOt autotuner sets up application parameters (line 16), AgoràLocalAppHandler checks mARGOt knowledge with respect to its internal one: if they are different, mARGOt configurations are updated. In this way, for instance, if the AgoràLocalAppHandler module receives a new configuration during Design Space Exploration phase (see \ref{dse_conf}), mARGOt knowledge is set up with this data, so the application is forced to be executed with the corresponding parameters values; if, for instance, the complete model is received (see \ref{modelSend}), mARGOt internal knowledge is set up with all this information, so the autotuner can choose the best Operating Point that fulfills application current goals and requirements;
     
     \item Operating Point dispatch (line 21-22): after the computation has done, parameters values just used with the corresponding monitored metrics of interest are published on a predetermined MQTT topic, so the AgoràRemoteAppHandler that is in charge of this application can receive this information (see \ref{opSend}).
     
