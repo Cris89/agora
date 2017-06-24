@@ -1,6 +1,6 @@
 \chapter{Background}\label{back}
 
-\lettrine{I}{n} this chapter we explain the main used concepts and tools, related to tesiCris; as it has been revealed in the Introduction, this work has been thought for HPC applications that run in parallel architectures, so we start clarifying what are these target systems and how they are built; after that, we explain the concepts of Design Space Exploration and Design of Experiments, that represents the kernel of this work, in union with the idea of application dynamic online autotuning; finally, we present the used tools for the various communications among tesiCris components and for applications complete model prediction, highlighting their principal characteristics and features: the Message Queue Telemetry Transport (MQTT) messaging protocol and the Generalized Linear Regression interface by Apache Spark\textsuperscript{TM} Machine Learning MLlib library.
+\lettrine{I}{n} this chapter we explain the main used concepts and tools, related to Agorà; as it has been revealed in the Introduction, this work has been thought for HPC applications that run in parallel architectures, so we start clarifying what are these target systems and how they are built; after that, we explain the concepts of Design Space Exploration and Design of Experiments, that represents the kernel of this work, in union with the idea of application dynamic online autotuning; finally, we present the used tools for the various communications among Agorà components and for applications complete model prediction, highlighting their principal characteristics and features: the Message Queue Telemetry Transport (MQTT) messaging protocol and the Generalized Linear Regression interface by Apache Spark\textsuperscript{TM} Machine Learning MLlib library.
 
 \section{Target architecture}
 
@@ -230,7 +230,7 @@ Online autotuning therefore entrusts systems management from people to technolog
 
 MQTT (Message Queue Telemetry Transport, \cite{banks2014mqtt}) is a lightweight messaging protocol that gives the possibility to establish remote communications among subjects. Its main characteristics are the minimization of network bandwidth and devices requirements but also the attention to the assurance of delivery; this features made MQTT ideal for machine-to-machine (M2M) or Internet of Things (IoT) world of connected devices, but in general this protocol have had a large use in different projects: for instance, the famous Facebook Messenger is built on top of it (\cite{zhang2011building}).
 
-MQTT uses a publish\slash{}subscribe pattern, instead of the classical client\slash{}server model: a client has the possibility to subscribe to topics and to publish messages on them (both topics and messages are strings); another component, called \textit{broker}, deals with the dispatch of messages to only those clients that have subscribed to corresponding topics; so, publishers (those clients that sends messages) and subscribers (those clients that receive messages) don't know about the existence of one another: the broker, which is known by every client, will distribute messages accordingly. Figure \ref{fig::mqtt_example} shows a possible MQTT scenario with a sensor and two devices:
+MQTT uses a client server publish\slash{}subscribe pattern: a client has the possibility to subscribe to topics and to publish messages on them (both topics and messages are strings); another component, called \textit{broker} server, deals with the dispatch of messages to only those clients that have subscribed to corresponding topics; so, publishers (those clients that sends messages) and subscribers (those clients that receive messages) don't know about the existence of one another: the broker, which is known by every client, will distribute messages accordingly. Figure \ref{fig::mqtt_example} shows a possible MQTT scenario with a sensor and two devices:
 
 \begin{figure}[H]
 
@@ -288,7 +288,7 @@ Another interesting MQTT feature is the Last Will and Testament (LWT): each clie
 
 \section{Apache Spark\texorpdfstring{$^{TM}\;$}MMLlib library}
 
-tesiCris takes advantage of the Machine Learning MLlib library by Apache Spark\textsuperscript{TM} (\cite{spark2015apache}) in order to predict the complete model of running applications; in particular, it has been focused on the Generalized Linear Regression interface.
+Agorà takes advantage of the Machine Learning MLlib library by Apache Spark\textsuperscript{TM} (\cite{spark2015apache}) in order to predict the complete model of running applications; in particular, it has been focused on the Generalized Linear Regression interface.
 
 
 \subsection{(Generalized) Linear Regression}
@@ -312,7 +312,7 @@ Linear Regression assumes that the response variable follows a Gaussian distribu
 
 \subsection{Regressors transformations}\label{regrTransforms}
 
-In order to use Linear Regression even if the relationship between the dependent variable and the independent variables is not linear, there is the necessity to modify the input variables; tesiCris implements two possible regressors transformations:
+In order to use Linear Regression even if the relationship between the dependent variable and the independent variables is not linear, there is the necessity to modify the input variables; Agorà implements two possible regressors transformations:
 
 \begin{enumerate}
 
@@ -322,7 +322,7 @@ In order to use Linear Regression even if the relationship between the dependent
 
 \end{enumerate}
 
-tesiCris chooses the model with the smallest Akaike Information Criterion (AIC) value, that is a measure of the quality, in terms of lost information, of statistical models for a given set of data; at the same AIC value, the chosen model is the one with the smallest mean of the sum of coefficient standard errors, that measure how precisely the model has estimated the regression coefficients with the given training set of data.
+Agorà chooses the model with the smallest Akaike Information Criterion (AIC) value, that is a measure of the quality, in terms of lost information, of statistical models for a given set of data; at the same AIC value, the chosen model is the one with the smallest mean of the sum of coefficient standard errors, that measure how precisely the model has estimated the regression coefficients with the given training set of data.
 
 
 
