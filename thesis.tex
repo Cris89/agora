@@ -130,14 +130,22 @@
 \pagenumbering{Roman}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Abstract
+% Abstract and Sommario
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{chapters/abstractENG}
 \input{chapters/abstractITA}
+
+\cleardoublepage
+\newpage
+
+\input{chapters/abstractENG}
+
+\cleardoublepage
+\newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % TOC
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\contentsname}{Table of Contents}
 \tableofcontents
 \cleardoublepage
 \newpage
