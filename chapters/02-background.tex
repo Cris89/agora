@@ -226,9 +226,9 @@ Online autotuning, therefore, entrusts system management from people to technolo
 
 \section{MQTT messaging protocol}\label{mqtt}
 
-MQTT (Message Queue Telemetry Transport, \cite{banks2014mqtt}) is a lightweight messaging protocol that gives the possibility to establish remote communications among subjects. Its main characteristics are the minimization of network bandwidth and devices requirements but also the attention to the assurance of delivery; this features made MQTT ideal for machine-to-machine (M2M) or Internet of Things (IoT) world of connected devices, but in general this protocol have had a large use in different projects: for instance, the famous Facebook Messenger is built on top of it (\cite{zhang2011building}).
+MQTT (Message Queue Telemetry Transport, \cite{banks2014mqtt}) is a lightweight messaging protocol that gives the possibility to establish remote communications among subjects. Its main characteristics are the minimization of network bandwidth and devices requirements; this features make MQTT ideal for machine-to-machine (M2M) or Internet of Things (IoT) world of connected devices, but in general this protocol have a large use in different projects: for instance, famous Facebook Messenger is built on top of it (\cite{zhang2011building}).
 
-MQTT uses a client server publish\slash{}subscribe pattern: a client has the possibility to subscribe to topics and to publish messages on them (both topics and messages are strings); another component, called \textit{broker} server, deals with the dispatch of messages to only those clients that have subscribed to corresponding topics; so, publishers (those clients that sends messages) and subscribers (those clients that receive messages) don't know about the existence of one another: the broker, which is known by every client, will distribute messages accordingly. Figure \ref{fig::mqtt_example} shows a possible MQTT scenario with a sensor and two devices:
+MQTT uses a client server publish\slash{}subscribe pattern: a client has the possibility to subscribe to topics and to publish messages on them (both topics and messages are strings); another component, called \textit{broker} server, deals with the dispatch of messages to only clients that have subscribed to corresponding topic; so, publishers (clients that sends messages) and subscribers (clients that receive messages) don't know about the existence of one another: the broker, which is known by every client, distribute messages accordingly. Figure \ref{fig::mqtt_example} shows a possible MQTT scenario with a sensor and two devices:
 
 \begin{figure}[H]
 
@@ -239,7 +239,7 @@ MQTT uses a client server publish\slash{}subscribe pattern: a client has the pos
 
 \end{figure}
 
-Topics are used by the broker to filter messages and manage them in a correct way; they are made up of one or more levels, separated by a forward slash, as shown in figure \ref{fig::topic}:
+Topics are used by the broker to filter messages and to manage them in a correct way; they are made up of one or more levels, separated by a forward slash, as shown in figure \ref{fig::topic}:
 
 \begin{figure}[H]
 
@@ -252,7 +252,7 @@ Topics are used by the broker to filter messages and manage them in a correct wa
 
 There is the possibility to subscribe to more topics at once through the use of wildcards: the single-level one (denoted with the symbol \textit{+}) and the multi-level one (indicated with the symbol \textit{\#}).
 
-Single-level wildcard substitutes an arbitrary level in a topic, so all topics that matches the same structure will be associated to the one with single-level wildcard:
+Single-level wildcard substitutes an arbitrary level in a topic, so all topics that matches the same structure are associated to the one with single-level wildcard:
 
 \begin{figure}[H]
 
@@ -263,7 +263,7 @@ Single-level wildcard substitutes an arbitrary level in a topic, so all topics t
 
 \end{figure}
 
-for instance, \textit{myhome\slash{}groundfloor\slash{}kitchen\slash{}temperature} and \textit{myhome\slash{}\linebreak groundfloor\slash{}livingroom\slash{}temperature} will match the topic in figure \ref{fig:mqtt_singlew}, while \textit{myhome\slash{}groundfloor\slash{}kitchen\slash{}humidity} won't.
+For instance, \textit{myhome\slash{}groundfloor\slash{}kitchen\slash{}temperature} and \textit{myhome\slash{}groundfloor\slash{}livingroom\slash{}temperature} match topic in figure \ref{fig:mqtt_singlew}, while \textit{myhome\slash{}groundfloor\slash{}kitchen\slash{}humidity} don't.
 
 Multi-level wildcard is placed at the end of a topic and it covers an arbitrary number of topic levels:
 
@@ -276,9 +276,9 @@ Multi-level wildcard is placed at the end of a topic and it covers an arbitrary 
 
 \end{figure}
 
-in this case, for instance, \textit{myhome\slash{}groundfloor\slash{}kitchen\slash{}temperature} and \textit{myhome\slash{}groundfloor\slash{}kitchen\slash{}humidity} will match the topic in figure \ref{fig:mqtt_mulw}, while \textit{myhome\slash{}firstfloor\slash{}livingroom\slash{}temperature} won't.
+In this case, for instance, \textit{myhome\slash{}groundfloor\slash{}kitchen\slash{}tem\-per\-a\-ture} and \textit{myhome\slash{}groundfloor\slash{}kitchen\slash{}humidity} match topic in figure \ref{fig:mqtt_mulw}, while \textit{myhome\slash{}firstfloor\slash{}livingroom\slash{}temperature} don't.
 
-Another interesting MQTT feature is the Last Will and Testament (LWT): each client can specify a normal MQTT message with topic and payload. When it connects to the broker, this message is stored; if client abruptly disconnects, the broker sends the corresponding LWT to all subscribed clients on related topic, notifying the occurred disconnection.
+Another interesting MQTT feature is the Last Will and Testament (LWT): each client can specify a normal MQTT message with topic and payload. When it connects to the broker, this message is stored; if client abruptly disconnects, broker sends corresponding LWT to all subscribed clients on related topic, notifying occurred disconnection.
 
 
 
@@ -286,12 +286,12 @@ Another interesting MQTT feature is the Last Will and Testament (LWT): each clie
 
 \section{Apache Spark\texorpdfstring{$^{TM}\;$}MMLlib library}
 
-Agorà takes advantage of the Machine Learning MLlib library by Apache Spark\textsuperscript{TM} (\cite{spark2015apache}) in order to predict the complete model of running applications; in particular, it has been focused on the Generalized Linear Regression interface.
+Agorà takes advantage of the Machine Learning MLlib library by Apache Spark\textsuperscript{TM} (\cite{spark2015apache}) in order to predict complete model of running applications; in particular, we focuse on the Generalized Linear Regression interface.
 
 
 \subsection{(Generalized) Linear Regression}\label{glr}
 
-Taking \cite{site:caltechML2012} as reference, Linear Regression tries to model the relationship between a variable \textit{y} and one or more variables \textit{x\textsubscript{1}, x\textsubscript{2}, ... x\textsubscript{n}, n $\ge$ 1}; more rigorously, given a set of statistical units $\{y_i, x_{i1}, x_{i2}, ..., x_{ip}\}_{i = 1}^n$, in which $y_i$ is the variable that depends on the p-vector $[x_{i1}, x_{i2}, ..., x_{ip}]$, linear regression assumes that this relationship is linear:
+Taking \cite{site:caltechML2012} as reference, Linear Regression tries to model the relationship between a variable $y$ and one or more variables $x_1, x_2, ... x_n, n \ge 1$; more rigorously, given a set of statistical units $\{y_i, x_{i1}, x_{i2}, ..., x_{ip}\}_{i = 1}^n$, in which $y_i$ is the variable that depends on the p-vector $[x_{i1}, x_{i2}, ..., x_{ip}]$, linear regression assumes that this relationship is linear:
 
 \begin{equation}
     y_i = \beta_0\boldsymbol{1} + \beta_1x_{i1} + \beta_2x_{i2} + ... +  \beta_px_{ip} + \epsilon_i, \quad i = 1, 2, ... n
@@ -301,23 +301,23 @@ $y_i$ is the \textit{regressand}, \textit{endogenous variable}, \textit{response
 
 $x_{i1}, x_{i2}, ..., x_{ip}$ are called \textit{regressors}, \textit{exogenous variables}, \textit{explanatory variables}, \textit{covariates}, \textit{input variables}, \textit{predictor variables} or \textit{independent variables};
 
-$\beta_0, \beta_1, ..., \beta_p$ are the \textit{effects} or \textit{regression coefficients}, whose values establish the connection between the regressand and the regressors; $\beta_0$ is also called \textit{intercept}; linear regression mainly focuses on the estimation of these parameters;
+$\beta_0, \beta_1, ..., \beta_p$ are the \textit{effects} or \textit{regression coefficients}, whose values establish the relationship among regressand and regressors; $\beta_0$ is also called \textit{intercept}; linear regression mainly focuses on the estimation of these parameters;
 
 $\epsilon_i$ is called the \textit{error term}, \textit{disturbance term} or \textit{noise}. It represents all other factors that influence $y_i$ other than the predictor variables.
 
-Linear Regression assumes that the response variable follows a Gaussian distribution; Generalized Linear Regression (GLR) gives the possibility to specify other distributions taken from the exponential family; it is useful for several kinds of prediction problems including Linear Regression, Poisson Regression (for count data) and Logistic Regression (for binary data); moreover, GLR gives the possibility to specify a link function \textit{g} that relates the mean of the measured variable to the exogenous variables. In the case of Gaussian distribution for Linear Regression, the link function can be equal to \textit{Identity}, \textit{Log} and \textit{Inverse}, with an explicit meaning.
+Linear Regression assumes that the response variable follows a Gaussian distribution; Generalized Linear Regression (GLR) gives the possibility to specify other distributions taken from the exponential family; it is useful for several kinds of prediction problems, including Linear Regression, Poisson Regression (for count data) and Logistic Regression (for binary data); moreover, GLR gives the possibility to specify a link function \textit{g} that relates the mean of measured variable to exogenous variables. In case of Gaussian distribution for Linear Regression, link function can be equal to \textit{Identity}, \textit{Log} and \textit{Inverse}, with explicit meaning.
 
 
 \subsection{Regressors transformations}\label{regrTransforms}
 
-In order to use Linear Regression even if the relationship between the dependent variable and the independent variables is not linear, there is the necessity to modify the input variables; Agorà implements two possible regressors transformations:
+In order to use Linear Regression even if the relationship among dependent variable and independent variables is not linear, there is the necessity to modify input variables; Agorà implements two possible regressors transformations:
 
 \begin{enumerate}
 
-    \item it transforms parameters values with inverse, square root and natural logarithmic functions; in union with the unaltered predictor variables, it tries to find the best model combining these transformations and the available link functions; we refer to this strategy as \textit{"transformations by functions"};
+    \item it transforms parameter values with inverse, square root and natural logarithmic functions; in union with the unaltered predictor variables, it tries to find the best model combining these transformations and available link functions; we refer to this strategy as \textit{"transformations by functions"};
     
-    \item it transforms parameters values through the polynomial expansion of second order: their cross-products and square values are added to the set of regressors, evaluating the best model with the available link functions; we refer to this strategy as \textit{"polynomial expansion of second order"}
+    \item it transforms parameter values through polynomial expansion of second order: their cross-products and square values are added to the set of regressors, evaluating the best model with available link functions; we refer to this strategy as \textit{"polynomial expansion of second order"}
 
 \end{enumerate}
 
-Agorà chooses the model with the smallest Akaike Information Criterion (AIC) value, that is a measure of the quality, in terms of lost information, of statistical models for a given set of data; at the same AIC value, the chosen model is the one with the smallest mean of the sum of coefficient standard errors, that measure how precisely the model has estimated the regression coefficients with the given training set of data.
+Agorà chooses the model with the smallest Akaike Information Criterion (AIC) value, that is a measure of the quality, in terms of lost information, of statistical models for a given set of data; at the same AIC value, chosen model is the one with the smallest mean of the sum of coefficient standard errors, that measure how precisely predicted model has estimated regression coefficients with the given training set of data.
