@@ -316,17 +316,10 @@ In order to use Linear Regression even if the relationship between the dependent
 
 \begin{enumerate}
 
-    \item it transforms parameters values with inverse, square root and natural logarithmic functions; in union with the unaltered predictor variables, it tries to find the best model combining these transformations and the available link functions;
+    \item it transforms parameters values with inverse, square root and natural logarithmic functions; in union with the unaltered predictor variables, it tries to find the best model combining these transformations and the available link functions; we refer to this strategy as \textit{"transformations by functions"};
     
-    \item it transforms parameters values through the polynomial expansion of second order: their cross-products and square values are added to the set of regressors, evaluating the best model with the available link functions.
+    \item it transforms parameters values through the polynomial expansion of second order: their cross-products and square values are added to the set of regressors, evaluating the best model with the available link functions; we refer to this strategy as \textit{"polynomial expansion of second order"}
 
 \end{enumerate}
 
 Agorà chooses the model with the smallest Akaike Information Criterion (AIC) value, that is a measure of the quality, in terms of lost information, of statistical models for a given set of data; at the same AIC value, the chosen model is the one with the smallest mean of the sum of coefficient standard errors, that measure how precisely the model has estimated the regression coefficients with the given training set of data.
-
-
-
-
-\section{Thesis structure}
-
-\textit{ [Da fare in ultimo, quando tutta la struttura della tesi è chiara] }
