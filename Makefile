@@ -5,7 +5,7 @@ restart:
 
 compile: restart
 	pdflatex thesis.tex
-	bibtex thesis
+	biber thesis
 	pdflatex thesis.tex
 	pdflatex thesis.tex
 
