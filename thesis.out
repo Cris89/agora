@@ -1,0 +1,57 @@
+\BOOKMARK [0][]{chapter.1}{Introduction}{}% 1
+\BOOKMARK [1][]{section.1.1}{Problem and Motivations}{chapter.1}% 2
+\BOOKMARK [1][]{section.1.2}{Objectives}{chapter.1}% 3
+\BOOKMARK [1][]{section.1.3}{Thesis structure}{chapter.1}% 4
+\BOOKMARK [0][]{chapter.2}{Background}{}% 5
+\BOOKMARK [1][]{section.2.1}{Target architecture}{chapter.2}% 6
+\BOOKMARK [1][]{section.2.2}{Design Space Exploration}{chapter.2}% 7
+\BOOKMARK [2][]{subsection.2.2.1}{Multi-Objective Optimization \(MOO\) problem}{section.2.2}% 8
+\BOOKMARK [1][]{section.2.3}{Design of Experiments}{chapter.2}% 9
+\BOOKMARK [1][]{section.2.4}{Dynamic autotuning}{chapter.2}% 10
+\BOOKMARK [1][]{section.2.5}{MQTT messaging protocol}{chapter.2}% 11
+\BOOKMARK [1][]{section.2.6}{Apache SparkMMLlib library}{chapter.2}% 12
+\BOOKMARK [2][]{subsection.2.6.1}{\(Generalized\) Linear Regression}{section.2.6}% 13
+\BOOKMARK [2][]{subsection.2.6.2}{Regressors transformations}{section.2.6}% 14
+\BOOKMARK [0][]{chapter.3}{State of The Art}{}% 15
+\BOOKMARK [1][]{section.3.1}{Design Space Exploration related works}{chapter.3}% 16
+\BOOKMARK [1][]{section.3.2}{Autotuning related works}{chapter.3}% 17
+\BOOKMARK [0][]{chapter.4}{Proposed methodology}{}% 18
+\BOOKMARK [0][]{chapter.5}{Agor\340: proposed framework}{}% 19
+\BOOKMARK [1][]{section.5.1}{Introduction}{chapter.5}% 20
+\BOOKMARK [1][]{section.5.2}{Use case implementation}{chapter.5}% 21
+\BOOKMARK [2][]{subsection.5.2.1}{Agor\340RemoteDispatcher module creation}{section.5.2}% 22
+\BOOKMARK [2][]{subsection.5.2.2}{Application arrival}{section.5.2}% 23
+\BOOKMARK [3][]{subsubsection.5.2.2.1}{Unknown application}{subsection.5.2.2}% 24
+\BOOKMARK [3][]{subsubsection.5.2.2.2}{Known application}{subsection.5.2.2}% 25
+\BOOKMARK [2][]{subsection.5.2.3}{Agor\340LocalAppHandler request}{section.5.2}% 26
+\BOOKMARK [3][]{subsubsection.5.2.3.1}{Agor\340RemoteAppHandler internal state equal to unknown}{subsection.5.2.3}% 27
+\BOOKMARK [3][]{subsubsection.5.2.3.2}{Agor\340RemoteAppHandler internal state equal to receivingInfo}{subsection.5.2.3}% 28
+\BOOKMARK [3][]{subsubsection.5.2.3.3}{Agor\340RemoteAppHandler internal state equal to buildingDoE}{subsection.5.2.3}% 29
+\BOOKMARK [3][]{subsubsection.5.2.3.4}{Agor\340RemoteAppHandler internal state equal to DSE}{subsection.5.2.3}% 30
+\BOOKMARK [3][]{subsubsection.5.2.3.5}{Agor\340RemoteAppHandler internal state equal to buildingTheModel}{subsection.5.2.3}% 31
+\BOOKMARK [3][]{subsubsection.5.2.3.6}{Agor\340RemoteAppHandler internal state equal to autotuning}{subsection.5.2.3}% 32
+\BOOKMARK [2][]{subsection.5.2.4}{Application information dispatch by Agor\340LocalAppHandler}{section.5.2}% 33
+\BOOKMARK [2][]{subsection.5.2.5}{Operating Point dispatch by Agor\340LocalAppHandler module}{section.5.2}% 34
+\BOOKMARK [2][]{subsection.5.2.6}{Agor\340LocalAppHandler module disconnection}{section.5.2}% 35
+\BOOKMARK [2][]{subsection.5.2.7}{Agor\340RemoteAppHandler module disconnection}{section.5.2}% 36
+\BOOKMARK [3][]{subsubsection.5.2.7.1}{Agor\340LocalAppHandler internal state equal to defaultStatus}{subsection.5.2.7}% 37
+\BOOKMARK [3][]{subsubsection.5.2.7.2}{Agor\340LocalAppHandler internal state equal to DSE}{subsection.5.2.7}% 38
+\BOOKMARK [3][]{subsubsection.5.2.7.3}{Agor\340LocalAppHandler internal state equal to DoEModel}{subsection.5.2.7}% 39
+\BOOKMARK [3][]{subsubsection.5.2.7.4}{Agor\340LocalAppHandler internal state equal to autotuning}{subsection.5.2.7}% 40
+\BOOKMARK [1][]{section.5.3}{Agor\340LocalAppHandler module integration}{chapter.5}% 41
+\BOOKMARK [0][]{chapter.6}{Experimental results}{}% 42
+\BOOKMARK [1][]{section.6.1}{Experimental setup}{chapter.6}% 43
+\BOOKMARK [2][]{subsection.6.1.1}{Synthetic application version 1}{section.6.1}% 44
+\BOOKMARK [2][]{subsection.6.1.2}{Synthetic application version 2}{section.6.1}% 45
+\BOOKMARK [2][]{subsection.6.1.3}{Swaptions}{section.6.1}% 46
+\BOOKMARK [1][]{section.6.2}{Experimental campaign}{chapter.6}% 47
+\BOOKMARK [2][]{subsection.6.2.1}{Synthetic application}{section.6.2}% 48
+\BOOKMARK [3][]{subsubsection.6.2.1.1}{Model prediction quality}{subsection.6.2.1}% 49
+\BOOKMARK [3][]{subsubsection.6.2.1.2}{Execution times}{subsection.6.2.1}% 50
+\BOOKMARK [3][]{subsubsection.6.2.1.3}{Application behavior over time}{subsection.6.2.1}% 51
+\BOOKMARK [2][]{subsection.6.2.2}{Swaptions application}{section.6.2}% 52
+\BOOKMARK [3][]{subsubsection.6.2.2.1}{Model prediction quality}{subsection.6.2.2}% 53
+\BOOKMARK [3][]{subsubsection.6.2.2.2}{Execution times}{subsection.6.2.2}% 54
+\BOOKMARK [3][]{subsubsection.6.2.2.3}{Application behavior over time}{subsection.6.2.2}% 55
+\BOOKMARK [0][]{chapter.7}{Conclusion and future works}{}% 56
+\BOOKMARK [0][]{Item.71}{Bibliography}{}% 57

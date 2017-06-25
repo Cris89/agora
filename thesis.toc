@@ -1,0 +1,123 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {greek}
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\select@language {italian}
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}Problem and Motivations}{1}{section.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.2}Objectives}{4}{section.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.3}Thesis structure}{5}{section.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {2}Background}{7}{chapter.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}Target architecture}{8}{section.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.2}Design Space Exploration}{11}{section.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.1}Multi-Objective Optimization (MOO) problem}{12}{subsection.2.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.3}Design of Experiments}{13}{section.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.4}Dynamic autotuning}{15}{section.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.5}MQTT messaging protocol}{17}{section.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.6}Apache Spark$^{TM}\tmspace +\thickmuskip {.2777em}$MLlib library}{19}{section.2.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.6.1}(Generalized) Linear Regression}{20}{subsection.2.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.6.2}Regressors transformations}{21}{subsection.2.6.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {3}State of The Art}{23}{chapter.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.1}Design Space Exploration related works}{23}{section.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.2}Autotuning related works}{24}{section.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {4}Proposed methodology}{29}{chapter.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Agor\IeC {\`a}: proposed framework}{39}{chapter.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.1}Introduction}{39}{section.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.2}Use case implementation}{41}{section.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.1}Agor\IeC {\`a}RemoteDispatcher module creation}{41}{subsection.5.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.2}Application arrival}{41}{subsection.5.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.2.2.1}Unknown application}{41}{subsubsection.5.2.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.2.2.2}Known application}{44}{subsubsection.5.2.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.3}Agor\IeC {\`a}LocalAppHandler request}{45}{subsection.5.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.2.3.1}Agor\IeC {\`a}RemoteAppHandler internal state equal to \textit {unknown}}{46}{subsubsection.5.2.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.2.3.2}Agor\IeC {\`a}RemoteAppHandler internal state equal to \textit {receivingInfo}}{46}{subsubsection.5.2.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.2.3.3}Agor\IeC {\`a}RemoteAppHandler internal state equal to \textit {buildingDoE}}{46}{subsubsection.5.2.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.2.3.4}Agor\IeC {\`a}RemoteAppHandler internal state equal to \textit {DSE}}{47}{subsubsection.5.2.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.2.3.5}Agor\IeC {\`a}RemoteAppHandler internal state equal to \textit {building\discretionary {-}{}{}The\discretionary {-}{}{}Model}}{47}{subsubsection.5.2.3.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.2.3.6}Agor\IeC {\`a}RemoteAppHandler internal state equal to \textit {autotuning}}{48}{subsubsection.5.2.3.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.4}Application information dispatch by Agor\IeC {\`a}LocalAppHandler}{49}{subsection.5.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.5}Operating Point dispatch by Agor\IeC {\`a}LocalAppHandler module}{55}{subsection.5.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.6}Agor\IeC {\`a}LocalAppHandler module disconnection}{56}{subsection.5.2.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.7}Agor\IeC {\`a}RemoteAppHandler module disconnection}{58}{subsection.5.2.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.2.7.1}Agor\IeC {\`a}LocalAppHandler internal state equal to \textit {defaultStatus}}{59}{subsubsection.5.2.7.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.2.7.2}Agor\IeC {\`a}LocalAppHandler internal state equal to \textit {DSE}}{59}{subsubsection.5.2.7.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.2.7.3}Agor\IeC {\`a}LocalAppHandler internal state equal to \textit {DoEModel}}{59}{subsubsection.5.2.7.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.2.7.4}Agor\IeC {\`a}LocalAppHandler internal state equal to \textit {autotuning}}{60}{subsubsection.5.2.7.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.3}Agor\IeC {\`a}LocalAppHandler module integration}{60}{section.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {6}Experimental results}{63}{chapter.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.1}Experimental setup}{63}{section.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.1.1}Synthetic application version 1}{65}{subsection.6.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.1.2}Synthetic application version 2}{66}{subsection.6.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.1.3}Swaptions}{68}{subsection.6.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.2}Experimental campaign}{68}{section.6.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.2.1}Synthetic application}{69}{subsection.6.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {6.2.1.1}Model prediction quality}{69}{subsubsection.6.2.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {6.2.1.2}Execution times}{77}{subsubsection.6.2.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {6.2.1.3}Application behavior over time}{81}{subsubsection.6.2.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.2.2}Swaptions application}{83}{subsection.6.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {6.2.2.1}Model prediction quality}{83}{subsubsection.6.2.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {6.2.2.2}Execution times}{85}{subsubsection.6.2.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {6.2.2.3}Application behavior over time}{86}{subsubsection.6.2.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {7}Conclusion and future works}{89}{chapter.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliography}{95}{Item.71}

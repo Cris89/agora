@@ -12,6 +12,14 @@
   bindingoffset=0.4cm
 }
 
+\usepackage[
+    backend=biber, 
+    natbib=true,
+    style=numeric,
+    sorting=none
+]{biblatex}
+\addbibresource{./porcoDio.bib}
+
 %Uncomment this for final prints: this just enables printing on a4 paper
 \usepackage[cam,center,a4,pdflatex,axes]{crop}
 
@@ -23,7 +31,7 @@
 \usepackage{mdwmath}
 \usepackage{mdwtab}
 \usepackage{amsmath,amssymb}
-\usepackage{cite}
+%\usepackage{cite}
 
 \usepackage{graphicx}
 \graphicspath{{./img/}}
@@ -40,14 +48,14 @@
 \usepackage{multirow}
 \usepackage{phdtitle}
 \usepackage{paralist}
-\usepackage{bibentry}
+%\usepackage{bibentry}
 %\usepackage[algochapter]{algorithm2e}
 \usepackage[bookmarks=true,pdftex=false,bookmarksopen=true,pdfborder={0,0,0},hidelinks]{hyperref}
 \usepackage{lscape}
 \usepackage{algorithmic}
 \usepackage{algorithm}
 \usepackage{longtable}
-\usepackage[latin1, utf8x]{inputenc}
+\usepackage[latin1, utf8]{inputenc}
 
 
 
@@ -75,6 +83,8 @@
 
 
 
+
+
 %% \hyphenation{} is used to force the 
 \hyphenation{}
 
@@ -89,7 +99,7 @@
 
 \hypersetup{pdftitle={A distributed framework supporting runtime autotuning for HPC applications}, pdfauthor={Cristiano Di Marco}}
 
-\nobibliography*
+%\nobibliography*
 
 \department {\normalfont{DIPARTIMENTO DI ELETTRONICA, INFORMAZIONE E BIOINGEGNERIA\\COMPUTER SCIENCE AND ENGINEERING - INGEGNERIA INFORMATICA}} %{Dipartimento di Elettronica, Informatica e Bioingegneria}
 \phdprogram{\normalfont{MASTER THESIS}}
@@ -179,10 +189,12 @@
 %\listoftables
 
 \cleardoublepage
-\phantomsection
+%\phantomsection
 \addcontentsline{toc}{chapter}{\bibname}
-\small
-\bibliographystyle{plain}
-\bibliography{thesis}
+%\small
+%\bibliographystyle{plain}
+%\bibliography{thesis}
+
+\printbibliography
 
 \end{document}
