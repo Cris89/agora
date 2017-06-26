@@ -12,14 +12,6 @@
   bindingoffset=0.4cm
 }
 
-\usepackage[
-    backend=biber, 
-    natbib=true,
-    style=numeric,
-    sorting=none
-]{biblatex}
-\addbibresource{./porcoDio.bib}
-
 %Uncomment this for final prints: this just enables printing on a4 paper
 \usepackage[cam,center,a4,pdflatex,axes]{crop}
 
@@ -64,10 +56,6 @@
 
 \usepackage{indentfirst}
 
-% font sans serif
-% \usepackage{arev}
-% \usepackage[T1]{fontenc}
-
 % font serif
 \usepackage{DejaVuSerif}
 \usepackage[T1]{fontenc}
@@ -78,6 +66,14 @@
 
 \setcounter{tocdepth}{3}
 \setcounter{secnumdepth}{3}
+
+\usepackage[
+    backend = biber, 
+    natbib = true,
+    style = numeric,
+    sorting = none
+]{biblatex}
+\addbibresource{./bibiography.bib}
 
 
 
@@ -188,13 +184,13 @@
 %\listoffigures
 %\listoftables
 
-\cleardoublepage
+%\cleardoublepage
 %\phantomsection
-\addcontentsline{toc}{chapter}{\bibname}
+%\addcontentsline{toc}{chapter}{\bibname}
 %\small
 %\bibliographystyle{plain}
 %\bibliography{thesis}
 
-\printbibliography
+\printbibliography[heading = bibintoc]
 
 \end{document}

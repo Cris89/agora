@@ -82,7 +82,7 @@
       <file>thesis.bcf</file>
     </requires>
     <requires type="editable">
-      <file>./porcoDio.bib</file>
+      <file>./bibiography.bib</file>
     </requires>
   </external>
 </requests>
