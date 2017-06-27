@@ -40,7 +40,9 @@ error = \dfrac{1}{0.015 \cdot \sqrt{param_1} + 0.033 \cdot \ln{(param_2)} + 0.02
 
 Application parameters can assume these values:
 
-\begin{center}
+\begin{table}[H]
+
+    \centering
 
     \begin{tabular}{ll}
     
@@ -54,7 +56,9 @@ Application parameters can assume these values:
     
     \end{tabular}
 
-\end{center}
+    \caption{Synthetic application version 1 parameters and related values}
+
+\end{table}
 
 This application has 455 Operating Points; figure \ref{fig::opListSynth1} shows complete OP distribution for $noisePercentage = 15\%$: every point represents a particular configuration with an error value (on x-axis) and a throughput one (on y-axis). Since $noise$ in $executionTime$ is affected by $randomNumber$, this plot consider its expected value, equal to the mean of the chosen exponential distribution (0.3); the obtained OP list represents the reference model for this predetermined $noise\-Per\-cent\-age$ value; of course, other reference models are similar, since the only difference is the $noisePercentage$ value for the calculation of $executionTime$ variable.
 
@@ -62,7 +66,7 @@ This application has 455 Operating Points; figure \ref{fig::opListSynth1} shows 
 
     \centering
     \includegraphics[width = \textwidth]{opGraphSynth1}
-    \caption{Complete OP distribution of synthtetic application version 1 (reference model with $noisePercentage = 15\%$); every point stands for a particular configuration with associated observed metric values; on x-axis: error metric values, on y-axis: throughput metric values [ jobs / second ]}
+    \caption[Complete OP distribution of synthtetic application version 1]{Complete OP distribution of synthtetic application version 1 (reference model with $noisePercentage = 15\%$); every point stands for a particular configuration with associated observed metric values; on x-axis: error metric values, on y-axis: throughput metric values [ jobs / second ]}
     \label{fig::opListSynth1}
     
 \end{figure}
@@ -85,7 +89,9 @@ error = \dfrac{1}{0.01 \cdot param_1 + 0.7 \cdot \ln{(param_2)} + 0.019 \cdot pa
 
 Parameter values are:
 
-\begin{center}
+\begin{table}[H]
+
+    \centering
 
     \begin{tabular}{ll}
     
@@ -99,7 +105,9 @@ Parameter values are:
     
     \end{tabular}
 
-\end{center}
+    \caption{Synthetic application version 2 parameters and related values}
+
+\end{table}
 
 In this application the number of Operating Points is 364; figure \ref{fig::opListSynth2} shows complete OP distribution of reference model with $noise\-Per\-cent\-age = 5\%$:
 
@@ -107,7 +115,7 @@ In this application the number of Operating Points is 364; figure \ref{fig::opLi
 
     \centering
     \includegraphics[width = \textwidth]{opGraphSynth2}
-    \caption{Complete OP distribution of synthtetic application version 2 (reference model with $noisePercentage = 5\%$); every point stands for a particular configuration with associated observed metric values; on x-axis: error metric values, on y-axis: throughput metric values [ jobs / second ]}
+    \caption[Complete OP distribution of synthtetic application version 2]{Complete OP distribution of synthtetic application version 2 (reference model with $noisePercentage = 5\%$); every point stands for a particular configuration with associated observed metric values; on x-axis: error metric values, on y-axis: throughput metric values [ jobs / second ]}
     \label{fig::opListSynth2}
     
 \end{figure}
@@ -119,7 +127,9 @@ Of course, regarding model prediction goodness, same reasoning as previous appli
 
 As already stated in \ref{expSetup}, this application has two parameters: $num\_\-threads$ and $num\_\-trials$; their values are:
 
-\begin{center}
+\begin{table}[H]
+
+    \centering
 
     \begin{tabular}{ll}
     
@@ -127,12 +137,14 @@ As already stated in \ref{expSetup}, this application has two parameters: $num\_
         Parameters & Values \\
         \midrule
         $num\_threads$ & 1, 2, 3, 4, 5, 6, 7, 8 \\
-        $num\_trials (\cdot 10^4)$ & 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 \\
+        $num\_trials (\cdot 10^3)$ & 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000 \\
         \bottomrule 
     
     \end{tabular}
 
-\end{center}
+    \caption{Swaptions parameters and related values}
+
+\end{table}
 
 The number of Operating Points is therefore 80; figure \ref{fig::swaptionsOPs} shows complete OP distribution with respect $avg\_error$ and $avg\_throughput$ metrics of interest:
 
@@ -140,7 +152,7 @@ The number of Operating Points is therefore 80; figure \ref{fig::swaptionsOPs} s
 
     \centering
     \includegraphics[width = \textwidth]{swaptionsOPgraph}
-    \caption{\textit{Swaptions} complete OP distribution; every point stands for a particular configuration with associated observed metric values; on x-axis: \textit{avg\_error} metric values, on y-axis: \textit{avg\_throughput} metric values \hbox{[ priced swaptions / second ]}}
+    \caption[Swaptions complete OP distribution]{Swaptions complete OP distribution; every point stands for a particular configuration with associated observed metric values; on x-axis: \textit{avg\_error} metric values, on y-axis: \textit{avg\_throughput} metric values \hbox{[ priced swaptions / second ]}}
     \label{fig::swaptionsOPs}
     
 \end{figure}
@@ -179,7 +191,7 @@ where $predictedValue(m)$ and $referenceValue(m)$ have explicit meaning; so, $de
     
     \includegraphics[width = \textwidth]{deltaErrorRangesSynth1spark1}
     
-     \caption{$deltaError$ results for throughput metric of synthetic application version 1; used RSM: 1st version of implemented GLR ("transformations by functions", see \ref{regrTransforms}); each stacked bar refers to a particular application configuration, with respect to $noisePercentage$ value and number of collected OP repetitions during DSE phase, showing OP percentages that have a corresponding throughput $deltaError$ within prearranged intervals; on y-axis: number of OPs \hbox{[ \% ]}}
+     \caption[$deltaError$ results for throughput metric of synthetic application version 1; used RSM: 1st version of implemented GLR ("transformations by functions")]{$deltaError$ results for throughput metric of synthetic application version 1; used RSM: 1st version of implemented GLR ("transformations by functions", see \ref{regrTransforms}); each stacked bar refers to a particular application configuration, with respect to $noisePercentage$ value and number of collected OP repetitions during DSE phase, showing OP percentages that have a corresponding throughput $deltaError$ within prearranged intervals; on y-axis: number of OPs \hbox{[ \% ]}}
     
     \label{fig::synth1spark1::intervals}
     
@@ -191,7 +203,7 @@ where $predictedValue(m)$ and $referenceValue(m)$ have explicit meaning; so, $de
     
     \includegraphics[width = \textwidth]{deltaErrorMeansSynth1spark1}
     
-    \caption{$deltaError$ mean values for throughput metric of synthetic application version 1; used RSM: 1st version of implemented GLR ("transformations by functions", see \ref{regrTransforms}); each bar shows throughput $deltaError$ mean for a particular application configuration, with respect to $noisePercentage$ value and number of collected OP repetitions during DSE phase; on y-axis: $deltaError$ mean [ \% ]}
+    \caption[$deltaError$ mean values for throughput metric of synthetic application version 1; used RSM: 1st version of implemented GLR ("transformations by functions")]{$deltaError$ mean values for throughput metric of synthetic application version 1; used RSM: 1st version of implemented GLR ("transformations by functions", see \ref{regrTransforms}); each bar shows throughput $deltaError$ mean for a particular application configuration, with respect to $noisePercentage$ value and number of collected OP repetitions during DSE phase; on y-axis: $deltaError$ mean [ \% ]}
     
     \label{fig::synth1spark1::means}
     
@@ -207,7 +219,7 @@ where $predictedValue(m)$ and $referenceValue(m)$ have explicit meaning; so, $de
     
     \includegraphics[width = \textwidth]{deltaErrorRangesSynth1spark2}
     
-     \caption{$deltaError$ results for throughput metric of synthetic application version 1; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order", see \ref{regrTransforms}); each stacked bar refers to a particular application configuration, with respect to $noisePercentage$ value and number of collected OP repetitions during DSE phase, showing OP percentages that have a corresponding throughput $deltaError$ within prearranged intervals; on y-axis: number of OPs \hbox{[ \% ]}}
+     \caption[$deltaError$ results for throughput metric of synthetic application version 1; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order")]{$deltaError$ results for throughput metric of synthetic application version 1; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order", see \ref{regrTransforms}); each stacked bar refers to a particular application configuration, with respect to $noisePercentage$ value and number of collected OP repetitions during DSE phase, showing OP percentages that have a corresponding throughput $deltaError$ within prearranged intervals; on y-axis: number of OPs \hbox{[ \% ]}}
     
     \label{fig::synth1spark2::intervals}
     
@@ -219,7 +231,7 @@ where $predictedValue(m)$ and $referenceValue(m)$ have explicit meaning; so, $de
     
     \includegraphics[width = \textwidth]{deltaErrorMeansSynth1spark2}
     
-    \caption{$deltaError$ mean values for throughput metric of synthetic application version 1; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order", see \ref{regrTransforms}); each bar shows throughput $deltaError$ mean for a particular application configuration, with respect to $noisePercentage$ value and number of collected OP repetitions during DSE phase; on y-axis: $deltaError$ mean [ \% ]}
+    \caption[$deltaError$ mean values for throughput metric of synthetic application version 1; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order")]{$deltaError$ mean values for throughput metric of synthetic application version 1; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order", see \ref{regrTransforms}); each bar shows throughput $deltaError$ mean for a particular application configuration, with respect to $noisePercentage$ value and number of collected OP repetitions during DSE phase; on y-axis: $deltaError$ mean [ \% ]}
     
     \label{fig::synth1spark2::means}
     
@@ -235,7 +247,7 @@ where $predictedValue(m)$ and $referenceValue(m)$ have explicit meaning; so, $de
     
     \includegraphics[width = \textwidth]{deltaErrorRangesSynth2spark2}
     
-     \caption{$deltaError$ results for throughput metric of synthetic application version 2; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order", see \ref{regrTransforms}); each stacked bar refers to a particular application configuration, with respect to $noisePercentage$ value and number of collected OP repetitions during DSE phase, showing OP percentages that have a corresponding throughput $deltaError$ within prearranged intervals; on y-axis: number of OPs \hbox{[ \% ]}}
+     \caption[$deltaError$ results for throughput metric of synthetic application version 2; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order")]{$deltaError$ results for throughput metric of synthetic application version 2; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order", see \ref{regrTransforms}); each stacked bar refers to a particular application configuration, with respect to $noisePercentage$ value and number of collected OP repetitions during DSE phase, showing OP percentages that have a corresponding throughput $deltaError$ within prearranged intervals; on y-axis: number of OPs \hbox{[ \% ]}}
     
     \label{fig::synth2spark2::intervals}
     
@@ -247,7 +259,7 @@ where $predictedValue(m)$ and $referenceValue(m)$ have explicit meaning; so, $de
     
     \includegraphics[width = \textwidth]{deltaErrorMeansSynth2spark2}
     
-    \caption{$deltaError$ mean values for throughput metric of synthetic application version 2; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order", see \ref{regrTransforms}); each bar shows throughput $deltaError$ mean for a particular application configuration, with respect to $noisePercentage$ value and number of collected OP repetitions during DSE phase; on y-axis: $deltaError$ mean [ \% ]}
+    \caption[$deltaError$ mean values for throughput metric of synthetic application version 2; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order")]{$deltaError$ mean values for throughput metric of synthetic application version 2; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order", see \ref{regrTransforms}); each bar shows throughput $deltaError$ mean for a particular application configuration, with respect to $noisePercentage$ value and number of collected OP repetitions during DSE phase; on y-axis: $deltaError$ mean [ \% ]}
     
     \label{fig::synth2spark2::means}
     
@@ -302,7 +314,7 @@ Concerning execution times, we want to show the significant benefit of sharing D
 
     \centering
     \includegraphics[width = \textwidth]{DSEtimes}
-    \caption{Design Space Exploration times for several numbers of executing applications; first bar is related to DSE carried out exploring each configuration in a serial way, without Agorà; other bars are related to DSE phase done with implemented framework, through 1 executing application up to 10 ones; on y-axis: elapsed time \hbox{[ seconds ]}}
+    \caption[Design Space Exploration times for several numbers of executing applications]{Design Space Exploration times for several numbers of executing applications; first bar is related to DSE carried out exploring each configuration in a serial way, without Agorà; other bars are related to DSE phase done with implemented framework, through 1 executing application up to 10 ones; on y-axis: elapsed time \hbox{[ seconds ]}}
     \label{fig::DSEtimes}
     
 \end{figure}
@@ -315,7 +327,7 @@ Now we want to show general Agorà advantages, comparing a Full-Factorial, so ex
 
     \centering
     \includegraphics[width = \textwidth]{fullFactorial_tesiCris}
-    \caption{Synthetic application version 2 (with $noisePercentage = 15\%$) execution times; first bar shows elapsed time for exhaustive execution; adjacent ones reveal overall time, until complete model is predicted, using 1, 5 and 10 DoE configuration repetitions during DSE phase; on y-axis: elapsed time [ seconds ]}
+    \caption[Synthetic application version 2 execution times]{Synthetic application version 2 (with $noisePercentage = 15\%$) execution times; first bar shows elapsed time for exhaustive execution; adjacent ones reveal overall time, until complete model is predicted, using 1, 5 and 10 DoE configuration repetitions during DSE phase; on y-axis: elapsed time [ seconds ]}
     \label{fig::full_cris}
     
 \end{figure}
@@ -331,7 +343,7 @@ Last figure wants to show application behavior during execution with the supervi
 
     \centering
     \includegraphics[width = \textwidth]{appBehavior}
-    \caption{Observed metric values during application execution; blue lines highlight boundaries of objective functions; on x-axis: time [ seconds ]; on y-axis: metric values}
+    \caption[Observed metric values during application execution]{Observed metric values during application execution; blue lines highlight boundaries of objective functions; on x-axis: time [ seconds ]; on y-axis: metric values}
     \label{fig::appBeh}
     
 \end{figure}
@@ -358,7 +370,7 @@ Next figures show results on predicted model using $deltaError$ measure, as done
 
     \centering
     \includegraphics[width = \textwidth]{deltaErrorRangesSwaptions15Spark2}
-    \caption{$deltaError$ results for both Swaptions metrics of interest; each stacked bar shows OP percentages that have a corresponding metric $deltaError$ within prearranged intervals; left stacked bar focuses on $avg\_error$ metric, right one on $avg\_throughput$; on y-axis: number of configurations [ \% ]}
+    \caption[$deltaError$ results for both Swaptions metrics of interest]{$deltaError$ results for both Swaptions metrics of interest; each stacked bar shows OP percentages that have a corresponding metric $deltaError$ within prearranged intervals; left stacked bar focuses on $avg\_error$ metric, right one on $avg\_throughput$; on y-axis: number of configurations [ \% ]}
     \label{fig::swaptions15spark2::intervals}
     
 \end{figure}
@@ -367,7 +379,7 @@ Next figures show results on predicted model using $deltaError$ measure, as done
 
     \centering
     \includegraphics[width = \textwidth]{deltaErrorMeansSwaptions15Spark2}
-    \caption{$deltaError$ mean values for both Swaptions metrics of interest; left bar shows $deltaError$ mean for $avg\_error$ metric, right one for $avg\_throughput$; on y-axis: $deltaError$ mean [ \% ]}
+    \caption[$deltaError$ mean values for both Swaptions metrics of interest]{$deltaError$ mean values for both Swaptions metrics of interest; left bar shows $deltaError$ mean for $avg\_error$ metric, right one for $avg\_throughput$; on y-axis: $deltaError$ mean [ \% ]}
     \label{fig::swaptions15spark2::means}
     
 \end{figure}
@@ -389,7 +401,7 @@ Regarding execution times, we compare analyzed run with a Full-Factorial, so exh
     
     \includegraphics[width = \textwidth]{swaptions_exhaustive_tesiCris}
     
-    \caption{\textit{Swaptions} execution times; first bar shows elapsed time for exhaustive execution; adjacent one reveal overall time, until complete model has been predicted, with the supervise of Agorà; on y-axis: elapsed time \hbox{[ seconds ]}}
+    \caption[Swaptions execution times]{Swaptions execution times; first bar shows elapsed time for exhaustive execution; adjacent one reveal overall time, until complete model has been predicted, with the supervise of Agorà; on y-axis: elapsed time \hbox{[ seconds ]}}
     
     \label{fig::sw::execT}
     
@@ -406,7 +418,7 @@ Exhaustive execution takes around 28 minutes to finish, while the analyzed one l
     
     \includegraphics[width = \textwidth]{swaptionsBehavior}
     
-    \caption{Observed metric values during \textit{Swaptions} execution; blue lines highlight boundaries of objective functions; on x-axis: time [ seconds ]; on y-axis: metric values}
+    \caption[Observed metric values during Swaptions execution]{Observed metric values during Swaptions execution; blue lines highlight boundaries of objective functions; on x-axis: time [ seconds ]; on y-axis: metric values}
     
     \label{fig::sw::beh}
     

@@ -8,8 +8,11 @@
 % For printing in a4
 \geometry{a4paper,
   margin=3cm,
-  top=3.8cm,
-  bindingoffset=0.4cm
+  top=4cm,
+  bottom=4cm,
+  bindingoffset=1cm,
+  footskip=1.5cm,
+  headsep=1cm
 }
 
 %Uncomment this for final prints: this just enables printing on a4 paper
@@ -138,15 +141,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Abstract and Sommario
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{chapters/abstractENG}
+
+\cleardoublepage
+\newpage
+
 \input{chapters/abstractITA}
 
 \cleardoublepage
 \newpage
 
-\input{chapters/abstractENG}
-
-\cleardoublepage
-\newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % TOC
@@ -190,6 +194,24 @@
 %\small
 %\bibliographystyle{plain}
 %\bibliography{thesis}
+
+\makeatletter
+     \renewcommand*\l@figure{\@dottedtocline{1}{1em}{3.2em}}
+\makeatother
+
+\phantomsection
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+
+\cleardoublepage
+\newpage
+
+\phantomsection
+\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
+
+\cleardoublepage
+\newpage
 
 \printbibliography[heading = bibintoc]
 
