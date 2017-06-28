@@ -12,109 +12,109 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Serial and parallel computation of a problem\relax }}{9}{figure.caption.5}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Serial and parallel computation of a problem\relax }}{8}{figure.caption.5}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Parallel architecture schema\relax }}{9}{figure.caption.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Instruction execution in a SISD architecture example\relax }}{10}{figure.caption.7}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Instruction execution in a SISD architecture example\relax }}{9}{figure.caption.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Instruction execution in a SIMD architecture example\relax }}{11}{figure.caption.8}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Instruction execution in a SIMD architecture example\relax }}{10}{figure.caption.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Instruction execution in a MISD architecture example\relax }}{11}{figure.caption.9}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Instruction execution in a MISD architecture example\relax }}{10}{figure.caption.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Instruction execution in a MIMD architecture example\relax }}{12}{figure.caption.10}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Instruction execution in a MIMD architecture example\relax }}{11}{figure.caption.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.7}{\ignorespaces MAPE-K control loop design\relax }}{17}{figure.caption.11}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces MAPE-K control loop design\relax }}{16}{figure.caption.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.8}{\ignorespaces MQTT publish/subscribe example, taken from \cite {site:hivemq}\relax }}{19}{figure.caption.12}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces MQTT publish/subscribe example, taken from \cite {site:hivemq}\relax }}{18}{figure.caption.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.9}{\ignorespaces MQTT topic example, taken from \cite {site:hivemq}\relax }}{19}{figure.caption.13}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces MQTT topic example, taken from \cite {site:hivemq}\relax }}{18}{figure.caption.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.10}{\ignorespaces MQTT topic with single-level wildcard example, taken from \cite {site:hivemq}\relax }}{20}{figure.caption.14}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces MQTT topic with single-level wildcard example, taken from \cite {site:hivemq}\relax }}{19}{figure.caption.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.11}{\ignorespaces MQTT topic with multi-level wildcard example, taken from \cite {site:hivemq}\relax }}{20}{figure.caption.15}
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.11}{\ignorespaces MQTT topic with multi-level wildcard example, taken from \cite {site:hivemq}\relax }}{19}{figure.caption.15}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Parallel architecture with tunable applications example}}{32}{figure.caption.16}
+\addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Tunable application Z with the assistance of mARGOt autotuner schema\relax }}{33}{figure.caption.17}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Parallel architecture with tunable applications example}}{30}{figure.caption.16}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Tunable application Z with the assistance of Agor\IeC {\`a} plus mARGOt autotuner schema\relax }}{34}{figure.caption.18}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Tunable application Z with the assistance of mARGOt autotuner schema\relax }}{31}{figure.caption.17}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Agor\IeC {\`a} overview in a parallel architecture\relax }}{37}{figure.caption.19}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Tunable application Z with the assistance of Agor\IeC {\`a} plus mARGOt autotuner schema\relax }}{32}{figure.caption.18}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Agor\IeC {\`a} overview in a parallel architecture\relax }}{34}{figure.caption.19}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Agor\IeC {\`a}RemoteDispatcher subscription\relax }}{43}{figure.caption.20}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Agor\IeC {\`a}RemoteDispatcher subscription\relax }}{41}{figure.caption.20}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.2}{\ignorespaces New unknown application arrival example}}{44}{figure.caption.21}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces New unknown application arrival example}}{42}{figure.caption.21}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Agor\IeC {\`a}LocalAppHandler MQTT subscriptions example\relax }}{45}{figure.caption.22}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Agor\IeC {\`a}LocalAppHandler MQTT subscriptions example\relax }}{43}{figure.caption.22}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Agor\IeC {\`a}RemoteAppHandler MQTT subscriptions example\relax }}{46}{figure.caption.23}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Agor\IeC {\`a}RemoteAppHandler MQTT subscriptions example\relax }}{44}{figure.caption.23}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.5}{\ignorespaces New known application arrival example}}{47}{figure.caption.24}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces New known application arrival example}}{45}{figure.caption.24}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Agor\IeC {\`a}LocalAppHandler request example\relax }}{47}{figure.caption.25}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Agor\IeC {\`a}LocalAppHandler request example\relax }}{45}{figure.caption.25}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Application information request by \textit {Agor\IeC {\`a}RemoteAppHandler} example\relax }}{48}{figure.caption.26}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Application information request by \textit {Agor\IeC {\`a}RemoteAppHandler} example\relax }}{46}{figure.caption.26}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Configuration dispatch by \textit {Agor\IeC {\`a}RemoteAppHandler} example\relax }}{49}{figure.caption.27}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Configuration dispatch by \textit {Agor\IeC {\`a}RemoteAppHandler} example\relax }}{47}{figure.caption.27}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Partial model dispatch by \textit {Agor\IeC {\`a}RemoteAppHandler} example\relax }}{50}{figure.caption.28}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Partial model dispatch by \textit {Agor\IeC {\`a}RemoteAppHandler} example\relax }}{48}{figure.caption.28}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Complete model dispatch by \textit {Agor\IeC {\`a}RemoteAppHandler} example\relax }}{51}{figure.caption.29}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Complete model dispatch by \textit {Agor\IeC {\`a}RemoteAppHandler} example\relax }}{49}{figure.caption.29}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Application information dispatch by \textit {Agor\IeC {\`a}LocalAppHandler} module example\relax }}{57}{figure.caption.30}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Application information dispatch by \textit {Agor\IeC {\`a}LocalAppHandler} module example\relax }}{55}{figure.caption.30}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Operating Point dispatch by \textit {Agor\IeC {\`a}LocalAppHandler} module example\relax }}{59}{figure.caption.31}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Operating Point dispatch by \textit {Agor\IeC {\`a}LocalAppHandler} module example\relax }}{57}{figure.caption.31}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Agor\IeC {\`a}LocalAppHandler module disconnection example\relax }}{60}{figure.caption.32}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Agor\IeC {\`a}LocalAppHandler module disconnection example\relax }}{58}{figure.caption.32}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Disconnection of \textit {Agor\IeC {\`a}LocalAppHandler} module that was sending application information example\relax }}{60}{figure.caption.33}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Disconnection of \textit {Agor\IeC {\`a}LocalAppHandler} module that was sending application information example\relax }}{58}{figure.caption.33}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.15}{\ignorespaces Agor\IeC {\`a}RemoteAppHandler module disconnection example\relax }}{61}{figure.caption.34}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Agor\IeC {\`a}RemoteAppHandler module disconnection example\relax }}{59}{figure.caption.34}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.16}{\ignorespaces Agor\IeC {\`a}RemoteAppHandler module disconnection with A\discretionary {-}{}{}go\discretionary {-}{}{}r\IeC {\`a}\discretionary {-}{}{}Local\discretionary {-}{}{}App\discretionary {-}{}{}Handler internal state equal to \textit {DSE} example\relax }}{62}{figure.caption.35}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Agor\IeC {\`a}RemoteAppHandler module disconnection with A\discretionary {-}{}{}go\discretionary {-}{}{}r\IeC {\`a}\discretionary {-}{}{}Local\discretionary {-}{}{}App\discretionary {-}{}{}Handler internal state equal to \textit {DSE} example\relax }}{60}{figure.caption.35}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.17}{\ignorespaces Sketch application with \textit {Agor\IeC {\`a}LocalAppHandler} module plus mARGOt autotuner integration\relax }}{63}{figure.caption.36}
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Sketch application with \textit {Agor\IeC {\`a}LocalAppHandler} module plus mARGOt autotuner integration\relax }}{61}{figure.caption.36}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Complete OP distribution of synthtetic application version 1}}{68}{figure.caption.38}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Complete OP distribution of synthtetic application version 1}}{66}{figure.caption.38}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Complete OP distribution of synthtetic application version 2}}{69}{figure.caption.40}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Complete OP distribution of synthtetic application version 2}}{67}{figure.caption.40}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Swaptions complete OP distribution}}{70}{figure.caption.42}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Swaptions complete OP distribution}}{68}{figure.caption.42}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.4}{\ignorespaces $deltaError$ results for throughput metric of synthetic application version 1; used RSM: 1st version of implemented GLR ("transformations by functions")}}{72}{figure.caption.43}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces $deltaError$ results for throughput metric of synthetic application version 1; used RSM: 1st version of implemented GLR ("transformations by functions")}}{70}{figure.caption.43}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.5}{\ignorespaces $deltaError$ mean values for throughput metric of synthetic application version 1; used RSM: 1st version of implemented GLR ("transformations by functions")}}{73}{figure.caption.44}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces $deltaError$ mean values for throughput metric of synthetic application version 1; used RSM: 1st version of implemented GLR ("transformations by functions")}}{71}{figure.caption.44}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.6}{\ignorespaces $deltaError$ results for throughput metric of synthetic application version 1; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order")}}{74}{figure.caption.45}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces $deltaError$ results for throughput metric of synthetic application version 1; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order")}}{72}{figure.caption.45}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.7}{\ignorespaces $deltaError$ mean values for throughput metric of synthetic application version 1; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order")}}{75}{figure.caption.46}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces $deltaError$ mean values for throughput metric of synthetic application version 1; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order")}}{73}{figure.caption.46}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.8}{\ignorespaces $deltaError$ results for throughput metric of synthetic application version 2; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order")}}{76}{figure.caption.47}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces $deltaError$ results for throughput metric of synthetic application version 2; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order")}}{74}{figure.caption.47}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.9}{\ignorespaces $deltaError$ mean values for throughput metric of synthetic application version 2; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order")}}{77}{figure.caption.48}
+\contentsline {figure}{\numberline {6.9}{\ignorespaces $deltaError$ mean values for throughput metric of synthetic application version 2; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order")}}{75}{figure.caption.48}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.10}{\ignorespaces Design Space Exploration times for several numbers of executing applications}}{81}{figure.caption.50}
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Design Space Exploration times for several numbers of executing applications}}{79}{figure.caption.50}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.11}{\ignorespaces Synthetic application version 2 execution times}}{83}{figure.caption.51}
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Synthetic application version 2 execution times}}{81}{figure.caption.51}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.12}{\ignorespaces Observed metric values during application execution}}{85}{figure.caption.52}
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Observed metric values during application execution}}{83}{figure.caption.52}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.13}{\ignorespaces $deltaError$ results for both Swaptions metrics of interest}}{87}{figure.caption.53}
+\contentsline {figure}{\numberline {6.13}{\ignorespaces $deltaError$ results for both Swaptions metrics of interest}}{85}{figure.caption.53}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.14}{\ignorespaces $deltaError$ mean values for both Swaptions metrics of interest}}{88}{figure.caption.54}
+\contentsline {figure}{\numberline {6.14}{\ignorespaces $deltaError$ mean values for both Swaptions metrics of interest}}{86}{figure.caption.54}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.15}{\ignorespaces Swaptions execution times}}{89}{figure.caption.55}
+\contentsline {figure}{\numberline {6.15}{\ignorespaces Swaptions execution times}}{87}{figure.caption.55}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.16}{\ignorespaces Observed metric values during Swaptions execution}}{90}{figure.caption.56}
+\contentsline {figure}{\numberline {6.16}{\ignorespaces Observed metric values during Swaptions execution}}{88}{figure.caption.56}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 

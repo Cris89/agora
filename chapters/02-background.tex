@@ -13,10 +13,10 @@ Parallel computing (\cite{barney2012introduction}) simultaneously uses multiple 
     \centering
 
     \subfloat[][\emph{Serial computation}\label{fig::pC::serial}]
-        {\includegraphics[width = 0.7\textwidth]{ser_prob}}
-    \\
+        {\includegraphics[width = 0.49\textwidth]{ser_prob}}
+    \enskip
     \subfloat[][\emph{Parallel computation}\label{fig::pC::parallel}]
-        {\includegraphics[width = 0.7\textwidth]{par_prob}}
+        {\includegraphics[width = 0.49\textwidth]{par_prob}}
     
     \caption{Serial and parallel computation of a problem}
 
@@ -167,7 +167,7 @@ Taking \cite{natrella2013nist} as reference, among various DoE techniques that g
     
     Considering the example in previous DoE, final design point list would be: $\langle$ \#processors, \#threads, cache size $\rangle$ $\in$
     
-    \{ $\langle$ 2, 1, 2K $\rangle$, $\langle$ 32, 1, 2K $\rangle$, $\langle$ 2, 8, 2K $\rangle$, $\langle$ 32, 8, 2K $\rangle$, $\langle$ 2, 1, 32K $\rangle$, \hbox{$\langle$ 32, 1, 32K $\rangle$}, $\langle$ 2, 8, 32K $\rangle$, $\langle$ 32, 8, 32K $\rangle$ \} $\cup$ 
+    \{ $\langle$ 2, 1, 2K $\rangle$, $\langle$ 32, 1, 2K $\rangle$, $\langle$ 2, 8, 2K $\rangle$, $\langle$ 32, 8, 2K $\rangle$, \hbox{$\langle$ 2, 1, 32K $\rangle$}, \hbox{$\langle$ 32, 1, 32K $\rangle$}, $\langle$ 2, 8, 32K $\rangle$, $\langle$ 32, 8, 32K $\rangle$ \} $\cup$ 
     
     \{ $\langle$ 8, 4, 8K $\rangle$ \} $\cup$
     
@@ -226,7 +226,7 @@ Online autotuning, therefore, entrusts system management from people to technolo
 
 \section{MQTT messaging protocol}\label{mqtt}
 
-MQTT (Message Queue Telemetry Transport, \cite{banks2014mqtt}) is a lightweight messaging protocol that gives the possibility to establish remote communications among subjects. Its main characteristics are the minimization of network bandwidth and devices requirements; this features make MQTT ideal for machine-to-machine (M2M) or Internet of Things (IoT) world of connected devices, but in general this protocol have a large use in different projects: for instance, famous Facebook Messenger is built on top of it (\cite{zhang2011building}).
+MQTT (Message Queue Telemetry Transport, \cite{banks2014mqtt}) is a light\-weight messaging protocol that gives the possibility to establish remote communications among subjects. Its main characteristics are the minimization of network bandwidth and devices requirements; this features make MQTT ideal for machine-to-machine (M2M) or Internet of Things (IoT) world of connected devices, but in general this protocol have a large use in different projects: for instance, famous Facebook Messenger is built on top of it (\cite{zhang2011building}).
 
 MQTT uses a client server publish\slash{}subscribe pattern: a client has the possibility to subscribe to topics and to publish messages on them (both topics and messages are strings); another component, called \textit{broker} server, deals with the dispatch of messages to only clients that have subscribed to corresponding topic; so, publishers (clients that sends messages) and subscribers (clients that receive messages) don't know about the existence of one another: the broker, which is known by every client, distribute messages accordingly. Figure \ref{fig::mqtt_example} shows a possible MQTT scenario with a sensor and two devices:
 
@@ -291,7 +291,7 @@ Agorà takes advantage of the Machine Learning MLlib library by Apache Spark\tex
 
 \subsection{(Generalized) Linear Regression}\label{glr}
 
-Taking \cite{site:caltechML2012} as reference, Linear Regression tries to model the relationship between a variable $y$ and one or more variables $x_1, x_2, ... x_n, n \ge 1$; more rigorously, given a set of statistical units $\{y_i, x_{i1}, x_{i2}, ..., x_{ip}\}_{i = 1}^n$, in which $y_i$ is the variable that depends on the p-vector $[x_{i1}, x_{i2}, ..., x_{ip}]$, linear regression assumes that this relationship is linear:
+Taking \cite{site:caltechML2012} as reference, Linear Regression tries to model the relationship between a variable $y$ and one or more variables $x_1,x_2,\\...x_n,n\ge1$; more rigorously, given a set of statistical units $\{y_i,x_{i1},x_{i2},\\...,x_{ip}\}_{i = 1}^n$, in which $y_i$ is the variable that depends on the p-vector $[x_{i1}, x_{i2}, ..., x_{ip}]$, linear regression assumes that this relationship is linear:
 
 \begin{equation}
     y_i = \beta_0\boldsymbol{1} + \beta_1x_{i1} + \beta_2x_{i2} + ... +  \beta_px_{ip} + \epsilon_i, \quad i = 1, 2, ... n
