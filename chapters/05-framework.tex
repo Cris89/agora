@@ -56,7 +56,7 @@ An application can be already known by the Agorà\-Remote\-Dis\-patch\-er module
 
 \subsubsection{Unknown application}
 
-A node starts running a program; the related AgoràLocalAppHandler module notifies this event, publishing on topic "agora/apps" a string composed of application name and machine hostname plus Process IDentifier (PID), with format "\textit{[appName] [hostname]\_[PID]}", so that AgoràLocalAppHandler module can be univocally recognized in the future; the message is received by AgoràRemoteDispatcher, that creates a dedicated AgoràRemoteAppHandler module for this application:
+A node starts running a program; the related AgoràLocalAppHandler module notifies this event, publishing on topic "agora\slash{}apps" a string composed of application name and machine hostname plus Process IDentifier (PID), with format "\textit{[appName] [hostname]\_[PID]}", so that AgoràLocalAppHandler module can be univocally recognized in the future; the message is received by Agorà\-Remote\-Dispatcher, that creates a dedicated AgoràRemoteAppHandler module for this application:
 
 \begin{figure}[H]
 
@@ -72,9 +72,9 @@ At the beginning, the AgoràLocalAppHandler module subscribes to some topics tha
 
     \item "agora/\textit{[appName]}", in order to understand if AgoràRemoteAppHandler has asked application information and, therefore, to reply (see \ref{req_info}); this topic is also used to understand if Agorà\-Remote\-App\-Handler has crashed and, so, to react properly (see \ref{handler_disc});
     
-    \item "agora/\textit{[appName]}/\textit{[hostname]\_[PID]}/conf", in order to receive configurations from AgoràRemoteAppHandler during DSE phase (see \ref{dse_conf});
+    \item "agora/\textit{[appName]}/\textit{[hostname]\_[PID]}/conf", in order to receive configurations from AgoràRemoteAppHandler during Design Space Exploration phase (see \ref{dse_conf});
     
-    \item "agora/\textit{[appName]}/\textit{[hostname]\_[PID]}/model", in order to receive\linebreak a partial OP list (see \ref{DoEModelSend}) and the complete predicted model from AgoràRemoteAppHandler (see \ref{modelSend}).
+    \item "agora/\textit{[appName]}/\textit{[hostname]\_[PID]}/model", in order to receive a partial OP list (see \ref{DoEModelSend}) and the complete predicted model from AgoràRemoteAppHandler (see \ref{modelSend}).
 
 \end{enumerate}
 
@@ -94,7 +94,7 @@ The AgoràRemoteAppHandler module subscribes to some topics in order to manage c
     
     \item "agora/\textit{[appName]}/req", in order to manage all the requests made by AgoràLocalAppHandler modules during program execution (see \ref{clientReq});
     
-    \item "agora/\textit{[appName]}/info/\#", in order to receive all available application information, such as parameter name and values (see \ref{client_info}); real topic is "agora\slash{}\textit{[appName]}\slash{}info\slash{}\textit{[host\-name]\_ [PID]}" (see MQTT multi-level wildcard, \ref{mqtt}), therefore AgoràRemote\-App\-Handler can store the ID of the node that is sending application information, in order to react properly to node possible crash during this phase (see \ref{client_disc});
+    \item "agora/\textit{[appName]}/info/\#", in order to receive all available application information, such as parameter name and values (see \ref{client_info}); real topic is "agora\slash{}\textit{[appName]}\slash{}info\slash{}\textit{[host\-name]\_ [PID]}" (see MQTT multi-level wildcard, \ref{mqtt}), therefore Agorà\-	Remote\-App\-Handler can store the ID of the node that is sending application information, in order to react properly to node possible crash during this phase (see \ref{client_disc});
     
     \item "agora/\textit{[appName]}/disconnection", in order to correctly react to a possible node disconnection (see \ref{client_disc});
     
@@ -113,7 +113,7 @@ The AgoràRemoteAppHandler module subscribes to some topics in order to manage c
 
 \subsubsection{Known application}\label{knownApp}
 
-When the AgoràRemoteDispatcher module is informed that a new node has started running an application but there exist already an AgoràRemoteAppHandler that is managing that program, it publishes on topic "agora/\textit{[appName]}/newHostpid" the new machine hostname plus PID, so that the corresponding AgoràRemoteAppHandler module can add the node to the pool of machines that are running the application it is supervising:
+When the AgoràRemoteDispatcher module is informed that a new node has started running an application but there exist already an AgoràRemoteAppHandler that is managing that program, it publishes on topic "agora/\textit{[appName]}/newHostpid" the new machine hostname plus PID, so that the corresponding Agorà\-Remote\-App\-Handler module can add the node to the pool of machines that are running the application it is supervising:
 
 \begin{figure}[H]
 
@@ -199,7 +199,7 @@ As shown in figure \ref{fig:conf}, AgoràLocalAppHandler receives a configuratio
 
 \subsubsection{AgoràRemoteAppHandler internal state equal to \textit{building\-The\-Model}}\label{DoEModelSend}
 
-AgoràRemoteAppHandler has gathered all needed OPs related to DoE configurations and it is computing complete Operating Point list through Machine Learning techniques; from gathered Operating Points, a partial model is built, assembling to every DoE configuration the mean of metric values, taken from the corresponding Operating Points; this partial model in sent to the AgoràLocalAppHandler module that made the request: each obtained OP is published on topic "agora/\textit{[appName]}/\textit{[hostname]\_[PID]}/model" with format "\textit{[configuration] [metric values]}"; both configuration and metric values follow lexicographic order; finally, AgoràRemoteAppHandler makes a final publication on same topic with payload "DoEModelDone":
+AgoràRemoteAppHandler has gathered all needed OPs related to DoE configurations and it is computing complete Operating Point list through Machine Learning techniques; from gathered Operating Points, a partial model is built, assembling to every DoE configuration the mean of metric values, taken from the corresponding Operating Points; this partial model in sent to the Agorà\-Local\-App\-Handler module that made the request: each obtained OP is published on topic "agora\slash{}\textit{[appName]}\slash{}\textit{[hostname]\_[PID]}\slash{}mod\-el" with format "\textit{[configuration] [metric values]}"; both configuration and metric values follow lexicographic order; finally, AgoràRemoteAppHandler makes a final publication on same topic with payload "DoEModelDone":
 
 \begin{figure}[H]
 
@@ -238,7 +238,7 @@ From this point on, AgoràLocalAppHandler stops making requests to the AgoràRem
 
 It has been shown that, if an AgoràRemoteAppHandler module receives a request from a node but its internal state is \textit{unknown}, it requests application information (see \ref{req_info}); AgoràRemoteAppHandler saves both the identifier of the first AgoràLocalAppHandler module that replies and all data it receives; other possible replies from other AgoràLocalAppHandler modules are discarded.
 
-Mandatory information that AgoràLocalAppHandler modules have to send is:
+Mandatory information AgoràLocalAppHandler modules have to send is:
 
 \begin{enumerate}
 
@@ -294,7 +294,7 @@ There are some optional information that AgoràLocalAppHandler modules can send 
     
     e.g. payload: "lhdSamples 6"
     
-    \item Response Surface Modeling technique: the keyword is \textit{RSM}, followed by the term that indicates the Machine Learning technique that has to be used in order to predict application complete OP list; Agorà implements two versions of the Apache Spark\textsuperscript{TM} Generalized Linear Regression RSM, explained in detail in \ref{regrTransforms}:
+    \item Response Surface Modeling technique: the keyword is \textit{RSM}, followed by the term that indicates the Machine Learning technique that has to be used in order to predict application complete OP list; Agorà implements two versions of the Apache Spark\textsuperscript{TM} Generalized Linear Regression, explained in detail in \ref{regrTransforms}:
     
     \begin{enumerate}
     
@@ -406,7 +406,7 @@ If an AgoràLocalAppHandler module disconnects for some reason, related Agorà\-
     
 \end{figure}
 
-Particular attention has to be taken if the disconnected AgoràLocalAppHandler module is the one that, at the beginning, is sending application information (see \ref{client_info}): in this case, AgoràRemoteAppHandler has to remove disconnected machine, it has to reset partial data (received up to that moment) and it asks again all available application information to remaining connected AgoràLocalAppHandler modules:
+Particular attention has to be taken if the disconnected AgoràLocalAppHandler module is the one that, at the beginning, is sending application information (see \ref{client_info}): in this case, AgoràRemoteAppHandler has to remove disconnected machine, it has to reset partial data (received up to that moment) and it asks again all available application information to remaining connected Agorà\-Local\-App\-Handler modules:
 
 \begin{figure}[H]
 
@@ -489,7 +489,7 @@ The AgoràLocalAppHandler module has already received predicted complete OP list
     
 \end{figure}
 
-Figure \ref{fig::sketchApp} shows a sketch application that, until \textit{loop\_condition()} is verified (line 12), is executed; computation depends on three parameters ($param1, param2, param3$) that are set up by mARGOt autotuner at the beginning of every cycle (line 16), while two metrics of interest ($metric1, metric2$) are monitored (for mARGOt details, see related scientific publication \cite{gadioli2015application}).
+Figure \ref{fig::sketchApp} shows a sketch application that, until \textit{loop\_con\-di\-tion()} is verified (line 12), is executed; computation depends on three parameters ($param1, param2, param3$) that are set up by mARGOt autotuner at the beginning of every cycle (line 16), while two metrics of interest ($metric1, metric2$) are monitored (for mARGOt details, see related scientific publication \cite{gadioli2015application}).
 
 Integration code required to use Agorà framework with mARGOt autotuner is written in bold red; main steps during program execution are three:
 
