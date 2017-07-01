@@ -60,13 +60,13 @@ Application parameters can assume these values:
 
 \end{table}
 
-This application has 455 Operating Points; figure \ref{fig::opListSynth1} shows complete OP distribution for $noisePercentage = 15\%$: every point represents a particular configuration with an error value (on x-axis) and a throughput one (on y-axis). Since $noise$ in $executionTime$ is affected by $randomNumber$, this plot consider its expected value, equal to the mean of the chosen exponential distribution (0.3); the obtained OP list represents the reference model for this predetermined $noise\-Per\-cent\-age$ value; of course, other reference models are similar, since the only difference is the $noisePercentage$ value for the calculation of $executionTime$ variable.
+This application has 455 Operating Points. Figure \ref{fig::opListSynth1} shows complete OP distribution for $noisePercentage = 15\%$: every point stands for a particular configuration with an associated error value (on x-axis) and a throughput one (on y-axis). Since $noise$ in $executionTime$ is affected by $randomNumber$, this plot consider its expected value, equal to the mean of the chosen exponential distribution (0.3). The obtained OP list represents the reference model for this predetermined $noise\-Per\-cent\-age$ value. Other reference models are similar, since the only difference is the $noisePercentage$ value for the calculation of $executionTime$ variable.
 
 \begin{figure}[h]
 
     \centering
     \includegraphics[width = \textwidth]{opGraphSynth1}
-    \caption[Complete OP distribution of synthtetic application version 1]{Complete OP distribution of synthtetic application version 1 (reference model with $noisePercentage = 15\%$); every point stands for a particular configuration with associated observed metric values; on x-axis: error metric values, on y-axis: throughput metric values \hbox{[ jobs / second ]}}
+    \caption{Throughput by varying the error for synthetic application version 1}
     \label{fig::opListSynth1}
     
 \end{figure}
@@ -109,18 +109,18 @@ Parameter values are:
 
 \end{table}
 
-In this application the number of Operating Points is 364; figure \ref{fig::opListSynth2} shows complete OP distribution of reference model with $noise\-Per\-cent\-age = 5\%$:
+In this application the number of Operating Points is 364; figure \ref{fig::opListSynth2} shows complete OP distribution of reference model with $noise\-Per\-cent\-age = 5\%$: every point stands for a particular configuration with an associated error value (on x-axis) and a throughput one (on y-axis).
 
 \begin{figure}[h]
 
     \centering
     \includegraphics[width = \textwidth]{opGraphSynth2}
-    \caption[Complete OP distribution of synthtetic application version 2]{Complete OP distribution of synthtetic application version 2 (reference model with $noisePercentage = 5\%$); every point stands for a particular configuration with associated observed metric values; on x-axis: error metric values, on y-axis: throughput metric values \hbox{[ jobs / second ]}}
+    \caption{Throughput by varying the error for synthetic application version 2}
     \label{fig::opListSynth2}
     
 \end{figure}
 
-Of course, regarding model prediction goodness, same reasoning as previous application version is applied.
+Regarding model prediction goodness, same reasoning as previous application version is applied.
 
 
 \subsection{Swaptions}
@@ -152,7 +152,7 @@ The number of Operating Points is therefore 80; figure \ref{fig::swaptionsOPs} s
 
     \centering
     \includegraphics[width = \textwidth]{swaptionsOPgraph}
-    \caption[Swaptions complete OP distribution]{Swaptions complete OP distribution; every point stands for a particular configuration with associated observed metric values; on x-axis: \textit{avg\_error} metric values, on y-axis: \textit{avg\_throughput} metric values \hbox{[ priced swaptions / second ]}}
+    \caption{Average throughput by varying the average error for Swaptions}
     \label{fig::swaptionsOPs}
     
 \end{figure}
@@ -191,7 +191,7 @@ where $predictedValue(m)$ and $referenceValue(m)$ have explicit meaning; so, $de
     
     \includegraphics[width = \textwidth]{deltaErrorRangesSynth1spark1}
     
-     \caption[$deltaError$ results for throughput metric of synthetic application version 1; used RSM: 1st version of implemented GLR ("transformations by functions")]{$deltaError$ results for throughput metric of synthetic application version 1; used RSM: 1st version of implemented GLR ("transformations by functions", see \ref{regrTransforms}); each stacked bar refers to a particular application configuration, with respect to $noisePercentage$ value and number of collected OP repetitions during DSE phase, showing OP percentages that have a corresponding throughput $deltaError$ within prearranged intervals; on y-axis: number of OPs \hbox{[ \% ]}}
+     \caption{$deltaError$ results for throughput metric of synthetic application version 1 by varying the noisePercentage and the number of OP repetitions. Used RSM: 1st version of implemented GLR ("transformations by functions")}
     
     \label{fig::synth1spark1::intervals}
     
@@ -203,7 +203,7 @@ where $predictedValue(m)$ and $referenceValue(m)$ have explicit meaning; so, $de
     
     \includegraphics[width = \textwidth]{deltaErrorMeansSynth1spark1}
     
-    \caption[$deltaError$ mean values for throughput metric of synthetic application version 1; used RSM: 1st version of implemented GLR ("transformations by functions")]{$deltaError$ mean values for throughput metric of synthetic application version 1; used RSM: 1st version of implemented GLR ("transformations by functions", see \ref{regrTransforms}); each bar shows throughput $deltaError$ mean for a particular application configuration, with respect to $noisePercentage$ value and number of collected OP repetitions during DSE phase; on y-axis: $deltaError$ mean [ \% ]}
+    \caption{$deltaError$ mean for throughput metric of synthetic application version 1 by varying the noisePercentage and the number of OP repetitions. Used RSM: 1st version of implemented GLR ("transformations by functions")}
     
     \label{fig::synth1spark1::means}
     
@@ -219,7 +219,7 @@ where $predictedValue(m)$ and $referenceValue(m)$ have explicit meaning; so, $de
     
     \includegraphics[width = \textwidth]{deltaErrorRangesSynth1spark2}
     
-     \caption[$deltaError$ results for throughput metric of synthetic application version 1; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order")]{$deltaError$ results for throughput metric of synthetic application version 1; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order", see \ref{regrTransforms}); each stacked bar refers to a particular application configuration, with respect to $noisePercentage$ value and number of collected OP repetitions during DSE phase, showing OP percentages that have a corresponding throughput $deltaError$ within prearranged intervals; on y-axis: number of OPs \hbox{[ \% ]}}
+     \caption{$deltaError$ results for throughput metric of synthetic application version 1 by varying the noisePercentage and the number of OP repetitions. Used RSM: 2nd version of implemented GLR ("polynomial combinations of degree 2")}
     
     \label{fig::synth1spark2::intervals}
     
@@ -231,7 +231,7 @@ where $predictedValue(m)$ and $referenceValue(m)$ have explicit meaning; so, $de
     
     \includegraphics[width = \textwidth]{deltaErrorMeansSynth1spark2}
     
-    \caption[$deltaError$ mean values for throughput metric of synthetic application version 1; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order")]{$deltaError$ mean values for throughput metric of synthetic application version 1; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order", see \ref{regrTransforms}); each bar shows throughput $deltaError$ mean for a particular application configuration, with respect to $noisePercentage$ value and number of collected OP repetitions during DSE phase; on y-axis: $deltaError$ mean [ \% ]}
+    \caption{$deltaError$ mean for throughput metric of synthetic application version 1 by varying the noisePercentage and the number of OP repetitions. Used RSM: 2nd version of implemented GLR ("polynomial combinations of degree 2")}
     
     \label{fig::synth1spark2::means}
     
@@ -247,7 +247,7 @@ where $predictedValue(m)$ and $referenceValue(m)$ have explicit meaning; so, $de
     
     \includegraphics[width = \textwidth]{deltaErrorRangesSynth2spark2}
     
-     \caption[$deltaError$ results for throughput metric of synthetic application version 2; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order")]{$deltaError$ results for throughput metric of synthetic application version 2; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order", see \ref{regrTransforms}); each stacked bar refers to a particular application configuration, with respect to $noisePercentage$ value and number of collected OP repetitions during DSE phase, showing OP percentages that have a corresponding throughput $deltaError$ within prearranged intervals; on y-axis: number of OPs \hbox{[ \% ]}}
+     \caption{$deltaError$ results for throughput metric of synthetic application version 2 by varying the noisePercentage and the number of OP repetitions. Used RSM: 2nd version of implemented GLR ("polynomial combinations of degree 2")}
     
     \label{fig::synth2spark2::intervals}
     
@@ -259,7 +259,7 @@ where $predictedValue(m)$ and $referenceValue(m)$ have explicit meaning; so, $de
     
     \includegraphics[width = \textwidth]{deltaErrorMeansSynth2spark2}
     
-    \caption[$deltaError$ mean values for throughput metric of synthetic application version 2; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order")]{$deltaError$ mean values for throughput metric of synthetic application version 2; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order", see \ref{regrTransforms}); each bar shows throughput $deltaError$ mean for a particular application configuration, with respect to $noisePercentage$ value and number of collected OP repetitions during DSE phase; on y-axis: $deltaError$ mean [ \% ]}
+    \caption{$deltaError$ mean for throughput metric of synthetic application version 2 by varying the noisePercentage and the number of OP repetitions. Used RSM: 2nd version of implemented GLR ("polynomial combinations of degree 2")}
     
     \label{fig::synth2spark2::means}
     
@@ -269,7 +269,7 @@ where $predictedValue(m)$ and $referenceValue(m)$ have explicit meaning; so, $de
 
 
 
-In figures \ref{fig::synth1spark1::intervals}, \ref{fig::synth1spark2::intervals} and \ref{fig::synth2spark2::intervals}, every stacked bar chart represent an application setting with respect to $noisePercentage$ value and the number of repetitions, for each DoE configuration, collected during DSE phase; on y-axis there are the number of predicted OPs, in percentage, grouped with respect to measured $deltaError$ of related throughput metric; related figures \ref{fig::synth1spark1::means}, \ref{fig::synth1spark2::means} and \ref{fig::synth2spark2::means} show $deltaError$ mean for each program setting.
+In Figures \ref{fig::synth1spark1::intervals}, \ref{fig::synth1spark2::intervals} and \ref{fig::synth2spark2::intervals}, each stacked bar chart represent an application setting with respect to $noisePercentage$ value and the number of repetitions, for each DoE configuration, collected during DSE phase; on y-axis there are the number of predicted OPs, in percentage, grouped with respect to measured $deltaError$ of related throughput metric; related Figures \ref{fig::synth1spark1::means}, \ref{fig::synth1spark2::means} and \ref{fig::synth2spark2::means} show $deltaError$ mean for each program setting.
 
 From figure \ref{fig::synth1spark1::intervals} we can see that, until $noisePercentage = 15\%$, model prediction is really precise even with only 1 repetition for each DoE configuration: almost the totality of OPs have a $del\-ta\-Er\-ror$ below $5\%$; with 5 repetitions and 10 repetitions, all configurations have a $del\-ta\-Er\-ror$ below $5\%$. With the introduction of a strong noise weight, $25\%$ and $50\%$, prediction get worse with 1 OP repetition, even if, respectively, around $70\%$ and $60\%$ of configurations remains with a \textit{deltaError} below $10\%$; prediction gets back really accurate with 5 and 10 OP repetitions also with these high noise values.
 
@@ -308,13 +308,13 @@ From last analyses, we can assert that Generalized Linear Regression with \texti
 
 \subsubsection{Execution times}
 
-Concerning execution times, we want to show the significant benefit of sharing Design Space Exploration phase among several nodes, running the same application: the 2nd version of synthetic application with $noise\-Percentage = 10\%$ is executed, using Face Centered Central Composite Desing of Experiments with one Center Point and collecting, for each configuration, 20 repetitions; for this application setting, the total number of configurations to be explored is 300. We accomplish this DSE phase with 1 up to 10 executing applications, collecting the overall executing time, represented by each bar chart in figure \ref{fig::DSEtimes}:
+Concerning execution times, we want to show the significant benefit of sharing Design Space Exploration phase among several nodes, running the same application: the 2nd version of synthetic application with $noise\-Percentage = 10\%$ is executed, using Face Centered Central Composite Desing of Experiments with one Center Point and collecting, for each configuration, 20 repetitions; for this application setting, the total number of configurations to be explored is 300. We accomplish this DSE phase with 1 up to 10 executing applications, collecting the overall executing time, represented by each bar chart in Figure \ref{fig::DSEtimes}.
 
 \begin{figure}[h]
 
     \centering
     \includegraphics[width = \textwidth]{DSEtimes}
-    \caption[Design Space Exploration times for several numbers of executing applications]{Design Space Exploration times for several numbers of executing applications; first bar is related to DSE carried out exploring each configuration in a serial way, without Agorà; other bars are related to DSE phase done with implemented framework, through 1 executing application up to 10 ones; on y-axis: elapsed time \hbox{[ seconds ]}}
+    \caption{Design Space Exploration time by varying the number of executing applications}
     \label{fig::DSEtimes}
     
 \end{figure}
@@ -327,7 +327,7 @@ Now we want to show general Agorà advantages, comparing a Full-Factorial, so ex
 
     \centering
     \includegraphics[width = \textwidth]{fullFactorial_tesiCris}
-    \caption[Synthetic application version 2 execution times]{Synthetic application version 2 (with $noisePercentage = 15\%$) execution times; first bar shows elapsed time for exhaustive execution; adjacent ones reveal overall time, until complete model is predicted, using 1, 5 and 10 DoE configuration repetitions during DSE phase; on y-axis: elapsed time [ seconds ]}
+    \caption{Execution time for different synthetic application version 2 settings}
     \label{fig::full_cris}
     
 \end{figure}
@@ -343,12 +343,12 @@ Last figure wants to show application behavior during execution with the supervi
 
     \centering
     \includegraphics[width = \textwidth]{appBehavior}
-    \caption[Observed metric values during application execution]{Observed metric values during application execution; blue lines highlight boundaries of objective functions; on x-axis: time [ seconds ]; on y-axis: metric values}
+    \caption{Metric values by varying time}
     \label{fig::appBeh}
     
 \end{figure}
 
-Every couple of corresponding points in graphs of figure \ref{fig::appBeh} represents a configuration with which the application has been executed, obtaining certain throughput and error metric values; from a colored couple of points to the following one, the application has maintained parameter values corresponding to the former couple; grey empty couples of points indicate application execution with parameter values equal to the first previous colored couple. At the beginning, application runs with default configuration, corresponding to an error of around 0.5 and a throughput equal to about 0.75 (grey couple of points); Agorà starts Design Space Exploration, sending DoE configurations: mARGOt, from time to time, sets application parameters with these values, so observed metric of interest values vary during all this phase (red couples of points); when DSE phase terminates, Agorà sends a partial model (see \ref{DoEModelSend}) and it starts predicting the complete list of Operating Points: mARGOt chooses the best application configuration that fulfills objective functions, represented by dark green couple of points; throughput is around 4.25, so the first goal is respected, while error is about 5, so the second goal is not achieved; when application receives the complete model (around at 6 and a half minutes after starting time), it is set with another configuration (light green couple of points): obtained throughput is approximately 3.25 and error is about 0.5, so all objective functions are fulfilled; of course, if objective functions don't change, program keeps running with this Operating Point.
+Every couple of corresponding points in graphs of figure \ref{fig::appBeh} represents a configuration with which the application has been executed, obtaining certain throughput and error metric values; from a colored couple of points to the following one, the application has maintained parameter values corresponding to the former couple; grey empty couples of points indicate application execution with parameter values equal to the first previous colored couple. At the beginning, application runs with default configuration, corresponding to an error of around 0.5 and a throughput equal to about 0.75 (grey couple of points); Agorà starts Design Space Exploration, sending DoE configurations: mARGOt, from time to time, sets application parameters with these values, so observed metric of interest values vary during all this phase (red couples of points); when DSE phase terminates, Agorà sends a partial model (see \ref{DoEModelSend}) and it starts predicting the complete list of Operating Points: mARGOt chooses the best application configuration that fulfills objective functions, represented by dark green couple of points; throughput is around 4.25, so the first goal is respected, while error is about 5, so the second goal is not achieved (blue lines highlight boundaries of objective functions); when application receives the complete model (around at 6 and a half minutes after starting time), it is set with another configuration (light green couple of points): obtained throughput is approximately 3.25 and error is about 0.5, so all objective functions are fulfilled; of course, if objective functions don't change, program keeps running with this Operating Point.
 
 
 
@@ -370,7 +370,7 @@ Next figures show results on predicted model using $deltaError$ measure, as done
 
     \centering
     \includegraphics[width = \textwidth]{deltaErrorRangesSwaptions15Spark2}
-    \caption[$deltaError$ results for both Swaptions metrics of interest]{$deltaError$ results for both Swaptions metrics of interest; each stacked bar shows OP percentages that have a corresponding metric $deltaError$ within prearranged intervals; left stacked bar focuses on $avg\_error$ metric, right one on $avg\_throughput$; on y-axis: number of configurations [ \% ]}
+    \caption{$deltaError$ results for both Swaptions metrics of interest}
     \label{fig::swaptions15spark2::intervals}
     
 \end{figure}
@@ -379,7 +379,7 @@ Next figures show results on predicted model using $deltaError$ measure, as done
 
     \centering
     \includegraphics[width = \textwidth]{deltaErrorMeansSwaptions15Spark2}
-    \caption[$deltaError$ mean values for both Swaptions metrics of interest]{$deltaError$ mean values for both Swaptions metrics of interest; left bar shows $deltaError$ mean for $avg\_error$ metric, right one for $avg\_throughput$; on y-axis: $deltaError$ mean [ \% ]}
+    \caption{$deltaError$ mean values for both Swaptions metrics of interest}
     \label{fig::swaptions15spark2::means}
     
 \end{figure}
@@ -401,7 +401,7 @@ Regarding execution times, we compare analyzed run with a Full-Factorial, so exh
     
     \includegraphics[width = \textwidth]{swaptions_exhaustive_tesiCris}
     
-    \caption[Swaptions execution times]{Swaptions execution times; first bar shows elapsed time for exhaustive execution; adjacent one reveal overall time, until complete model has been predicted, with the supervise of Agorà; on y-axis: elapsed time \hbox{[ seconds ]}}
+    \caption{Swaptions execution times}
     
     \label{fig::sw::execT}
     
@@ -418,10 +418,10 @@ Exhaustive execution takes around 28 minutes to finish, while the analyzed one l
     
     \includegraphics[width = \textwidth]{swaptionsBehavior}
     
-    \caption[Observed metric values during Swaptions execution]{Observed metric values during Swaptions execution; blue lines highlight boundaries of objective functions; on x-axis: time [ seconds ]; on y-axis: metric values}
+    \caption{Swaptions metric values by varying time}
     
     \label{fig::sw::beh}
     
 \end{figure}
 
-Figure \ref{fig::sw::beh} shows application behavior during execution; we set, as objective functions, $avg\_\-throughput > 3$ and $avg\_\-error < 35$; during Design Space Exploration phase, application is executed with Design of Experiments configurations in order to collect training data (red couples of points); around 195 seconds, DSE phase finishes and application receives partial model (see \ref{DoEModelSend}); mARGOt sets up \textit{Swaptions} with best possible parameter values with respect to goals and requirements (dark green couple of points): during model prediction phase, $avg\_throughput$ is about 5 (so, great\-er than the minimum required value 3) and $avg\_error$ approximately 42 (higher than 35, so the corresponding objective function is not followed); Agorà sends complete model with predicted metric values for each application configuration: mARGOt changes current Operating Point (light green couple of points), obtaining an $avg\_throughput > 3$ and an $avg\_error < 35$, so both objective functions are achieved. 
+Figure \ref{fig::sw::beh} shows application behavior during execution; we set, as objective functions, $avg\_\-throughput > 3$ and $avg\_\-error < 35$ (blue lines highlight boundaries of objective functions); during Design Space Exploration phase, application is executed with Design of Experiments configurations in order to collect training data (red couples of points); around 195 seconds, DSE phase finishes and application receives partial model (see \ref{DoEModelSend}); mARGOt sets up \textit{Swaptions} with best possible parameter values with respect to goals and requirements (dark green couple of points): during model prediction phase, $avg\_throughput$ is about 5 (so, great\-er than the minimum required value 3) and $avg\_error$ approximately 42 (higher than 35, so the corresponding objective function is not followed); Agorà sends complete model with predicted metric values for each application configuration: mARGOt changes current Operating Point (light green couple of points), obtaining an $avg\_throughput > 3$ and an $avg\_error < 35$, so both objective functions are achieved. 

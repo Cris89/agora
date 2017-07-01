@@ -80,36 +80,36 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Complete OP distribution of synthtetic application version 1}}{51}{figure.caption.39}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Throughput by varying the error for synthetic application version 1\relax }}{51}{figure.caption.39}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Complete OP distribution of synthtetic application version 2}}{53}{figure.caption.41}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Throughput by varying the error for synthetic application version 2\relax }}{53}{figure.caption.41}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Swaptions complete OP distribution}}{54}{figure.caption.43}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Average throughput by varying the average error for Swaptions\relax }}{54}{figure.caption.43}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.4}{\ignorespaces $deltaError$ results for throughput metric of synthetic application version 1; used RSM: 1st version of implemented GLR ("transformations by functions")}}{55}{figure.caption.44}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces $deltaError$ results for throughput metric of synthetic application version 1 by varying the noisePercentage and the number of OP repetitions. Used RSM: 1st version of implemented GLR ("transformations by functions")\relax }}{55}{figure.caption.44}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.5}{\ignorespaces $deltaError$ mean values for throughput metric of synthetic application version 1; used RSM: 1st version of implemented GLR ("transformations by functions")}}{56}{figure.caption.45}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces $deltaError$ mean for throughput metric of synthetic application version 1 by varying the noisePercentage and the number of OP repetitions. Used RSM: 1st version of implemented GLR ("transformations by functions")\relax }}{56}{figure.caption.45}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.6}{\ignorespaces $deltaError$ results for throughput metric of synthetic application version 1; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order")}}{57}{figure.caption.46}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces $deltaError$ results for throughput metric of synthetic application version 1 by varying the noisePercentage and the number of OP repetitions. Used RSM: 2nd version of implemented GLR ("polynomial combinations of degree 2")\relax }}{57}{figure.caption.46}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.7}{\ignorespaces $deltaError$ mean values for throughput metric of synthetic application version 1; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order")}}{58}{figure.caption.47}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces $deltaError$ mean for throughput metric of synthetic application version 1 by varying the noisePercentage and the number of OP repetitions. Used RSM: 2nd version of implemented GLR ("polynomial combinations of degree 2")\relax }}{58}{figure.caption.47}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.8}{\ignorespaces $deltaError$ results for throughput metric of synthetic application version 2; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order")}}{59}{figure.caption.48}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces $deltaError$ results for throughput metric of synthetic application version 2 by varying the noisePercentage and the number of OP repetitions. Used RSM: 2nd version of implemented GLR ("polynomial combinations of degree 2")\relax }}{59}{figure.caption.48}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.9}{\ignorespaces $deltaError$ mean values for throughput metric of synthetic application version 2; used RSM: 2nd version of implemented GLR ("polynomial expansion of second order")}}{60}{figure.caption.49}
+\contentsline {figure}{\numberline {6.9}{\ignorespaces $deltaError$ mean for throughput metric of synthetic application version 2 by varying the noisePercentage and the number of OP repetitions. Used RSM: 2nd version of implemented GLR ("polynomial combinations of degree 2")\relax }}{60}{figure.caption.49}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.10}{\ignorespaces Design Space Exploration times for several numbers of executing applications}}{61}{figure.caption.51}
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Design Space Exploration time by varying the number of executing applications\relax }}{61}{figure.caption.51}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.11}{\ignorespaces Synthetic application version 2 execution times}}{62}{figure.caption.52}
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Execution time for different synthetic application version 2 settings\relax }}{62}{figure.caption.52}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.12}{\ignorespaces Observed metric values during application execution}}{64}{figure.caption.53}
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Metric values by varying time\relax }}{63}{figure.caption.53}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.13}{\ignorespaces $deltaError$ results for both Swaptions metrics of interest}}{66}{figure.caption.54}
+\contentsline {figure}{\numberline {6.13}{\ignorespaces $deltaError$ results for both Swaptions metrics of interest\relax }}{65}{figure.caption.54}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.14}{\ignorespaces $deltaError$ mean values for both Swaptions metrics of interest}}{67}{figure.caption.55}
+\contentsline {figure}{\numberline {6.14}{\ignorespaces $deltaError$ mean values for both Swaptions metrics of interest\relax }}{66}{figure.caption.55}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.15}{\ignorespaces Swaptions execution times}}{68}{figure.caption.56}
+\contentsline {figure}{\numberline {6.15}{\ignorespaces Swaptions execution times\relax }}{67}{figure.caption.56}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.16}{\ignorespaces Observed metric values during Swaptions execution}}{69}{figure.caption.57}
+\contentsline {figure}{\numberline {6.16}{\ignorespaces Swaptions metric values by varying time\relax }}{68}{figure.caption.57}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
