@@ -31,7 +31,7 @@ where $noise$ simulates a disturbance; it is computed as:
 noise = executionTime \cdot randomNumber \cdot noisePercentage
 \]
 
-$randomNumber$ is a generated random value according to an exponential distribution with mean 0.3; $noisePercentage$ affects noise weight and it can be equal to $1\%, 5\%, 10\%, 15\%, 25\%$ or $50\%$.
+$randomNumber$ is a generated random value according to an exponential distribution with mean 0.3; $noisePercentage$ affects noise weight and it can be equal to $1\%$, $5\%$, $10\%$, $15\%$, $25\%$ or $50\%$.
 
 Error metric is calculated as:
 \[
@@ -173,7 +173,7 @@ In this paragraph we show experimental results for both versions of synthetic ap
 
 \subsubsection{Model prediction quality}\label{deltaErrorExplanation}
 
-Concerning model prediction goodness, both synthetic application versions are executed several times with the introduction of all noise weights ($1\%, 5\%, 10\%, 15\%, 25\%$ and $50\%$), focusing on the prediction of throughput metric, that is the one affected by $noise\-Percentage$ value; a Face Centered Central Composite Desing of Experiments with one Center Point has been used, firstly gathering 1 repetition, then 5 repetitions and finally 10 repetitions for each DoE configuration during Design Space Exploration phase; for each predicted metric value $m$ for each application setting, we have calculated a $deltaError$ measure:
+Concerning model prediction goodness, both synthetic application versions are executed several times with the introduction of all noise weights ($1\%$, $5\%$, $10\%$, $15\%$, $25\%$ and $50\%$), focusing on the prediction of throughput metric, that is the one affected by $noise\-Percentage$ value; a Face Centered Central Composite Desing of Experiments with one Center Point has been used, firstly gathering 1 repetition, then 5 repetitions and finally 10 repetitions for each DoE configuration during Design Space Exploration phase; for each predicted metric value $m$ for each application setting, we have calculated a $deltaError$ measure:
 
 \[
 deltaError(m) = \dfrac{\left\vert predictedValue(m) - referenceValue(m) \right\vert \cdot 100}{\left\vert referenceValue(m) \right\vert}

@@ -66,7 +66,7 @@ A node starts running a program; the related AgoraLocalAppHandler module notifie
     
 \end{figure}
 
-At the beginning, the AgoraLocalAppHandler module subscribes to some topics that are needed to receive communications from the related AgoraRemoteAppHandler:
+At the beginning, the Agora\-Local\-App\-Handler module subscribes to some topics that are needed to receive communications from the related Agora\-Remote\-App\-Handler:
 
 \begin{enumerate}
 
@@ -113,7 +113,7 @@ The AgoraRemoteAppHandler module subscribes to some topics in order to manage co
 
 \subsubsection{Known application}\label{knownApp}
 
-When the AgoraRemoteDispatcher module is informed that a new node has started running an application but there exist already an AgoraRemoteAppHandler that is managing that program, it publishes on topic "agora/\textit{[appName]}/newHostpid" the new machine hostname plus PID, so that the corresponding Agora\-Remote\-App\-Handler module can add the node to the pool of machines that are running the application it is supervising:
+When the AgoraRemoteDispatcher module is informed that a new node has started running an application but there exist already an AgoraRemoteAppHandler that is managing that program, it publishes on topic "agora\slash{}\textit{[app\-Name]}\slash{}newHostpid" the new machine hostname plus PID, so that the corresponding Agora\-Remote\-App\-Handler module can add the node to the pool of machines that are running the application it is supervising:
 
 \begin{figure}[H]
 
@@ -392,7 +392,7 @@ Model prediction just starts when last needed Operating Point repetition related
 
 \subsection{AgoraLocalAppHandler module disconnection}\label{client_disc}
 
-If an AgoraLocalAppHandler module disconnects for some reason, related Agora\-Remote\-App\-Handler receives a message on topic "agora\slash{}\textit{[appName]}\slash{}disconnection" with payload "\textit{[hostname]\_[PID]}", relative to disconnected AgoraLocalAppHandler; the AgoraRemote\-App\-Handler module removes node identifier from the list of machines it is managing:
+If an AgoraLocalAppHandler module disconnects for some reason, related Agora\-Remote\-App\-Handler receives a message on topic "agora\slash{}\textit{[appName]}\slash{}dis\-con\-nec\-tion" with payload "\textit{[hostname]\_[PID]}", relative to disconnected AgoraLocalAppHandler; the AgoraRemote\-App\-Handler module removes node identifier from the list of machines it is managing:
 
 \begin{figure}[H]
 
@@ -485,7 +485,7 @@ The AgoraLocalAppHandler module has already received predicted complete OP list 
     
 \end{figure}
 
-Figure \ref{fig::sketchApp} shows a sketch application that, until \textit{loop\_con\-di\-tion()} is verified (line 12), is executed; computation depends on three parameters ($param1, param2, param3$) that are set up by mARGOt autotuner at the beginning of every cycle (line 16), while two metrics of interest ($metric1, metric2$) are monitored (for mARGOt details, see related scientific publication \cite{gadioli2015application}).
+Figure \ref{fig::sketchApp} shows a sketch application that, until \textit{loop\_con\-di\-tion()} is verified (line 12), is executed; computation depends on three parameters ($pa\-ram1, pa\-ram2, pa\-ram3$) that are set up by mARGOt autotuner at the beginning of every cycle (line 16), while two metrics of interest ($metric1, metric2$) are monitored (for mARGOt details, see related scientific publication \cite{gadioli2015application}).
 
 Integration code required to use Agora framework with mARGOt autotuner is written in bold red; main steps during program execution are three:
 
