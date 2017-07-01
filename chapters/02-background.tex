@@ -1,6 +1,6 @@
 \chapter{Background}\label{back}
 
-\lettrine{I}{}\textit{n} this chapter, we explain the main concepts and used tools related to Agorà. This work has been thought for HPC applications that run in parallel architectures, so we start clarifying what are these target systems and how they are built. After that, we explain the concepts of Design Space Exploration and Design of Experiments, that represents the kernel of this work, together with the idea of application dynamic online autotuning. Finally, we present the tools used for communications among Agorà components and for application complete model prediction, highlighting their principal characteristics and features: the Message Queue Telemetry Transport (MQTT) messaging protocol and the Generalized Linear Regression interface by Apache Spark\textsuperscript{TM} Machine Learning MLlib library.
+\lettrine{I}{}\textit{n} this chapter, we explain the main concepts and used tools related to Agora. This work has been thought for HPC applications that run in parallel architectures, so we start clarifying what are these target systems and how they are built. After that, we explain the concepts of Design Space Exploration and Design of Experiments, that represents the kernel of this work, together with the idea of application dynamic online autotuning. Finally, we present the tools used for communications among Agora components and for application complete model prediction, highlighting their principal characteristics and features: the Message Queue Telemetry Transport (MQTT) messaging protocol and the Generalized Linear Regression interface by Apache Spark\textsuperscript{TM} Machine Learning MLlib library.
 
 \section{Target architecture}
 
@@ -262,7 +262,7 @@ Another interesting MQTT feature is the Last Will and Testament (LWT): each clie
 
 \section{Apache Spark\texorpdfstring{$^{TM}\;$}MMLlib library}
 
-Agorà takes advantage of the Machine Learning MLlib library by Apache Spark\textsuperscript{TM} (\cite{spark2015apache}) in order to predict complete model of running applications; in particular, we focuse on the Generalized Linear Regression interface.
+Agora takes advantage of the Machine Learning MLlib library by Apache Spark\textsuperscript{TM} (\cite{spark2015apache}) in order to predict complete model of running applications; in particular, we focuse on the Generalized Linear Regression interface.
 
 
 \subsection{(Generalized) Linear Regression}\label{glr}
@@ -286,7 +286,7 @@ Linear Regression assumes that the response variable follows a Gaussian distribu
 
 \subsection{Independent variable transformations}\label{regrTransforms}
 
-In order to use Linear Regression even if the relationship among response variable and independent variables is not linear, there is the necessity to modify input variables. Agorà implements two possible independent variable transformations:
+In order to use Linear Regression even if the relationship among response variable and independent variables is not linear, there is the necessity to modify input variables. Agora implements two possible independent variable transformations:
 
 \begin{enumerate}
 
@@ -296,4 +296,4 @@ In order to use Linear Regression even if the relationship among response variab
 
 \end{enumerate}
 
-Agorà chooses the model with the smallest Akaike Information Criterion (AIC) value, that is a measure of the quality, in terms of lost information, of statistical models for a given set of data. At the same AIC value, chosen model is the one with the smallest mean of the sum of coefficient standard errors, that measure how precisely predicted model has estimated regression coefficients with the given training set of data.
+Agora chooses the model with the smallest Akaike Information Criterion (AIC) value, that is a measure of the quality, in terms of lost information, of statistical models for a given set of data. At the same AIC value, chosen model is the one with the smallest mean of the sum of coefficient standard errors, that measure how precisely predicted model has estimated regression coefficients with the given training set of data.

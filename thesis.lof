@@ -38,45 +38,45 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {4.2}{\ignorespaces A tunable application Z with the assistance of mARGOt autotuner\relax }}{23}{figure.caption.18}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.3}{\ignorespaces A tunable application Z with the assistance of Agor\IeC {\`a} and mARGOt autotuner\relax }}{24}{figure.caption.19}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces A tunable application Z with the assistance of Agora and mARGOt autotuner\relax }}{24}{figure.caption.19}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Agor\IeC {\`a} overview in a parallel architecture\relax }}{26}{figure.caption.20}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Agora overview in a parallel architecture\relax }}{26}{figure.caption.20}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Agor\IeC {\`a}RemoteDispatcher subscription\relax }}{31}{figure.caption.21}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces AgoraRemoteDispatcher subscription\relax }}{31}{figure.caption.21}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {5.2}{\ignorespaces New unknown application arrival example}}{31}{figure.caption.22}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Agor\IeC {\`a}LocalAppHandler MQTT subscriptions example\relax }}{32}{figure.caption.23}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces AgoraLocalAppHandler MQTT subscriptions example\relax }}{32}{figure.caption.23}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Agor\IeC {\`a}RemoteAppHandler MQTT subscriptions example\relax }}{33}{figure.caption.24}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces AgoraRemoteAppHandler MQTT subscriptions example\relax }}{33}{figure.caption.24}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {5.5}{\ignorespaces New known application arrival example}}{34}{figure.caption.25}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Agor\IeC {\`a}LocalAppHandler request example\relax }}{34}{figure.caption.26}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces AgoraLocalAppHandler request example\relax }}{34}{figure.caption.26}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Application information request by \textit {Agor\IeC {\`a}RemoteAppHandler} example\relax }}{35}{figure.caption.27}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Application information request by \textit {AgoraRemoteAppHandler} example\relax }}{35}{figure.caption.27}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Configuration dispatch by \textit {Agor\IeC {\`a}RemoteAppHandler} example\relax }}{36}{figure.caption.28}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Configuration dispatch by \textit {AgoraRemoteAppHandler} example\relax }}{36}{figure.caption.28}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Partial model dispatch by \textit {Agor\IeC {\`a}RemoteAppHandler} example\relax }}{36}{figure.caption.29}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Partial model dispatch by \textit {AgoraRemoteAppHandler} example\relax }}{36}{figure.caption.29}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Complete model dispatch by \textit {Agor\IeC {\`a}RemoteAppHandler} example\relax }}{37}{figure.caption.30}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Complete model dispatch by \textit {AgoraRemoteAppHandler} example\relax }}{37}{figure.caption.30}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Application information dispatch by \textit {Agor\IeC {\`a}LocalAppHandler} module example\relax }}{42}{figure.caption.31}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Application information dispatch by \textit {AgoraLocalAppHandler} module example\relax }}{42}{figure.caption.31}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Operating Point dispatch by \textit {Agor\IeC {\`a}LocalAppHandler} module example\relax }}{43}{figure.caption.32}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Operating Point dispatch by \textit {AgoraLocalAppHandler} module example\relax }}{43}{figure.caption.32}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Agor\IeC {\`a}LocalAppHandler module disconnection example\relax }}{44}{figure.caption.33}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces AgoraLocalAppHandler module disconnection example\relax }}{44}{figure.caption.33}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Disconnection of \textit {Agor\IeC {\`a}LocalAppHandler} module that was sending application information example\relax }}{45}{figure.caption.34}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Disconnection of \textit {AgoraLocalAppHandler} module that was sending application information example\relax }}{45}{figure.caption.34}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.15}{\ignorespaces Agor\IeC {\`a}RemoteAppHandler module disconnection example\relax }}{45}{figure.caption.35}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces AgoraRemoteAppHandler module disconnection example\relax }}{45}{figure.caption.35}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.16}{\ignorespaces Agor\IeC {\`a}RemoteAppHandler module disconnection with A\discretionary {-}{}{}go\discretionary {-}{}{}r\IeC {\`a}\discretionary {-}{}{}Local\discretionary {-}{}{}App\discretionary {-}{}{}Handler internal state equal to \textit {DSE} example\relax }}{46}{figure.caption.36}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces AgoraRemoteAppHandler module disconnection with A\discretionary {-}{}{}go\discretionary {-}{}{}ra\discretionary {-}{}{}Local\discretionary {-}{}{}App\discretionary {-}{}{}Handler internal state equal to \textit {DSE} example\relax }}{46}{figure.caption.36}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.17}{\ignorespaces Sketch application with \textit {Agor\IeC {\`a}LocalAppHandler} module plus mARGOt autotuner integration\relax }}{47}{figure.caption.37}
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Sketch application with \textit {AgoraLocalAppHandler} module plus mARGOt autotuner integration\relax }}{47}{figure.caption.37}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 

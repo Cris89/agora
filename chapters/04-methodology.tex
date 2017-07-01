@@ -22,32 +22,32 @@ Very often, High Performance Computing applications expose a large set of parame
     
 \end{figure}
 
-The autotuner needs application knowledge, so there have to be a preceding offline phase (before program start of computation) for profiling. This thesis contributes to avoid this offline step by building, managing and updating application knowledge during execution itself. A local module mainly takes care of properly setting application knowledge, while a remote one manages collected information during execution, in order to predict complete application model. Figure \ref{fig::appAGORA} shows application Z interconnected with Agorà and mARGOt autotuner.
+The autotuner needs application knowledge, so there have to be a preceding offline phase (before program start of computation) for profiling. This thesis contributes to avoid this offline step by building, managing and updating application knowledge during execution itself. A local module mainly takes care of properly setting application knowledge, while a remote one manages collected information during execution, in order to predict complete application model. Figure \ref{fig::appAGORA} shows application Z interconnected with Agora and mARGOt autotuner.
 
 \begin{figure}[H]
 
     \centering
     \includegraphics[width = \textwidth]{App_Agora_mARGOt}
-    \caption{A tunable application Z with the assistance of Agorà and mARGOt autotuner}
+    \caption{A tunable application Z with the assistance of Agora and mARGOt autotuner}
     \label{fig::appAGORA}
     
 \end{figure}
 
-This thesis focuses on the problem of managing concurrent executed by parallel architecture. Main objective of this work is to initially drive program execution with a subset of parameter configurations taken from their Design Space, in order to gather all metric of interest values associated to them. This list composes the training set for the prediction of application complete model through Machine Learning techniques. Agorà can also correctly manage possible features, where a feature is a particular application element than cannot be set up like software knobs, but it contributes to the estimation of complete model. During the DSE phase, feature values are observed like metric values while, during model prediction, they are considered as parameters, so their observations take part to the estimation of metric of interest values.
+This thesis focuses on the problem of managing concurrent executed by parallel architecture. Main objective of this work is to initially drive program execution with a subset of parameter configurations taken from their Design Space, in order to gather all metric of interest values associated to them. This list composes the training set for the prediction of application complete model through Machine Learning techniques. Agora can also correctly manage possible features, where a feature is a particular application element than cannot be set up like software knobs, but it contributes to the estimation of complete model. During the DSE phase, feature values are observed like metric values while, during model prediction, they are considered as parameters, so their observations take part to the estimation of metric of interest values.
 
-The typical architecture in which Agorà works is parallel, where there are multiple nodes, potentially heterogeneous, that execute applications; the main Agorà features are the following:
+The typical architecture in which Agora works is parallel, where there are multiple nodes, potentially heterogeneous, that execute applications; the main Agora features are the following:
 
 \begin{enumerate}
     
     \item to drive Design Space Exploration in a distributed way, among all nodes that are running the same program, in order to considerably reduce DSE phase and to speed up overall workflow;
     
-    \item to manage multiple kinds of applications, each of them separately organized by a dedicated Agorà module that is in charge of all nodes that execute the same program;
+    \item to manage multiple kinds of applications, each of them separately organized by a dedicated Agora module that is in charge of all nodes that execute the same program;
     
     \item the out-of-band activity from parallel architecture data streams: computation of Design of Experiments configurations, collection of associated metric of interest values and complete model prediction are done in a separate node with respect to the ones that run applications inside the architecture, while the exchange of information is done using the lightweight MQTT protocol (discussed in chapter \ref{mqtt});
     
     \item the persistence of generated knowledge: once application complete model is predicted, it is stored so, at any time, it can be reloaded and it is sent to new nodes that start running the same application, without repeating all the workflow through which the complete model has been previously predicted;
     
-    \item to recover the cases where a running node crash and to recover the interruption of remote Agorà module that has the objective to predict application complete model: if the former situation happens, Agorà has to properly handle remaining running nodes; if the latter situation happens, running nodes inside the parallel architecture does not have to stop their execution but they react properly, according to the internal state of their related local Agorà module at that moment.
+    \item to recover the cases where a running node crash and to recover the interruption of remote Agora module that has the objective to predict application complete model: if the former situation happens, Agora has to properly handle remaining running nodes; if the latter situation happens, running nodes inside the parallel architecture does not have to stop their execution but they react properly, according to the internal state of their related local Agora module at that moment.
 
 \end{enumerate}
 
@@ -55,22 +55,22 @@ The typical architecture in which Agorà works is parallel, where there are mult
 
     \centering
     \includegraphics[width = \textwidth]{Agora_overall}
-    \caption{Agorà overview in a parallel architecture}
+    \caption{Agora overview in a parallel architecture}
     \label{fig::tesiCris_overview}
     
 \end{figure}
 
-Figure \ref{fig::tesiCris_overview} shows all Agorà components and a possible scenario with a parallel architecture in which six nodes are running three different types of tunable applications; for each type of application there exists a dedicated AgoràRemoteAppHandler module that manages it. The orange arrows represent the possible communications among modules, made possible through MQTT subscriptions and publications on predetermined topics.
+Figure \ref{fig::tesiCris_overview} shows all Agora components and a possible scenario with a parallel architecture in which six nodes are running three different types of tunable applications; for each type of application there exists a dedicated AgoraRemoteAppHandler module that manages it. The orange arrows represent the possible communications among modules, made possible through MQTT subscriptions and publications on predetermined topics.
 
-The main modules of Agorà are:
+The main modules of Agora are:
 
 \begin{enumerate}
 
-    \item the \textit{AgoràDispatcher} module, written in Python: it keeps waiting for program arrival, in order to properly manage them;
+    \item the \textit{AgoraDispatcher} module, written in Python: it keeps waiting for program arrival, in order to properly manage them;
     
-    \item the \textit{AgoràRemoteAppHandler} module, written in Python:
+    \item the \textit{AgoraRemoteAppHandler} module, written in Python:
 	\begin{itemize}	
-		\item [--] it is created by the AgoràDispatcher for each type of application;
+		\item [--] it is created by the AgoraDispatcher for each type of application;
 
 		\item [--] it asks for application information such as, for instance, all parameter name and values;
 
@@ -83,19 +83,19 @@ The main modules of Agorà are:
 		\item [--] it makes use of Machine Learning techniques in order to build application complete model; finally it sends result to connected nodes.
 	\end{itemize}
     
-    \item the \textit{AgoràLocalAppHandler} module, written in C++:
+    \item the \textit{AgoraLocalAppHandler} module, written in C++:
 	\begin{itemize}
 		\item [--] it is set up in every executing program;
 
 		\item [--] it communicates with the autotuner that manages application behavior;
 
-		\item [--] it notifies the existence of related running machine to the AgoràDispatcher module;
+		\item [--] it notifies the existence of related running machine to the AgoraDispatcher module;
 
-		\item [--] it replies to possible information request made by the related AgoràRemoteAppHandler;
+		\item [--] it replies to possible information request made by the related AgoraRemoteAppHandler;
 
-		\item [--] during Design Space Exploration phase, it receives configurations from the AgoràRemoteAppHandler module, it sets up program knowledge with this information and, after the application has done computation, it sends back all obtained information, regarding parameter values and associated metric of interest values;
+		\item [--] during Design Space Exploration phase, it receives configurations from the AgoraRemoteAppHandler module, it sets up program knowledge with this information and, after the application has done computation, it sends back all obtained information, regarding parameter values and associated metric of interest values;
 
-		\item [--] it saves predicted complete model received from the AgoràRemoteAppHandler module, in order to properly update application knowledge with this data.
+		\item [--] it saves predicted complete model received from the AgoraRemoteAppHandler module, in order to properly update application knowledge with this data.
 	\end{itemize}
 
 \end{enumerate}
@@ -108,16 +108,16 @@ Principal phases that define framework workflow and the interaction among compon
 
 \begin{enumerate}
 
-    \item application start of execution: when programs start running, related AgoràLocalAppHandler module notifies their existence to the AgoràDispatcher module; if the application is unknown, AgoràDispatcher creates a dedicated AgoràRemoteAppHandler module that is in charge of managing it, otherwise it communicates new node to the corresponding existing AgoràRemoteAppHandler module;
+    \item application start of execution: when programs start running, related AgoraLocalAppHandler module notifies their existence to the AgoraDispatcher module; if the application is unknown, AgoraDispatcher creates a dedicated AgoraRemoteAppHandler module that is in charge of managing it, otherwise it communicates new node to the corresponding existing AgoraRemoteAppHandler module;
     
-    \item Design of Experiments computation: AgoràRemoteAppHandler module computes the subset of configurations, from the entire application Design Space, that compose the Design of Experiments; after that, it is ready to drive Design Space Exploration phase, distributing these configurations to requesting nodes;
+    \item Design of Experiments computation: AgoraRemoteAppHandler module computes the subset of configurations, from the entire application Design Space, that compose the Design of Experiments; after that, it is ready to drive Design Space Exploration phase, distributing these configurations to requesting nodes;
     
-    \item configuration reception: AgoràLocalAppHandler module updates application knowledge with all the configurations that, from time to time, are sent by the AgoràRemoteAppHandler module; every time program computation is finished, it sends back to the AgoràRemoteAppHandler module a list of values, made by the configuration just used with the observed metrics of interest;
+    \item configuration reception: AgoraLocalAppHandler module updates application knowledge with all the configurations that, from time to time, are sent by the AgoraRemoteAppHandler module; every time program computation is finished, it sends back to the AgoraRemoteAppHandler module a list of values, made by the configuration just used with the observed metrics of interest;
     
-    \item application configuration and related metric value collection: A\-go\-rà\-Remote\-App\-Handler module collects all the information it receives from running nodes; when it has all necessary data, it uses Machine Learning techniques in order to predict application complete model, made by all possible configurations associated with predicted metric values;
+    \item application configuration and related metric value collection: A\-go\-ra\-Remote\-App\-Handler module collects all the information it receives from running nodes; when it has all necessary data, it uses Machine Learning techniques in order to predict application complete model, made by all possible configurations associated with predicted metric values;
     
-    \item predicted model dispatch: application complete model is sent by AgoràRemoteAppHandler to associated running nodes; related AgoràLocalAppHandler modules update program knowledge with this information, so the dynamic autotuner can set up application knobs with the best configuration that fulfills current goals and requirements.
+    \item predicted model dispatch: application complete model is sent by AgoraRemoteAppHandler to associated running nodes; related AgoraLocalAppHandler modules update program knowledge with this information, so the dynamic autotuner can set up application knobs with the best configuration that fulfills current goals and requirements.
 
 \end{enumerate}
 
-The interactions among Agorà components are implemented in an asynchronous way: program executions are independent from MQTT message exchange and all modules properly react to these events, in order to not condition application workflow and to not steal execution time, making all process as flowing as possible.
+The interactions among Agora components are implemented in an asynchronous way: program executions are independent from MQTT message exchange and all modules properly react to these events, in order to not condition application workflow and to not steal execution time, making all process as flowing as possible.
