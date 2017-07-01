@@ -40,7 +40,7 @@ error = \dfrac{1}{0.015 \cdot \sqrt{param_1} + 0.033 \cdot \ln{(param_2)} + 0.02
 
 Application parameters can assume these values:
 
-\begin{table}[H]
+\begin{table}[h]
 
     \centering
 
@@ -62,7 +62,7 @@ Application parameters can assume these values:
 
 This application has 455 Operating Points; figure \ref{fig::opListSynth1} shows complete OP distribution for $noisePercentage = 15\%$: every point represents a particular configuration with an error value (on x-axis) and a throughput one (on y-axis). Since $noise$ in $executionTime$ is affected by $randomNumber$, this plot consider its expected value, equal to the mean of the chosen exponential distribution (0.3); the obtained OP list represents the reference model for this predetermined $noise\-Per\-cent\-age$ value; of course, other reference models are similar, since the only difference is the $noisePercentage$ value for the calculation of $executionTime$ variable.
 
-\begin{figure}[H]
+\begin{figure}[h]
 
     \centering
     \includegraphics[width = \textwidth]{opGraphSynth1}
@@ -89,7 +89,7 @@ error = \dfrac{1}{0.01 \cdot param_1 + 0.7 \cdot \ln{(param_2)} + 0.019 \cdot pa
 
 Parameter values are:
 
-\begin{table}[H]
+\begin{table}[h]
 
     \centering
 
@@ -111,7 +111,7 @@ Parameter values are:
 
 In this application the number of Operating Points is 364; figure \ref{fig::opListSynth2} shows complete OP distribution of reference model with $noise\-Per\-cent\-age = 5\%$:
 
-\begin{figure}[H]
+\begin{figure}[h]
 
     \centering
     \includegraphics[width = \textwidth]{opGraphSynth2}
@@ -127,7 +127,7 @@ Of course, regarding model prediction goodness, same reasoning as previous appli
 
 As already stated in \ref{expSetup}, this application has two parameters: $num\_\-threads$ and $num\_\-trials$; their values are:
 
-\begin{table}[H]
+\begin{table}[h]
 
     \centering
 
@@ -148,7 +148,7 @@ As already stated in \ref{expSetup}, this application has two parameters: $num\_
 
 The number of Operating Points is therefore 80; figure \ref{fig::swaptionsOPs} shows complete OP distribution with respect $avg\_error$ and $avg\_throughput$ metrics of interest:
 
-\begin{figure}[H]
+\begin{figure}[h]
 
     \centering
     \includegraphics[width = \textwidth]{swaptionsOPgraph}
@@ -185,7 +185,7 @@ where $predictedValue(m)$ and $referenceValue(m)$ have explicit meaning; so, $de
 
 
 
-\begin{figure}[H]
+\begin{figure}[h]
 
     \centering
     
@@ -197,7 +197,7 @@ where $predictedValue(m)$ and $referenceValue(m)$ have explicit meaning; so, $de
     
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[h]
 
     \centering
     
@@ -213,7 +213,7 @@ where $predictedValue(m)$ and $referenceValue(m)$ have explicit meaning; so, $de
 
 
 
-\begin{figure}[H]
+\begin{figure}[h]
 
     \centering
     
@@ -225,7 +225,7 @@ where $predictedValue(m)$ and $referenceValue(m)$ have explicit meaning; so, $de
     
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[h]
 
     \centering
     
@@ -241,7 +241,7 @@ where $predictedValue(m)$ and $referenceValue(m)$ have explicit meaning; so, $de
 
 
 
-\begin{figure}[H]
+\begin{figure}[h]
 
     \centering
     
@@ -253,7 +253,7 @@ where $predictedValue(m)$ and $referenceValue(m)$ have explicit meaning; so, $de
     
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[h]
 
     \centering
     
@@ -279,7 +279,7 @@ Concerning synthetic application version 2 with the 2nd version of implemented G
 
 For synthetic application version 1, as it can be understood, 1st implemented version of GLR works slightly better than the 2nd one, but their prediction times are very different, as shown in table \ref{tab::GLRtimes}:
 
-\begin{table}[H]
+\begin{table}[h]
 
     \centering
     
@@ -310,7 +310,7 @@ From last analyses, we can assert that Generalized Linear Regression with \texti
 
 Concerning execution times, we want to show the significant benefit of sharing Design Space Exploration phase among several nodes, running the same application: the 2nd version of synthetic application with $noise\-Percentage = 10\%$ is executed, using Face Centered Central Composite Desing of Experiments with one Center Point and collecting, for each configuration, 20 repetitions; for this application setting, the total number of configurations to be explored is 300. We accomplish this DSE phase with 1 up to 10 executing applications, collecting the overall executing time, represented by each bar chart in figure \ref{fig::DSEtimes}:
 
-\begin{figure}[H]
+\begin{figure}[h]
 
     \centering
     \includegraphics[width = \textwidth]{DSEtimes}
@@ -323,7 +323,7 @@ From figure \ref{fig::DSEtimes} we can see that Agorà takes about 23 minutes to
 
 Now we want to show general Agorà advantages, comparing a Full-Factorial, so exhaustive, application execution with the one supervised by this work; in figure \ref{fig::full_cris}, first bar chart shows overall time needed to compute Full-Factorial run for synthetic application version 2 with $noisePercentage = 15\%$, analyzing every possible configuration one time; next stacked bar charts show overall time, divided by DSE phase and model prediction, for the same application setting using Agorà and collecting 1, 5 and 10 OP repetitions for each DoE configuration:
 
-\begin{figure}[H]
+\begin{figure}[h]
 
     \centering
     \includegraphics[width = \textwidth]{fullFactorial_tesiCris}
@@ -339,7 +339,7 @@ Figure \ref{fig::full_cris} shows that an exhaustive execution of analyzed appli
 
 Last figure wants to show application behavior during execution with the supervise of Agorà and mARGOt autotuner; on x-axis there is time, while on y-axis there are observed metric of interest values during execution. We have run synthetic application version 2 with $noisePercentage = 15\%$, using Face Centered Central Composite Design of Experiments with one Center Point and the 2nd version of implemented GLR as RSM, collecting 5 repetitions for each Design of Experiments configuration during DSE phase; objective functions have been set up to $Throughput > 3$ and $Error < 1$; figure \ref{fig::appBeh} shows results:
 
-\begin{figure}[H]
+\begin{figure}[h]
 
     \centering
     \includegraphics[width = \textwidth]{appBehavior}
@@ -366,7 +366,7 @@ Next figures show results on predicted model using $deltaError$ measure, as done
 
 
 
-\begin{figure}[H]
+\begin{figure}[h]
 
     \centering
     \includegraphics[width = \textwidth]{deltaErrorRangesSwaptions15Spark2}
@@ -375,7 +375,7 @@ Next figures show results on predicted model using $deltaError$ measure, as done
     
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[h]
 
     \centering
     \includegraphics[width = \textwidth]{deltaErrorMeansSwaptions15Spark2}
@@ -395,7 +395,7 @@ We obtain an average $deltaError$ of around $11\%$ for $avg\_throughput$ and abo
 
 Regarding execution times, we compare analyzed run with a Full-Factorial, so exhaustive, execution in which we collect, for each configuration, 15 repetitions for each Operating Point, as shown in figure \ref{fig::sw::execT}:
 
-\begin{figure}[H]
+\begin{figure}[h]
 
     \centering
     
@@ -412,7 +412,7 @@ Exhaustive execution takes around 28 minutes to finish, while the analyzed one l
 
 \subsubsection{Application behavior over time}
 
-\begin{figure}[H]
+\begin{figure}[h]
 
     \centering
     

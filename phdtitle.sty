@@ -24,50 +24,51 @@
 \renewcommand{\maketitle}{
 \thispagestyle{empty}
 \begin{center}
-\bfseries
-\vspace*{-2.5cm}
+%\bfseries
+\vspace*{-1.5cm}
   \begin{figure}[htbp]
     \begin{center}
-       \includegraphics[width=26mm]{\@titleimage}
+       \includegraphics[width=0.5\textwidth]{\@titleimage}
     \end{center}
   \end{figure}
 %\vspace*{-0.2cm}
-  \large{\textsc{POLITECNICO DI MILANO}\\%}\\
-  \small
-  \@department\\
+  %\large{\textsc{POLITECNICO DI MILANO}\\%}\\
+  %\small
+  \large
+  \@department
   %\large{\sc 
-  \@phdprogram}\\
-  \normalsize
+  %\@phdprogram}\\
+  %\normalsize
 \vspace*{0.5cm}
 \hrule
 \vspace*{1.5cm}
- \LARGE\sc
+ \huge
   \@title\\
 \end{center}
-\vspace*{1cm}
+\vspace*{0.5cm}
 \large
 \begin{flushright}
-  \normalsize M.Sc Thesis of:\\
+  M.Sc. Thesis of:\\
   \large \textbf{\@author}\\
 \end{flushright}
 \begin{flushright}
-  \normalsize Student ID:\\
+  Student ID:\\
   \large \textbf{\@matricola}\\
 \end{flushright}
 \begin{flushleft}
-  \normalsize Advisor:\\
+  Advisor:\\
  \large \textbf{Prof. \@advisor}\\
 \end{flushleft}
 \begin{flushleft}
-  \normalsize Co-Advisors:\\
-  \large \textbf{Eng. \@coadTwo}\\
+  Co-Advisors:\\
+  \large \textbf{Ph.D. \@coadTwo}\\
   \large \textbf{Prof. \@coadOne}\\
 \end{flushleft}
 %\begin{flushleft}
 %  \normalsize The Chair of the Doctoral Program:\\
 %  \large \textbf{Prof. \@supervisor}\\
 % \end{flushleft}
- \vspace{\fill}
+ \vspace*{\fill}
 \begin{center}
 \@phdcycle
 \end{center}

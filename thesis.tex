@@ -1,6 +1,6 @@
 
 % For printing with the A5 format
-\documentclass[a4,11pt,twoside,openright,english,italian]{book}% twoside!
+\documentclass[a4,10pt,twoside,openright,english,italian]{book}% twoside!
 
 % Set paper size
 \usepackage[twoside=true]{geometry}
@@ -50,21 +50,18 @@
 \usepackage{algorithmic}
 \usepackage{algorithm}
 \usepackage{longtable}
+
+% font
+\usepackage[T1]{fontenc}
 \usepackage[latin1, utf8]{inputenc}
+\renewcommand*\rmdefault{lmr}
+%\usepackage[sc]{mathpazo}
 
 \usepackage{ragged2e}
 
-
-
-
-
+\usepackage[justification=centering]{caption}
 
 \usepackage{indentfirst}
-
-% font serif
-\usepackage{DejaVuSerif}
-\usepackage[T1]{fontenc}
-
 
 \usepackage{setspace}
 \renewcommand{\baselinestretch}{1.5}
@@ -80,12 +77,6 @@
 ]{biblatex}
 \addbibresource{./bibiography.bib}
 
-
-
-
-
-
-
 %% \hyphenation{} is used to force the 
 \hyphenation{}
 
@@ -100,25 +91,28 @@
 
 \hypersetup{pdftitle={A distributed framework supporting runtime autotuning for HPC applications}, pdfauthor={Cristiano Di Marco}}
 
-%\nobibliography*
-
-\department {\normalfont{DIPARTIMENTO DI ELETTRONICA, INFORMAZIONE E BIOINGEGNERIA\\COMPUTER SCIENCE AND ENGINEERING - INGEGNERIA INFORMATICA}} %{Dipartimento di Elettronica, Informatica e Bioingegneria}
-\phdprogram{\normalfont{MASTER THESIS}}
+\department{\textsc{Scuola di Ingegneria Industriale e dell'Informazione\\Dipartimento di Elettronica, Informazione e Bioingegneria\\Corso di Laurea Magistrale in Computer Science and Engineering}}
 
 \author{Cristiano Di Marco}
 \matricola{835911}
-\title{A DISTRIBUTED FRAMEWORK\\SUPPORTING RUNTIME AUTOTUNING\\FOR HPC APPLICATIONS} %{A distributed framework supporting runtime autotuning for HPC applications}
+\title{\textsc{a Distributed Framework\\supporting Runtime Autotuning\\for HPC Applications}}
 \advisor{Cristina Silvano}
 \coadOne{Gianluca Palermo}
 \coadTwo{Davide Gadioli}
 \titleimage{img/logopoli.png}
 \phdcycle{Academic Year 2016/2017}
 
+
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Let's Start The Real Document
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 \selectlanguage{english}
+
+\newgeometry{centering, margin=1in}
 
 \maketitle
 
@@ -127,6 +121,7 @@
 \cleardoublepage
 \newpage
 
+\restoregeometry
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Dedica
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
