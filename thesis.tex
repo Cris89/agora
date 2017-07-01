@@ -122,6 +122,19 @@
 \newpage
 
 \restoregeometry
+
+% change numbering into Roman numbers for the introductory part
+\setcounter{page}{1}
+\pagenumbering{Roman}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Acknowledgement
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{chapters/acknowledge}
+
+\cleardoublepage
+\newpage
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Dedica
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -131,9 +144,6 @@
 \newpage
 
 \pagestyle{fancy}
-% change numbering into Roman numbers for the introductory part
-\setcounter{page}{1}
-\pagenumbering{Roman}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Abstract and Sommario
@@ -157,6 +167,22 @@
 \cleardoublepage
 \newpage
 
+\makeatletter
+     \renewcommand*\l@figure{\@dottedtocline{1}{1em}{3.2em}}
+\makeatother
+
+\phantomsection
+\listoffigures
+
+\cleardoublepage
+\newpage
+
+\phantomsection
+\listoftables
+
+\cleardoublepage
+\newpage
+
 % Now lets go back to normal numbering
 \setcounter{page}{1}
 \pagenumbering{arabic}
@@ -173,14 +199,6 @@
 \cleardoublepage
 \newpage
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Acknowledgement
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{chapters/acknowledge}
-
-\cleardoublepage
-\newpage
-
 %\cleardoublepage
 %\listoffigures
 %\listoftables
@@ -191,24 +209,6 @@
 %\small
 %\bibliographystyle{plain}
 %\bibliography{thesis}
-
-\makeatletter
-     \renewcommand*\l@figure{\@dottedtocline{1}{1em}{3.2em}}
-\makeatother
-
-\phantomsection
-\addcontentsline{toc}{chapter}{\listfigurename}
-\listoffigures
-
-\cleardoublepage
-\newpage
-
-\phantomsection
-\addcontentsline{toc}{chapter}{\listtablename}
-\listoftables
-
-\cleardoublepage
-\newpage
 
 \printbibliography[heading = bibintoc]
 
