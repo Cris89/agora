@@ -1,6 +1,6 @@
 \chapter{Agorà: proposed framework}\label{agora}
 
-\lettrine{C}{hapter} 5 shows technical implementation of Agorà framework, going into detail of all possible use cases; in the last part, a sketch application explains how AgoràLocalAppHandler module is integrated and how it works.
+\lettrine{T}{}\textit{his} Chapter shows technical implementation of Agorà framework, going into detail of all possible use cases. In the last part, a sketch application explains how AgoràLocalAppHandler module is integrated and how it works.
 
 
 \section{Introduction}
@@ -52,7 +52,7 @@ The starting point is the creation of the AgoràRemoteDispatcher module, that is
 
 \subsection{Application arrival}
 
-An application can be already known by the Agorà\-Remote\-Dis\-patch\-er module or a program is executed by a machine for the first time.
+An application can be already known by the Agorà\-Remote\-Dis\-patch\-er module or a program is executed by a machine for the first time. We define \textit{known} application a program that is already supervised by an AgoraRemoteAppHandler module, while \textit{unknown} application a program that does not have a dedicated AgoraRemoteAppHandler module.
 
 \subsubsection{Unknown application}
 
@@ -300,15 +300,13 @@ There are some optional information that AgoràLocalAppHandler modules can send 
     
         \item the 1st version ("\textit{transformations by functions}"), that uses parameter values transformations, with associated word \textit{sparkGenLinRegrTransforms};
         
-        \item the 2nd version ("\textit{polynomial expansion of second order}"), that uses parameter polynomial expansion of second order, with associated word \textit{sparkGenLinRegr2ndPolyExp}
+        \item the 2nd version ("\textit{polynomial expansion of second order}"), that uses parameter polynomial expansion of second order, with associated word \textit{sparkGenLinRegr2ndPolyExp}.
     
     \end{enumerate}
     
     e.g. payload: "RSM sparkGenLinRegr2ndPolyExp"
     
-    \item parameter value transformations for the 1st implemented version of Apache Spark\textsuperscript{TM} Generalized Linear Regression RSM: the keyword is \textit{paramsTransforms}, followed by the involved metric name and the terms that indicate the kind of parameter transformations, the family distribution and the link function.
-    
-    Transformations must follow the same order of parameter information dispatch; they can be:
+    \item parameter value transformations for the 1st implemented version of Apache Spark\textsuperscript{TM} Generalized Linear Regression RSM: the keyword is \textit{paramsTransforms}, followed by the involved metric name and the terms that indicate the kind of parameter transformations, the family distribution and the link function. Transformations must follow the same order of parameter information dispatch; they can be:
     
     \begin{enumerate}
     
@@ -322,9 +320,7 @@ There are some optional information that AgoràLocalAppHandler modules can send 
     
     \end{enumerate}
     
-    Agorà focuses on the prediction of continuous functions with normal distribution: corresponding family is the Gaussian one, indicated with word \textit{gaussian}.
-    
-    For Gaussian family, link function can be:
+    Agorà focuses on the prediction of continuous functions with normal distribution: corresponding family is the Gaussian one, indicated with word \textit{gaussian}. For Gaussian family, link function can be:
     
     \begin{enumerate}
     

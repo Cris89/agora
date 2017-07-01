@@ -1,10 +1,10 @@
 \chapter{Experimental results}\label{exps}
 
-\lettrine{I}{n} order to demonstrate Agorà validity, we do some tests on various applications and scenarios. Firstly, we present the structure of programs we use to do experiments; after that, we show test types and corresponding results.
+\lettrine{T}{}\textit{o} evaluate the benefits and drawbacks of the Agora framework, we carried out a set of experiments on various applications and scenarios. First, we present the structure of the applications used for the experiments; then, we show the experimental results.
 
 \section{Experimental setup}\label{expSetup}
 
-We test Agorà in three different scenarios: two versions of a synthetic application and a real one. This work has been coupled with mARGOt autotuner (\cite{gadioli2015application}); from now on, we use the concept of Operating Point (OP) concerning application configurations in terms of parameter values and associated performance (observed metric of interest values).
+We evaluate Agorà in three different scenarios: two versions of a synthetic application and a real one. This work has been coupled with mARGOt autotuner (\cite{gadioli2015application}). We use the concept of Operating Point (OP) concerning application configurations in terms of parameter values and associated performance (observed metric of interest values).
 
 Synthetic application has three parameters: $param_1$, $param_2$ and $param_3$; a function of these three variables calculates the amount of milliseconds of an execution cycle ($executionTime$ variable), while another function sets up an error measure; this last variable is considered as metric, together with application throughput as number of jobs per second (so, approximately equal to $\dfrac{1000}{executionTime}$).
 
@@ -16,7 +16,7 @@ avg\_error = \dfrac{\sum_{s \in pricedSwaptions} \left\vert StandDevRef(s) - Sta
 
 where $StandDevRef(s)$ is the reference standard deviation for swaption $s$, $StandDev(s)$ is the evaluated one and $pricedSwaptions$ represents the set of swaptions that are priced at each computing cycle; so, metric $avg\_error$ stands for the average of differences between standard deviation of priced swaptions using evaluated configuration with respect to the reference one (standard deviation for 1.000.000 trials).
 
-Concerning used machine, we test Agorà on a Dell XPS 15 9550 with 4 core / 8 threads Intel(R) Core(TM) i7-6700HQ CPU @ 2.60 processor.
+Concerning used machine, we run Agorà on a Dell XPS 15 9550 with 4 core / 8 threads Intel(R) Core(TM) i7-6700HQ CPU @ 2.60 processor.
 
 
 \subsection{Synthetic application version 1}
