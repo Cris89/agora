@@ -11,7 +11,7 @@
     
 \end{figure}
 
-Very often, High Performance Computing applications expose a large set of parameters, making related Design Space huge and, consequently, unrealistic to explore it in an exhaustive way. In order to choose, from time to time, best program setting with the aim to improve energy efficiency with respect to power consumption and current input data, the concept of runtime autotuning is used: a class of online autotuners is able to choose, from time to time, best possible parameter values that fulfill application goals and requirements, starting from a design-time knowledge that gives information about parameter values and corresponding metric of interest values, built off-line. Figure \ref{fig::appAut} shows application Z interconnected with mARGOt \cite{gadioli2015application}, a dynamic autotuner developed by PoliMi research group.
+Very often, High Performance Computing applications expose a large set of parameters, making related Design Space huge and, consequently, unrealistic to explore it in an exhaustive way. In order to choose, from time to time, best program setting with the aim to improve energy efficiency with respect to power consumption and current input data, the concept of Runtime Autotuning is used: a class of online autotuners is able to choose, from time to time, best possible parameter values that fulfill application goals and requirements, starting from a design-time knowledge that gives information about parameter values and corresponding metric of interest values, built off-line. Figure \ref{fig::appAut} shows application Z interconnected with mARGOt \cite{gadioli2015application}, a dynamic autotuner developed by PoliMi research group.
 
 \begin{figure}[H]
 
@@ -43,7 +43,7 @@ The typical architecture in which Agora works is parallel, where there are multi
     
     \item to manage multiple kinds of applications, each of them separately organized by a dedicated Agora module that is in charge of all nodes that execute the same program;
     
-    \item the out-of-band activity from parallel architecture data streams: computation of Design of Experiments configurations, collection of associated metric of interest values and complete model prediction are done in a separate node with respect to the ones that run applications inside the architecture, while the exchange of information is done using the lightweight MQTT protocol (discussed in chapter \ref{mqtt});
+    \item the out-of-band activity from parallel architecture data streams: computation of Design of Experiments configurations, collection of associated metric of interest values and complete model prediction are done in a separate node with respect to the ones that run applications inside the architecture, while the exchange of information is done using the lightweight MQTT protocol (discussed in Chapter \ref{mqtt});
     
     \item the persistence of generated knowledge: once application complete model is predicted, it is stored so, at any time, it can be reloaded and it is sent to new nodes that start running the same application, without repeating all the workflow through which the complete model has been previously predicted;
     

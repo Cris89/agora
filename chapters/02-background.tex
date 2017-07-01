@@ -1,6 +1,6 @@
 \chapter{Background}\label{back}
 
-\lettrine{I}{}\textit{n} this chapter, we explain the main concepts and used tools related to Agora. This work has been thought for HPC applications that run in parallel architectures, so we start clarifying what are these target systems and how they are built. After that, we explain the concepts of Design Space Exploration and Design of Experiments, that represents the kernel of this work, together with the idea of application dynamic online autotuning. Finally, we present the tools used for communications among Agora components and for application complete model prediction, highlighting their principal characteristics and features: the Message Queue Telemetry Transport (MQTT) messaging protocol and the Generalized Linear Regression interface by Apache Spark\textsuperscript{TM} Machine Learning MLlib library.
+\lettrine{I}{}\textit{n} this Chapter, we explain the main concepts and used tools related to Agora. This work has been thought for HPC applications that run in parallel architectures, so we start clarifying what are these target systems and how they are built. After that, we explain the concepts of Design Space Exploration and Design of Experiments, that represents the kernel of this work, together with the idea of application dynamic online autotuning. Finally, we present the tools used for communications among Agora components and for application complete model prediction, highlighting their principal characteristics and features: the Message Queue Telemetry Transport (MQTT) messaging protocol and the Generalized Linear Regression interface by Apache Spark\textsuperscript{TM} Machine Learning MLlib library.
 
 \section{Target architecture}
 
@@ -151,9 +151,9 @@ Taking \cite{natrella2013nist} as reference, among various DoE techniques that g
 
 
 
-\section{Dynamic autotuning}
+\section{Dynamic Autotuning}
 
-When applications expose some configurable parameters (a.k.a. \textit{dynamic knobs}), the concept of dynamic autotuning is defined as the capability to find the best set of knob values, in an automatic and systematic way, that satisfies application goals and requirements at runtime, properly reacting to possible objective function change. For instance, a web video streaming application would be able to manage video quality according to the overload of its servers. In some situations, it could set up itself for the best possible resolution. Sometimes, it should reduce the quality in order to make still available its services to all connected clients.
+When applications expose some configurable parameters (a.k.a. \textit{dynamic knobs}), the concept of Dynamic Autotuning is defined as the capability to find the best set of knob values, in an automatic and systematic way, that satisfies application goals and requirements at runtime, properly reacting to possible objective function change. For instance, a web video streaming application would be able to manage video quality according to the overload of its servers. In some situations, it could set up itself for the best possible resolution. Sometimes, it should reduce the quality in order to make still available its services to all connected clients.
 
 IBM research studies on \textit{Autonomic Computing} (\cite{kephart2003vision}, \cite{computing2006architectural}) made a breakthrough on the concept of self-adapting systems that are able to manage themselves and to dynamically optimize their execution configuration at runtime; \textit{Autonomic Computing} is based of the MAPE-K control loop, showed in Figure \ref{fig::mape-k}.
 
@@ -203,7 +203,7 @@ MQTT uses a client server publish\slash{}subscribe pattern. A client has the pos
 
 \end{figure}
 
-Topics are used by the broker to filter messages and to manage them in a correct way; they are made up of one or more levels, separated by a forward slash, as shown in figure \ref{fig::topic}:
+Topics are used by the broker to filter messages and to manage them in a correct way; they are made up of one or more levels, separated by a forward slash, as shown in Figure \ref{fig::topic}:
 
 \begin{figure}[H]
 
@@ -273,18 +273,18 @@ Taking \cite{site:caltechML2012} as reference, Linear Regression tries to model 
     y_i = \beta_0\boldsymbol{1} + \beta_1x_{i1} + \beta_2x_{i2} + ... +  \beta_px_{ip} + \epsilon_i, \quad i = 1, 2, ... n
 \end{equation}
 
-$y_i$ is the \textit{response variable};
+$y_i$ is the \textit{response variable} or \textit{regressand};
 
-$x_{i1}, x_{i2}, ..., x_{ip}$ are called \textit{independent variables};
+$x_{i1}, x_{i2}, ..., x_{ip}$ are called \textit{independent variables} or \textit{regressors};
 
 $\beta_0, \beta_1, ..., \beta_p$ are the \textit{regression coefficients}, whose values establish the relationship among regressand and regressors; $\beta_0$ is also called \textit{intercept}. Linear regression mainly focuses on the estimation of these parameters;
 
 $\epsilon_i$ is called the \textit{error term}. It represents all other factors that influence $y_i$ other than the independent variables.
 
-Linear Regression assumes that the response variable follows a Gaussian distribution. Generalized Linear Regression (GLR) gives the possibility to specify other distributions taken from the exponential family. It is useful for several kinds of prediction problems, including Linear Regression, Poisson Regression (for count data) and Logistic Regression (for binary data). Moreover, GLR gives the possibility to specify the link function \textit{g} that relates the mean of response variable to the independent variables. In case of Gaussian distribution for Linear Regression, the link function can be equal to \textit{Identity}, \textit{Log} and \textit{Inverse}, with explicit meaning.
+Linear Regression assumes that the response variable follows a Gaussian distribution. Generalized Linear Regression (GLR) gives the possibility to specify other distributions taken from the exponential family. It is useful for several kinds of prediction problems, including Linear Regression, Poisson Regression (for count data) and Logistic Regression (for binary data). Moreover, GLR gives the possibility to specify the link function \textit{g} that relates the mean of regressand to the independent variables. In case of Gaussian distribution for Linear Regression, the link function can be equal to \textit{Identity}, \textit{Log} and \textit{Inverse}, with explicit meaning.
 
 
-\subsection{Independent variable transformations}\label{regrTransforms}
+\subsection{Regressor transformations}\label{regrTransforms}
 
 In order to use Linear Regression even if the relationship among response variable and independent variables is not linear, there is the necessity to modify input variables. Agora implements two possible independent variable transformations:
 
@@ -292,7 +292,7 @@ In order to use Linear Regression even if the relationship among response variab
 
     \item it transforms parameter values with inverse, square root and natural logarithmic functions. In union with the unaltered predictor variables, it tries to find the best model combining these transformations and available link functions. We refer to this strategy as \textit{"transformations by functions"};
     
-    \item it transforms parameter values through polynomial expansion of second order: their cross-products and square values are added to the set of regressors, evaluating the best model with available link functions. We refer to this strategy as \textit{"polynomial expansion of second order"}.
+    \item it transforms parameter values through polynomial combinations of degree 2: their cross-products and square values are added to the set of regressors, evaluating the best model with available link functions. We refer to this strategy as \textit{"polynomial combinations of degree 2"}.
 
 \end{enumerate}
 

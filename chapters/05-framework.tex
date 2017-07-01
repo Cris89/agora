@@ -17,7 +17,7 @@ where $StandDevRef(s)$ is the reference standard deviation for swaption $s$, $St
 
 Agora has been interconnected to mARGOt autotuner (\cite{gadioli2015application}), that exploits design-time knowledge to dynamically adapt application behavior during execution; mARGOt represents this information as a list of Operating Points (OPs): an OP is made by a set of parameter values, also called software knobs, in union with the associated performance (metric of interest values), profiled at design-time; Agora improvement is to build application knowledge at runtime, with an online distributed Design Space Exploration phase in which a subset of OPs are collected, in order to predict the complete model, made by the entire Operating Point list.
 
-Agora could work in union with other autotuners that, using application knowledge in terms of configurations and associated performances, have the capability to dynamically adapt application behavior during execution.
+Agora could work in union with other autotuners that, using application knowledge in terms of configurations and associated performance, have the capability to dynamically adapt application behavior during execution.
 
 
 
@@ -194,7 +194,7 @@ The AgoraRemoteAppHandler module has computed DoE configurations, so it is drivi
     
 \end{figure}
 
-As shown in figure \ref{fig:conf}, AgoraLocalAppHandler receives a configuration with $num\_threads = 1$ and $num\_trials = 100.000$; next computation is going to be done with these parameter values.
+As shown in Figure \ref{fig:conf}, AgoraLocalAppHandler receives a configuration with $num\_threads = 1$ and $num\_trials = 100.000$; next computation is going to be done with these parameter values.
 
 
 \subsubsection{AgoraRemoteAppHandler internal state equal to \textit{building\-The\-Model}}\label{DoEModelSend}
@@ -210,7 +210,7 @@ AgoraRemoteAppHandler has gathered all needed OPs related to DoE configurations 
     
 \end{figure}
 
-Taking figure \ref{fig:doe_model} as reference, the first sent OP has parameters\linebreak $num\_threads = 1$ and $num\_trials = 100.000$, with metrics $avg\_error = 217,3312$ and $avg\_throughput = 6,737362$; the AgoraLocalAppHandler module sets up mARGOt autotuner with this OP list, so the application is executed with the best Operating Point that fulfills current goals and requirements.
+Taking Figure \ref{fig:doe_model} as reference, the first sent OP has parameters\linebreak $num\_threads = 1$ and $num\_trials = 100.000$, with metrics $avg\_error = 217,3312$ and $avg\_throughput = 6,737362$; the AgoraLocalAppHandler module sets up mARGOt autotuner with this OP list, so the application is executed with the best Operating Point that fulfills current goals and requirements.
 
 
 \subsubsection{AgoraRemoteAppHandler internal state equal to \textit{autotuning}}\label{modelSend}
@@ -288,7 +288,7 @@ There are some optional information that AgoraLocalAppHandler modules can send t
     
     \end{enumerate}
     
-    We refer to chapter \ref{doe} for Design of Experiments detailed information.
+    We refer to Chapter \ref{doe} for Design of Experiments detailed information.
     
     e.g. payload: "DoE fcccdExtra"
     
@@ -300,11 +300,11 @@ There are some optional information that AgoraLocalAppHandler modules can send t
     
         \item the 1st version ("\textit{transformations by functions}"), that uses parameter values transformations, with associated word \textit{sparkGenLinRegrTransforms};
         
-        \item the 2nd version ("\textit{polynomial expansion of second order}"), that uses parameter polynomial expansion of second order, with associated word \textit{sparkGenLinRegr2ndPolyExp}.
+        \item the 2nd version ("\textit{polynomial combinations of degree 2}"), that uses parameter polynomial combinations of degree 2, with associated word \textit{sparkGenLinRegrPolyComb2}.
     
     \end{enumerate}
     
-    e.g. payload: "RSM sparkGenLinRegr2ndPolyExp"
+    e.g. payload: "RSM sparkGenLinRegrPolyComb2"
     
     \item parameter value transformations for the 1st implemented version of Apache Spark\textsuperscript{TM} Generalized Linear Regression RSM: the keyword is \textit{paramsTransforms}, followed by the involved metric name and the terms that indicate the kind of parameter transformations, the family distribution and the link function. Transformations must follow the same order of parameter information dispatch; they can be:
     
@@ -332,7 +332,7 @@ There are some optional information that AgoraLocalAppHandler modules can send t
     
     \end{enumerate}
     
-    If this kind of information is available, it must exist for each metric of interest. We refer to chapter \ref{glr} for more detailed information about family and link function.
+    If this kind of information is available, it must exist for each metric of interest. We refer to Chapter \ref{glr} for more detailed information about family and link function.
     
     e.g. payload: "paramsTransforms avg\_error id sqrt gaussian log"
     
@@ -344,7 +344,7 @@ There are some optional information that AgoraLocalAppHandler modules can send t
 
 \end{enumerate}
 
-If not specified, default Design of Experiments type is Face Centered Central Composite DoE with one Center Point, default number of repetitions for each OP is 1, default number of program features is 0 and default RSM technique is the \textit{"polynomial expansion of second order"} version of the Apache Spark\textsuperscript{TM} Generalized Linear Regression. If the chosen RSM technique is the \textit{"transformations by functions"} GLR version but there is no information about parameter value transformations, Agora tries every possible combination in union with all possible link functions, choosing the best result according to Akaike Information Criterion measure and the mean of the sum of coefficient standard errors (see \ref{regrTransforms}).
+If not specified, default Design of Experiments type is Face Centered Central Composite DoE with one Center Point, default number of repetitions for each OP is 1, default number of program features is 0 and default RSM technique is the \textit{"polynomial combinations of degree 2"} version of the Apache Spark\textsuperscript{TM} Generalized Linear Regression. If the chosen RSM technique is the \textit{"transformations by functions"} GLR version but there is no information about parameter value transformations, Agora tries every possible combination in union with all possible link functions, choosing the best result according to Akaike Information Criterion measure and the mean of the sum of coefficient standard errors (see \ref{regrTransforms}).
 
 All information is sent by AgoraLocalAppHandler modules on topic "agora\slash{}\textit{[appName]}\slash{}info\slash{}\textit{[hostname]\_[PID]}"; a final publication with message "done" specifies to the AgoraRemoteAppHandler that application information is finished:
 
@@ -357,7 +357,7 @@ All information is sent by AgoraLocalAppHandler modules on topic "agora\slash{}\
     
 \end{figure}
 
-Taking figure \ref{fig:info_send} as reference, the AgoraRemoteAppHandler pulls out, from topic, \textit{crisXPS15\_1897} and it saves this identifier as the AgoraLocalAppHandler that is sending program information; as we can see, \textit{Swaptions} application focuses on two metrics, $avg\_error$ and $avg\_throughput$; it has two parameters, $num\_threads$ and $num\_trials$; the former is sent with the complete list of values, while the latter is sent with the keyword \textit{range}, specifying its minimum value ($100.000$), its maximum one ($1.000.000$) and the step ($100.000$): the Agora\-Remote\-App\-Handler computes all values, that are therefore $100.000$, $200.000$, $300.000$, ..., $1.000.000$; the Design of Experiments that has to be used is the Face Centered DoE with one Center Point and the RSM technique is the 1st version of the Apache Spark\textsuperscript{TM} Generalized Linear Regression; parameter transformations are also specified so, e.g. for metric $avg\_error$, the first parameter ($num\_threads$) will not be transformed, while the second parameter ($num\_trials$) has to be transformed with the square root function, applying \textit{gaussian} as family distribution and \textit{log} as link function; it can be noticed that there is no information about the number of Operating Point repetitions to collect during DSE phase: in this case, default value is used (1 repetition for each OP); finally, there is no payload with keyword \textit{numFeats} either: \textit{Swaptions} does not have features.
+Taking Figure \ref{fig:info_send} as reference, the AgoraRemoteAppHandler pulls out, from topic, \textit{crisXPS15\_1897} and it saves this identifier as the AgoraLocalAppHandler that is sending program information; as we can see, \textit{Swaptions} application focuses on two metrics, $avg\_error$ and $avg\_throughput$; it has two parameters, $num\_threads$ and $num\_trials$; the former is sent with the complete list of values, while the latter is sent with the keyword \textit{range}, specifying its minimum value ($100.000$), its maximum one ($1.000.000$) and the step ($100.000$): the Agora\-Remote\-App\-Handler computes all values, that are therefore $100.000$, $200.000$, $300.000$, ..., $1.000.000$; the Design of Experiments that has to be used is the Face Centered DoE with one Center Point and the RSM technique is the 1st version of the Apache Spark\textsuperscript{TM} Generalized Linear Regression; parameter transformations are also specified so, e.g. for metric $avg\_error$, the first parameter ($num\_threads$) will not be transformed, while the second parameter ($num\_trials$) has to be transformed with the square root function, applying \textit{gaussian} as family distribution and \textit{log} as link function; it can be noticed that there is no information about the number of Operating Point repetitions to collect during DSE phase: in this case, default value is used (1 repetition for each OP); finally, there is no payload with keyword \textit{numFeats} either: \textit{Swaptions} does not have features.
 
 The AgoraRemoteAppHandler module is now ready to compute Design of Experiments configurations; after that, it can start distributing them to nodes, driving the subsequent Design Space Exploration phase.
 
