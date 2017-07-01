@@ -1,12 +1,12 @@
 \chapter{Background}\label{back}
 
-\lettrine{I}{n} this chapter we explain main concepts and used tools, related to Agorà; as it has been revealed in previous chapter, this work has been thought for HPC applications that run in parallel architectures, so we start clarifying what are these target systems and how they are built; after that, we explain the concepts of Design Space Exploration and Design of Experiments, that represents the kernel of this work, in union with the idea of application dynamic online autotuning; finally, we present used tools for various communications among Agorà components and for application complete model prediction, highlighting their principal characteristics and features: the Message Queue Telemetry Transport (MQTT) messaging protocol and the Generalized Linear Regression interface by Apache Spark\textsuperscript{TM} Machine Learning MLlib library.
+\lettrine{I}{}\textit{n} this chapter, we explain the main concepts and used tools related to Agorà. This work has been thought for HPC applications that run in parallel architectures, so we start clarifying what are these target systems and how they are built. After that, we explain the concepts of Design Space Exploration and Design of Experiments, that represents the kernel of this work, together with the idea of application dynamic online autotuning. Finally, we present the tools used for communications among Agorà components and for application complete model prediction, highlighting their principal characteristics and features: the Message Queue Telemetry Transport (MQTT) messaging protocol and the Generalized Linear Regression interface by Apache Spark\textsuperscript{TM} Machine Learning MLlib library.
 
 \section{Target architecture}
 
 High Performance Computing applications have complex and massive tasks to do, so they need huge computing power in order to accomplish their objectives.
 
-Parallel computing (\cite{barney2012introduction}) simultaneously uses multiple re\-sourc\-es in order to solve a computational problem, taking advantage of concurrency, that is the possibility to execute, at the same time, those parts that are independent each other; in figure \ref{fig::pC::serial} we can see an example of serial computation, with a single processor that executes problem instructions sequentially, one after another; figure \ref{fig::pC::parallel} instead represents a possible parallel computation, where problem is split in four parts that can be executed concurrently on different processors:
+Parallel computing (\cite{barney2012introduction}) simultaneously uses multiple re\-sourc\-es in order to solve a computational problem, taking advantage of concurrency, that is the possibility to execute, at the same time, those parts that are independent each other. In figure \ref{fig::pC::serial} we can see an example of serial computation, with a single processor that executes problem instructions sequentially, one after another. Figure \ref{fig::pC::parallel} instead represents a possible parallel computation, where problem is split in four parts that can be executed concurrently on different processors:
 
 \begin{figure}[H]
 
@@ -36,49 +36,13 @@ Inside a parallel architecture there can be heterogeneous nodes, with different 
 
 \begin{enumerate}
 
-    \item \textit{Single Instruction, Single Data (SISD)}: this is the original kind of computer, in which there is only one instruction stream that is managed by the Central Processing Unit (CPU) during clock cycles; this is serial, so non-parallel, computing. Figure \ref{fig::sisd} shows a SISD execution example, in which every instruction is executed after the previous one:
+    \item \textit{Single Instruction, Single Data (SISD)}: this is the original kind of computer, in which there is only one instruction stream that is managed by the Central Processing Unit (CPU) during clock cycles; this is serial, so non-parallel, computing;
     
-    \begin{figure}[H]
-
-        \centering
-        \includegraphics[width = 0.3\textwidth]{sisd}
-        \caption{Instruction execution in a SISD architecture example}
-        \label{fig::sisd}
+    \item \textit{Single Instruction, Multiple Data (SIMD)}: at any clock cycle, there is one instruction that is executed, but processing units can operate on different data elements of instruction;
     
-    \end{figure}
+    \item \textit{Multiple Instruction, Single Data (MISD)}: a single data stream is managed by multiple processing units, that can independently operate on data through separate instruction streams;
     
-    \item \textit{Single Instruction, Multiple Data (SIMD)}: at any clock cycle, there is one instruction that is executed, but processing units can operate on different data elements of instruction; in figure \ref{fig::simd} a classical SIMD execution is shown, where vector \textit{A} and \textit{B} data are used to simultaneously modify vector \textit{C}:
-    
-    \begin{figure}[H]
-
-        \centering
-        \includegraphics[width = 0.8\textwidth]{simd}
-        \caption{Instruction execution in a SIMD architecture example}
-        \label{fig::simd}
-    
-    \end{figure}
-    
-    \item \textit{Multiple Instruction, Single Data (MISD)}: a single data stream is managed by multiple processing units, that can independently operate on data through separate instruction streams; figure \ref{fig::misd} shows a MISD execution, where \textit{A(1)} is simultaneously used to compute different tasks:
-    
-    \begin{figure}[H]
-
-        \centering
-        \includegraphics[width = 0.8\textwidth]{misd}
-        \caption{Instruction execution in a MISD architecture example}
-        \label{fig::misd}
-    
-    \end{figure}
-    
-    \item \textit{Multiple Instruction, Multiple Data (MIMD)}: every processing unit can execute different data and instruction streams; in figure \ref{fig::mimd}, processors concurrently elaborate different tasks that involve different elements:
-    
-    \begin{figure}[H]
-
-        \centering
-        \includegraphics[width = 0.8\textwidth]{mimd}
-        \caption{Instruction execution in a MIMD architecture example}
-        \label{fig::mimd}
-    
-    \end{figure}
+    \item \textit{Multiple Instruction, Multiple Data (MIMD)}: every processing unit can execute different data and instruction streams;
 
 \end{enumerate}
 
@@ -90,15 +54,15 @@ Nowadays, among introduced alternatives, MIMD architectures are the most used in
 
 \section{Design Space Exploration}
 
-In many engineering problems there are several objectives that have to be obtained, with the presence of certain constraints and with the possibility to manage some customizable parameters; objectives can involve various metrics of interest, for instance connected to application throughput, system consumed power or overall cost.
+In many engineering problems there are several objectives that have to be obtained, given certain constraints and with the possibility to manage some customizable parameters. Objectives can involve various metrics of interest, for instance connected to application throughput, system consumed power or overall cost.
 
-Design Space Exploration (DSE) analyzes, in a systematic way, the space of possible parameter combinations that constitute application Design Space, with the objective to find the best design point that fulfills problem goals and requirements.
+Automatic Design Space Exploration (DSE) analyzes, in a systematic way, the space of possible parameter combinations that constitute application Design Space, with the objective to find the best design point that fulfills problem goals and requirements.
 
-HPC applications have almost always a lot of parameters and related set of values, making the list of program configurations very long; in these cases, corresponding Design Space literally explodes, making impossible to analyze it in an exhaustive way.
+HPC applications have almost always a lot of parameters and related set of values, making the list of program configurations very long. In these cases, the corresponding Design Space literally explodes, making impossible to analyze it in an exhaustive way.
 
 \subsection{Multi-Objective Optimization (MOO) problem}
 
-When there is more than one objective function that has to be accomplished, DSE consists of a Multi-Objective Optimization (MOO) problem; taking \cite{caramia2008multi} as reference, in mathematical terms a MOO problem can be defined as:
+When there is more than one objective function, DSE consists of a Multi-Objective Optimization (MOO) problem. Taking \cite{caramia2008multi} as reference, in mathematical terms a MOO problem can be defined as:
 
 \begin{equation}
         min( f_1(x), f_2(x), ..., f_k(x) ), \quad k \ge 2 \qquad s.t. \quad x \in X
@@ -106,9 +70,9 @@ When there is more than one objective function that has to be accomplished, DSE 
 
 where $k$ denotes the number of objective functions and $X$ represents the feasible region, defined by some constraints functions (for instance, in an embedded architecture, the total area should not exceed a predetermined value). If some of the objective functions have to be maximized, they can be attributed to minimizing its negation.
 
-Multi-Objective Optimization problem has a lot of analogies into a wide variety of situations and domains, even the most common ones: formerly the ancients, given a set of seeds and a plot of land, had to choose what, how and how much farm, in order to maximize harvest profit and to minimize required effort, simultaneously not exceeding a cost limit; airline companies want to augment the number of passengers on their airplanes, to increase safety, to enlarge autonomy of their vehicles by means of various technical, strategic and commercial choices; an undergraduate student would minimize his/her university career duration and maximize his/her exam average, with a predetermined time limit and with the possibility to choose some coursers than others.
+Multi-Objective Optimization problem has a lot of analogies into a wide variety of situations and domains, even the most common ones. Formerly the ancients, given a set of seeds and a plot of land, had to choose what, how and how much farm, in order to maximize harvest profit and to minimize required effort, simultaneously not exceeding a cost limit. Airline companies want to augment the number of passengers on their airplanes, to increase safety, to enlarge autonomy of their vehicles by means of various technical, strategic and commercial choices. An undergraduate student would minimize his/her university career duration and maximize his/her exam average, with a predetermined time limit and with the possibility to choose some coursers than others.
 
-As it can be understood, since some objectives are in contrast with other objectives, a unique solution does not exist; for instance, in a microcontroller, an objective focused on performance would definitely confront against a goal related to power consumption: best solution for one of them would be the worst for the other and conversely. Therefore, the aim of Design Space Exploration is almost always to search for a meeting point, between all goals and requirements, that fulfills overall problem.
+Since some objectives are in contrast with other objectives, a unique solution does not exist. For instance, in a microcontroller, an objective focused on performance would definitely confront against a goal related to power consumption: best solution for one of them would be the worst for the other and conversely. Therefore, the aim of Design Space Exploration is almost always to search for a trade off, among goals and requirements, that fulfills overall problem.
 
 Since the concept of unique optimal solution can't be applied, it is useful to introduce the notion of Pareto optimality; pareto optimal solutions are, essentially, those ones that can't be improved without degrading at least one objective function. So, a solution \textit{x\textsuperscript{1}} is said to \textit{(Pareto) dominate} a solution \textit{x\textsuperscript{2}} if:
 
@@ -127,13 +91,13 @@ The set of Pareto optimal solutions is often called Pareto front, Pareto frontie
 
 \section{Design of Experiments}\label{doe}
 
-When a Design Space of an application is huge and, consequently, there is no possibility to do an exhaustive analysis of all possible configurations, there is the need to take a subset of points of interest that represent as closely as possible system behavior. Therefore, on one hand there is the quality of representation, that should be reliable enough; on the other, the number of simulations to do, that should be small.
+When a Design Space of an application is huge and, consequently, there is no possibility to do an exhaustive analysis of all possible configurations, there is the need to take a subset of points of interest that represent as closely as possible system behavior. Therefore, on one hand there is the quality of representation, that should be reliable enough; on the other side, the number of simulations to do, that should be small.
 
 Taking \cite{natrella2013nist} as reference, among various DoE techniques that generate initial set of design points to be analyzed, we can mention:
 
 \begin{itemize}
 
-    \item \textit{Full-Factorial DoE}: it is made by all possible combinations among parameter values, so all possible application configurations are picked up;
+    \item \textit{Full-Factorial DoE}: it is given by all possible combinations among parameter values, so all possible application configurations are picked up;
  
     \item \textit{2-Level Full-Factorial DoE}: suitable for designs with two or more parameters, this DoE picks up all possible combinations among the extreme values of all parameters.
     
@@ -173,13 +137,13 @@ Taking \cite{natrella2013nist} as reference, among various DoE techniques that g
     
     \{ $\langle$ 2, 4, 8K $\rangle$, $\langle$ 32, 4, 8K $\rangle$, $\langle$ 8, 1, 8K $\rangle$, $\langle$ 8, 8, 8K $\rangle$, $\langle$ 8, 4, 2K $\rangle$, \hbox{$\langle$ 8, 4, 32K $\rangle$} \};
     
-    \item \textit{Plackett-Burman DoE}: it might be useful to analyze, more eonomically, a larger number of parameters; in fact, this DoE reduces the number of potential factors, constructing very economical designs with number of points multiple of 4 (rather than power of 2, as in the 2-Level Full-Factorial DoE).
+    \item \textit{Plackett-Burman DoE}: it might be useful to analyze, more eonomically, a larger number of parameters. This DoE reduces the number of potential factors, constructing very economical designs with number of points multiple of 4 (rather than power of 2, as in the 2-Level Full-Factorial DoE).
     
     Concerning the example above, in this case final design point list would be: $\langle$ \#processors, \#threads, cache size $\rangle$ $\in$
     
     \{ $\langle$ 2, 1, 32K $\rangle$, $\langle$ 32, 1, 2K $\rangle$, $\langle$ 2, 8, 2K $\rangle$, $\langle$ 32, 8, 32K $\rangle$ \};
     
-    \item \textit{Latin-Hypercube DoE}: this DoE randomly chooses parameter values for each design point; the number of final configurations can be set up in advance.
+    \item \textit{Latin-Hypercube DoE}: this DoE randomly chooses parameter values for each design point. The number of final configurations can be set up in advance.
 
 \end{itemize}
 
@@ -189,9 +153,9 @@ Taking \cite{natrella2013nist} as reference, among various DoE techniques that g
 
 \section{Dynamic autotuning}
 
-When applications expose some configurable parameters (a.k.a. \textit{dynamic knobs}), the concept of dynamic autotuning is defined as the ability to find the best set of knob values, in an automatic and systematic way, that satisfies application goals and requirements at runtime, properly reacting to possible objective function change. For instance, a web video streaming application would be able to manage video quality according to the overload of its servers: in some situations, it could set up itself for the best possible resolution; sometimes, it should reduce quality in order to make still available its services to all connected clients.
+When applications expose some configurable parameters (a.k.a. \textit{dynamic knobs}), the concept of dynamic autotuning is defined as the capability to find the best set of knob values, in an automatic and systematic way, that satisfies application goals and requirements at runtime, properly reacting to possible objective function change. For instance, a web video streaming application would be able to manage video quality according to the overload of its servers. In some situations, it could set up itself for the best possible resolution. Sometimes, it should reduce the quality in order to make still available its services to all connected clients.
 
-IBM research studies on \textit{Autonomic Computing} (\cite{kephart2003vision}, \cite{computing2006architectural}) made a breakthrough on the concept of self-adapting systems that are able to manage themselves and to dynamically optimize their execution configuration at runtime; \textit{Autonomic Computing} is based of the MAPE-K control loop, showed in figure \ref{fig::mape-k}:
+IBM research studies on \textit{Autonomic Computing} (\cite{kephart2003vision}, \cite{computing2006architectural}) made a breakthrough on the concept of self-adapting systems that are able to manage themselves and to dynamically optimize their execution configuration at runtime; \textit{Autonomic Computing} is based of the MAPE-K control loop, showed in Figure \ref{fig::mape-k}.
 
 \begin{figure}[H]
 
@@ -216,7 +180,7 @@ In this control loop we can identify four principal functions:
 
 \end{itemize}
 
-Finally, \textit{Knowledge} source is composed by all data that is used by the four functions; it includes information such as, for instance, topology structure, historical logs, metrics and policies.
+Finally, \textit{Knowledge} source is composed of all data that is used by the four functions; it includes information such as, for instance, topology structure, historical logs, metrics and policies.
 
 Online autotuning, therefore, entrusts system management from people to technology, achieving self-configuration and self-op\-ti\-mi\-za\-tion objectives; application requirements may change during execution and the overall system is able to properly react and to re-adapt itself.
 
@@ -226,9 +190,9 @@ Online autotuning, therefore, entrusts system management from people to technolo
 
 \section{MQTT messaging protocol}\label{mqtt}
 
-MQTT (Message Queue Telemetry Transport, \cite{banks2014mqtt}) is a light\-weight messaging protocol that gives the possibility to establish remote communications among subjects. Its main characteristics are the minimization of network bandwidth and devices requirements; this features make MQTT ideal for machine-to-machine (M2M) or Internet of Things (IoT) world of connected devices, but in general this protocol have a large use in different projects: for instance, famous Facebook Messenger is built on top of it (\cite{zhang2011building}).
+MQTT (Message Queue Telemetry Transport, \cite{banks2014mqtt}) is a light\-weight messaging protocol that gives the possibility to establish remote communications among subjects. Its main characteristics are the minimization of network bandwidth and devices requirements. This features make MQTT ideal for machine-to-machine (M2M) or Internet of Things (IoT) world of connected devices, but in general this protocol have a large use in different projects: for instance, famous Facebook Messenger is built on top of it (\cite{zhang2011building}).
 
-MQTT uses a client server publish\slash{}subscribe pattern: a client has the possibility to subscribe to topics and to publish messages on them (both topics and messages are strings); another component, called \textit{broker} server, deals with the dispatch of messages to only clients that have subscribed to corresponding topic; so, publishers (clients that sends messages) and subscribers (clients that receive messages) don't know about the existence of one another: the broker, which is known by every client, distribute messages accordingly. Figure \ref{fig::mqtt_example} shows a possible MQTT scenario with a sensor and two devices:
+MQTT uses a client server publish\slash{}subscribe pattern. A client has the possibility to subscribe to topics and to publish messages on them (both topics and messages are strings). Another component, called \textit{broker} server, deals with the dispatch of messages to only clients that have subscribed to corresponding topic. Therefore, publishers (clients that sends messages) and subscribers (clients that receive messages) don't know about the existence of one another: the broker, which is known by every client, distribute messages accordingly. Figure \ref{fig::mqtt_example} shows a possible MQTT scenario with a sensor and two devices.
 
 \begin{figure}[H]
 
@@ -263,7 +227,7 @@ Single-level wildcard substitutes an arbitrary level in a topic, so all topics t
 
 \end{figure}
 
-For instance, \textit{myhome\slash{}groundfloor\slash{}kitchen\slash{}temperature} and \textit{myhome\slash{}groundfloor\slash{}livingroom\slash{}temperature} match topic in figure \ref{fig:mqtt_singlew}, while \textit{myhome\slash{}groundfloor\slash{}kitchen\slash{}humidity} don't.
+For instance,\\\textit{myhome\slash{}groundfloor\slash{}kitchen\slash{}temperature}\\and\\\textit{myhome\slash{}groundfloor\slash{}livingroom\slash{}temperature}\\match topic in Figure \ref{fig:mqtt_singlew}, while \textit{myhome\slash{}groundfloor\slash{}kitchen\slash{}humidity} don't.
 
 Multi-level wildcard is placed at the end of a topic and it covers an arbitrary number of topic levels:
 
@@ -276,7 +240,13 @@ Multi-level wildcard is placed at the end of a topic and it covers an arbitrary 
 
 \end{figure}
 
-In this case, for instance, \textit{myhome\slash{}groundfloor\slash{}kitchen\slash{}tem\-per\-a\-ture} and \textit{myhome\slash{}groundfloor\slash{}kitchen\slash{}humidity} match topic in figure \ref{fig:mqtt_mulw}, while \textit{myhome\slash{}firstfloor\slash{}livingroom\slash{}temperature} don't.
+In this case, for instance,\\
+\centerline{\textit{myhome\slash{}groundfloor\slash{}kitchen\slash{}tem\-per\-a\-ture}}\\
+\centerline{and}\\
+\centerline{\textit{myhome\slash{}groundfloor\slash{}kitchen\slash{}humidity}}\\
+match topic in Figure \ref{fig:mqtt_mulw}, while\\
+\centerline{\textit{myhome\slash{}firstfloor\slash{}livingroom\slash{}temperature}}\\
+don't.
 
 Another interesting MQTT feature is the Last Will and Testament (LWT): each client can specify a normal MQTT message with topic and payload. When it connects to the broker, this message is stored; if client abruptly disconnects, broker sends corresponding LWT to all subscribed clients on related topic, notifying occurred disconnection.
 
@@ -291,33 +261,33 @@ Agorà takes advantage of the Machine Learning MLlib library by Apache Spark\tex
 
 \subsection{(Generalized) Linear Regression}\label{glr}
 
-Taking \cite{site:caltechML2012} as reference, Linear Regression tries to model the relationship between a variable $y$ and one or more variables $x_1,x_2,\\...x_n,n\ge1$; more rigorously, given a set of statistical units $\{y_i,x_{i1},x_{i2},\\...,x_{ip}\}_{i = 1}^n$, in which $y_i$ is the variable that depends on the p-vector $[x_{i1}, x_{i2}, ..., x_{ip}]$, linear regression assumes that this relationship is linear:
+Taking \cite{site:caltechML2012} as reference, Linear Regression tries to model the relationship between a variable $y$ and one or more variables $x_1,x_2,\\...x_n,n\ge1$. More rigorously, given a set of statistical units $\{y_i,x_{i1},x_{i2},\\...,x_{ip}\}_{i = 1}^n$, in which $y_i$ is the variable that depends on the p-vector $[x_{i1}, x_{i2}, ..., x_{ip}]$, linear regression assumes that this relationship is linear:
 
 \begin{equation}
     y_i = \beta_0\boldsymbol{1} + \beta_1x_{i1} + \beta_2x_{i2} + ... +  \beta_px_{ip} + \epsilon_i, \quad i = 1, 2, ... n
 \end{equation}
 
-$y_i$ is the \textit{regressand}, \textit{endogenous variable}, \textit{response variable}, \textit{measured variable}, \textit{criterion variable} or \textit{dependent variable};
+$y_i$ is the \textit{response variable};
 
-$x_{i1}, x_{i2}, ..., x_{ip}$ are called \textit{regressors}, \textit{exogenous variables}, \textit{explanatory variables}, \textit{covariates}, \textit{input variables}, \textit{predictor variables} or \textit{independent variables};
+$x_{i1}, x_{i2}, ..., x_{ip}$ are called \textit{independent variables};
 
-$\beta_0, \beta_1, ..., \beta_p$ are the \textit{effects} or \textit{regression coefficients}, whose values establish the relationship among regressand and regressors; $\beta_0$ is also called \textit{intercept}; linear regression mainly focuses on the estimation of these parameters;
+$\beta_0, \beta_1, ..., \beta_p$ are the \textit{regression coefficients}, whose values establish the relationship among regressand and regressors; $\beta_0$ is also called \textit{intercept}. Linear regression mainly focuses on the estimation of these parameters;
 
-$\epsilon_i$ is called the \textit{error term}, \textit{disturbance term} or \textit{noise}. It represents all other factors that influence $y_i$ other than the predictor variables.
+$\epsilon_i$ is called the \textit{error term}. It represents all other factors that influence $y_i$ other than the independent variables.
 
-Linear Regression assumes that the response variable follows a Gaussian distribution; Generalized Linear Regression (GLR) gives the possibility to specify other distributions taken from the exponential family; it is useful for several kinds of prediction problems, including Linear Regression, Poisson Regression (for count data) and Logistic Regression (for binary data); moreover, GLR gives the possibility to specify a link function \textit{g} that relates the mean of measured variable to exogenous variables. In case of Gaussian distribution for Linear Regression, link function can be equal to \textit{Identity}, \textit{Log} and \textit{Inverse}, with explicit meaning.
+Linear Regression assumes that the response variable follows a Gaussian distribution. Generalized Linear Regression (GLR) gives the possibility to specify other distributions taken from the exponential family. It is useful for several kinds of prediction problems, including Linear Regression, Poisson Regression (for count data) and Logistic Regression (for binary data). Moreover, GLR gives the possibility to specify the link function \textit{g} that relates the mean of response variable to the independent variables. In case of Gaussian distribution for Linear Regression, the link function can be equal to \textit{Identity}, \textit{Log} and \textit{Inverse}, with explicit meaning.
 
 
-\subsection{Regressor transformations}\label{regrTransforms}
+\subsection{Independent variable transformations}\label{regrTransforms}
 
-In order to use Linear Regression even if the relationship among dependent variable and independent variables is not linear, there is the necessity to modify input variables; Agorà implements two possible regressors transformations:
+In order to use Linear Regression even if the relationship among response variable and independent variables is not linear, there is the necessity to modify input variables. Agorà implements two possible independent variable transformations:
 
 \begin{enumerate}
 
-    \item it transforms parameter values with inverse, square root and natural logarithmic functions; in union with the unaltered predictor variables, it tries to find the best model combining these transformations and available link functions; we refer to this strategy as \textit{"transformations by functions"};
+    \item it transforms parameter values with inverse, square root and natural logarithmic functions. In union with the unaltered predictor variables, it tries to find the best model combining these transformations and available link functions. We refer to this strategy as \textit{"transformations by functions"};
     
-    \item it transforms parameter values through polynomial expansion of second order: their cross-products and square values are added to the set of regressors, evaluating the best model with available link functions; we refer to this strategy as \textit{"polynomial expansion of second order"}
+    \item it transforms parameter values through polynomial expansion of second order: their cross-products and square values are added to the set of regressors, evaluating the best model with available link functions. We refer to this strategy as \textit{"polynomial expansion of second order"}.
 
 \end{enumerate}
 
-Agorà chooses the model with the smallest Akaike Information Criterion (AIC) value, that is a measure of the quality, in terms of lost information, of statistical models for a given set of data; at the same AIC value, chosen model is the one with the smallest mean of the sum of coefficient standard errors, that measure how precisely predicted model has estimated regression coefficients with the given training set of data.
+Agorà chooses the model with the smallest Akaike Information Criterion (AIC) value, that is a measure of the quality, in terms of lost information, of statistical models for a given set of data. At the same AIC value, chosen model is the one with the smallest mean of the sum of coefficient standard errors, that measure how precisely predicted model has estimated regression coefficients with the given training set of data.
