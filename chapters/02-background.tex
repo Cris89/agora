@@ -84,7 +84,16 @@ Since the concept of unique optimal solution can't be applied, it is useful to i
 \end{cases}
 \end{equation}
 
-The set of Pareto optimal solutions is often called Pareto front, Pareto frontier or Pareto boundary.
+The set of Pareto optimal solutions is often called Pareto front, Pareto frontier or Pareto boundary. Figure \ref{fig::pareto} shows an example of a Pareto frontier. Boxed points represent feasible choices. Point C is dominated by both point A and point B. Points A and B are not strictly dominated by any other point, therefore they are on the Pareto front.
+
+\begin{figure}[htb]
+
+    \centering
+    \includegraphics[width = 0.6\textwidth]{pareto}
+    \caption[Pareto frontier example]{Pareto frontier example, taken from \cite{wiki:pareto}}
+    \label{fig::pareto}
+
+\end{figure}
 
 
 
@@ -100,7 +109,7 @@ Taking \cite{natrella2013nist} as reference, among various DoE techniques that g
 
     \item \textit{Full-Factorial DoE}: it is given by all possible combinations among parameter values, so all possible application configurations are picked up;
  
-    \item \textit{2-Level Full-Factorial DoE}: suitable for designs with two or more parameters, this DoE picks up all possible combinations among the extreme values of all parameters.
+    \item \textit{2-Level Full-Factorial DoE} (Figure \ref{fig::ff2l}): suitable for designs with two or more parameters, this DoE picks up all possible combinations among the extreme values of all parameters.
     
     If, for instance, there are three tunable parameters:
     
@@ -118,7 +127,7 @@ Taking \cite{natrella2013nist} as reference, among various DoE techniques that g
     
     \{ $\langle$ 2, 1, 2K $\rangle$, $\langle$ 32, 1, 2K $\rangle$, $\langle$ 2, 8, 2K $\rangle$, $\langle$ 32, 8, 2K $\rangle$, \hbox{$\langle$ 2, 1, 32K $\rangle$}, \hbox{$\langle$ 32, 1, 32K $\rangle$}, $\langle$ 2, 8, 32K $\rangle$, $\langle$ 32, 8, 32K $\rangle$ \};
 
-    \item \textit{Face Centered Central Composite DoE with one Center Point}: also this DoE is appropriate for designs with two or more parameters. Design point list can be split in three sets:
+    \item \textit{Face Centered Central Composite DoE with one Center Point} (Figure \ref{fig::fcccd}): also this DoE is appropriate for designs with two or more parameters. Design point list can be split in three sets:
     
      \begin{enumerate}
     
@@ -147,6 +156,21 @@ Taking \cite{natrella2013nist} as reference, among various DoE techniques that g
     \item \textit{Latin-Hypercube DoE}: this DoE randomly chooses parameter values for each design point. The number of final configurations can be set up in advance.
 
 \end{itemize}
+
+
+\begin{figure}[htb]
+
+    \centering
+
+    \subfloat[][\emph{2-Level Full-Factorial DoE}\label{fig::ff2l}]
+        {\includegraphics[width = 0.45\textwidth]{ff2l}}
+    \enskip
+    \subfloat[][\emph{Face Centered Central Composite DoE with One Center Point}\label{fig::fcccd}]
+        {\includegraphics[width = 0.45\textwidth]{fcccd}}
+    
+    \caption{DoE graphic representations}
+
+\end{figure}
 
 
 
@@ -199,18 +223,18 @@ MQTT uses a client server publish\slash{}subscribe pattern. A client has the pos
 
     \centering
     \includegraphics[width = 0.8\textwidth]{mqtt}
-    \caption{MQTT publish/subscribe example, taken from \cite{site:hivemq}}
+    \caption[MQTT publish/subscribe example]{MQTT publish/subscribe example, taken from \cite{site:hivemq}}
     \label{fig::mqtt_example}
 
 \end{figure}
 
 Topics are used by the broker to filter messages and to manage them in a correct way; they are made up of one or more levels, separated by a forward slash, as shown in Figure \ref{fig::topic}.
 
-\begin{figure}[hb]
+\begin{figure}[ht]
 
     \centering
     \includegraphics[width = 0.8\textwidth]{mqtt_toplevs}
-    \caption{A MQTT topic, taken from \cite{site:hivemq}}
+    \caption[A MQTT topic]{A MQTT topic, taken from \cite{site:hivemq}}
     \label{fig::topic}
 
 \end{figure}
@@ -230,7 +254,7 @@ don't.
 
     \centering
     \includegraphics[width = 0.7\textwidth]{mqtt_singlew}
-    \caption{A MQTT topic with single-level wildcard, taken from \cite{site:hivemq}}
+    \caption[A MQTT topic with single-level wildcard]{A MQTT topic with single-level wildcard, taken from \cite{site:hivemq}}
     \label{fig:mqtt_singlew}
 
 \end{figure}
@@ -248,7 +272,7 @@ don't.
 
     \centering
     \includegraphics[width = 0.7\textwidth]{mqtt_mulw}
-    \caption{A MQTT topic with multi-level wildcard, taken from \cite{site:hivemq}}
+    \caption[A MQTT topic with multi-level wildcard]{A MQTT topic with multi-level wildcard, taken from \cite{site:hivemq}}
     \label{fig:mqtt_mulw}
 
 \end{figure}
