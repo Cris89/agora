@@ -6,9 +6,9 @@
 
 High Performance Computing applications have complex and massive tasks to do, so they need huge computing power in order to accomplish their objectives.
 
-Parallel computing (\cite{barney2012introduction}) simultaneously uses multiple re\-sourc\-es in order to solve a computational problem, taking advantage of concurrency, that is the possibility to execute, at the same time, those parts that are independent each other. In figure \ref{fig::pC::serial} we can see an example of serial computation, with a single processor that executes problem instructions sequentially, one after another. Figure \ref{fig::pC::parallel} instead represents a possible parallel computation, where problem is split in four parts that can be executed concurrently on different processors:
+Parallel computing (\cite{barney2012introduction}) simultaneously uses multiple re\-sourc\-es in order to solve a computational problem, taking advantage of concurrency, that is the possibility to execute, at the same time, those parts that are independent each other. In figure \ref{fig::pC::serial} we can see an example of serial computation, with a single processor that executes problem instructions sequentially, one after another. Figure \ref{fig::pC::parallel} instead represents a possible parallel computation, where problem is split in four parts that can be executed concurrently on different processors.
 
-\begin{figure}[H]
+\begin{figure}[htb]
 
     \centering
 
@@ -22,9 +22,9 @@ Parallel computing (\cite{barney2012introduction}) simultaneously uses multiple 
 
 \end{figure}
 
-A typical parallel architecture is composed by an arbitrary number of computers, called \textit{nodes}, each of them with multiple processors, cores, functional units, ect. connected all together by a network:
+A typical parallel architecture is composed by an arbitrary number of computers, called \textit{nodes}, each of them with multiple processors, cores, functional units, ect. connected all together by a network.
 
-\begin{figure}[H]
+\begin{figure}[htb]
 
     \centering
     \includegraphics[width = \textwidth]{par_net}
@@ -157,7 +157,7 @@ When applications expose some configurable parameters (a.k.a. \textit{dynamic kn
 
 IBM research studies on \textit{Autonomic Computing} (\cite{kephart2003vision}, \cite{computing2006architectural}) made a breakthrough on the concept of self-adapting systems that are able to manage themselves and to dynamically optimize their execution configuration at runtime; \textit{Autonomic Computing} is based of the MAPE-K control loop, showed in Figure \ref{fig::mape-k}.
 
-\begin{figure}[H]
+\begin{figure}[htb]
 
     \centering
     \includegraphics[width = \textwidth]{MAPE-K}
@@ -194,7 +194,7 @@ MQTT (Message Queue Telemetry Transport, \cite{banks2014mqtt}) is a light\-weigh
 
 MQTT uses a client server publish\slash{}subscribe pattern. A client has the possibility to subscribe to topics and to publish messages on them (both topics and messages are strings). Another component, called \textit{broker} server, deals with the dispatch of messages to only clients that have subscribed to corresponding topic. Therefore, publishers (clients that sends messages) and subscribers (clients that receive messages) don't know about the existence of one another: the broker, which is known by every client, distribute messages accordingly. Figure \ref{fig::mqtt_example} shows a possible MQTT scenario with a sensor and two devices.
 
-\begin{figure}[H]
+\begin{figure}[htb]
 
     \centering
     \includegraphics[width = \textwidth]{mqtt}
@@ -203,9 +203,9 @@ MQTT uses a client server publish\slash{}subscribe pattern. A client has the pos
 
 \end{figure}
 
-Topics are used by the broker to filter messages and to manage them in a correct way; they are made up of one or more levels, separated by a forward slash, as shown in Figure \ref{fig::topic}:
+Topics are used by the broker to filter messages and to manage them in a correct way; they are made up of one or more levels, separated by a forward slash, as shown in Figure \ref{fig::topic}.
 
-\begin{figure}[H]
+\begin{figure}[hb]
 
     \centering
     \includegraphics[width = \textwidth]{mqtt_toplevs}
@@ -216,17 +216,7 @@ Topics are used by the broker to filter messages and to manage them in a correct
 
 There is the possibility to subscribe to more topics at once through the use of wildcards: the single-level one (denoted with the symbol \textit{+}) and the multi-level one (indicated with the symbol \textit{\#}).
 
-Single-level wildcard substitutes an arbitrary level in a topic, so all topics that matches the same structure are associated to the one with single-level wildcard:
-
-\begin{figure}[H]
-
-    \centering
-    \includegraphics[width = 0.8\textwidth]{mqtt_singlew}
-    \caption{MQTT topic with single-level wildcard example, taken from \cite{site:hivemq}}
-    \label{fig:mqtt_singlew}
-
-\end{figure}
-
+Single-level wildcard substitutes an arbitrary level in a topic, so all topics that matches the same structure are associated to the one with single-level wildcard.
 For instance,\\
 \centerline{\textit{myhome\slash{}groundfloor\slash{}kitchen\slash{}temperature}}\\
 \centerline{and}\\
@@ -235,17 +225,16 @@ match topic in Figure \ref{fig:mqtt_singlew}, while\\
 \centerline{\textit{myhome\slash{}groundfloor\slash{}kitchen\slash{}humidity}}\\
 don't.
 
-Multi-level wildcard is placed at the end of a topic and it covers an arbitrary number of topic levels:
-
-\begin{figure}[H]
+\begin{figure}[htb]
 
     \centering
-    \includegraphics[width = 0.8\textwidth]{mqtt_mulw}
-    \caption{MQTT topic with multi-level wildcard example, taken from \cite{site:hivemq}}
-    \label{fig:mqtt_mulw}
+    \includegraphics[width = 0.8\textwidth]{mqtt_singlew}
+    \caption{MQTT topic with single-level wildcard example, taken from \cite{site:hivemq}}
+    \label{fig:mqtt_singlew}
 
 \end{figure}
 
+Multi-level wildcard is placed at the end of a topic and it covers an arbitrary number of topic levels.
 In this case, for instance,\\
 \centerline{\textit{myhome\slash{}groundfloor\slash{}kitchen\slash{}tem\-per\-a\-ture}}\\
 \centerline{and}\\
@@ -253,6 +242,15 @@ In this case, for instance,\\
 match topic in Figure \ref{fig:mqtt_mulw}, while\\
 \centerline{\textit{myhome\slash{}firstfloor\slash{}livingroom\slash{}temperature}}\\
 don't.
+
+\begin{figure}[htb]
+
+    \centering
+    \includegraphics[width = 0.8\textwidth]{mqtt_mulw}
+    \caption{MQTT topic with multi-level wildcard example, taken from \cite{site:hivemq}}
+    \label{fig:mqtt_mulw}
+
+\end{figure}
 
 Another interesting MQTT feature is the Last Will and Testament (LWT): each client can specify a normal MQTT message with topic and payload. When it connects to the broker, this message is stored; if client abruptly disconnects, broker sends corresponding LWT to all subscribed clients on related topic, notifying occurred disconnection.
 

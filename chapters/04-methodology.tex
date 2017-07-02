@@ -1,8 +1,8 @@
 \chapter{Proposed Methodology}\label{methodology}
 
-\lettrine{T}{}\textit{unable} applications are characterized by the presence of specific parameters, also known as \textit{knobs}, that influence program execution; their change generates different application results in terms of metric of interest values, as, for instance, throughput or power consumption. Figure \ref{fig::appDef} shows a typical parallel architecture with three nodes (node 1, 2 and 3) that are executing three tunable applications (application X, Y and Z respectively):
+\lettrine{T}{}\textit{unable} applications are characterized by the presence of specific parameters, also known as \textit{knobs}, that influence program execution; their change generates different application results in terms of metric of interest values, as, for instance, throughput or power consumption. Figure \ref{fig::appDef} shows a typical parallel architecture with three nodes (node 1, 2 and 3) that are executing three tunable applications (application X, Y and Z respectively).
 
-\begin{figure}[H]
+\begin{figure}[htb]
 
     \centering
     \includegraphics[width = \textwidth]{Apps}
@@ -13,7 +13,7 @@
 
 Very often, High Performance Computing applications expose a large set of parameters, making related Design Space huge and, consequently, unrealistic to explore it in an exhaustive way. In order to choose, from time to time, best program setting with the aim to improve energy efficiency with respect to power consumption and current input data, the concept of Runtime Autotuning is used: a class of online autotuners is able to choose, from time to time, best possible parameter values that fulfill application goals and requirements, starting from a design-time knowledge that gives information about parameter values and corresponding metric of interest values, built off-line. Figure \ref{fig::appAut} shows application Z interconnected with mARGOt \cite{gadioli2015application}, a dynamic autotuner developed by PoliMi research group.
 
-\begin{figure}[H]
+\begin{figure}[htb]
 
     \centering
     \includegraphics[width = \textwidth]{App_mARGOt}
@@ -24,7 +24,7 @@ Very often, High Performance Computing applications expose a large set of parame
 
 The autotuner needs application knowledge, so there have to be a preceding offline phase (before program start of computation) for profiling. This thesis contributes to avoid this offline step by building, managing and updating application knowledge during execution itself. A local module mainly takes care of properly setting application knowledge, while a remote one manages collected information during execution, in order to predict complete application model. Figure \ref{fig::appAGORA} shows application Z interconnected with Agora and mARGOt autotuner.
 
-\begin{figure}[H]
+\begin{figure}[htb]
 
     \centering
     \includegraphics[width = \textwidth]{App_Agora_mARGOt}
@@ -51,7 +51,7 @@ The typical architecture in which Agora works is parallel, where there are multi
 
 \end{enumerate}
 
-\begin{figure}[H]
+\begin{figure}[t]
 
     \centering
     \includegraphics[width = \textwidth]{tesiCris_overall}

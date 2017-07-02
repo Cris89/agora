@@ -40,7 +40,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {4.3}{\ignorespaces A tunable application Z with the assistance of Agora and mARGOt autotuner\relax }}{24}{figure.caption.19}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Agora overview in a parallel architecture\relax }}{26}{figure.caption.20}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Agora overview in a parallel architecture\relax }}{25}{figure.caption.20}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
@@ -70,13 +70,13 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {5.13}{\ignorespaces AgoraLocalAppHandler module disconnection example\relax }}{44}{figure.caption.33}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Disconnection of \textit {AgoraLocalAppHandler} module that was sending application information example\relax }}{45}{figure.caption.34}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Disconnection of \textit {AgoraLocalAppHandler} module that was sending application information example\relax }}{44}{figure.caption.34}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {5.15}{\ignorespaces AgoraRemoteAppHandler module disconnection example\relax }}{45}{figure.caption.35}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {5.16}{\ignorespaces AgoraRemoteAppHandler module disconnection with A\discretionary {-}{}{}go\discretionary {-}{}{}ra\discretionary {-}{}{}Local\discretionary {-}{}{}App\discretionary {-}{}{}Handler internal state equal to \textit {DSE} example\relax }}{46}{figure.caption.36}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.17}{\ignorespaces Sketch application with \textit {AgoraLocalAppHandler} module plus mARGOt autotuner integration\relax }}{47}{figure.caption.37}
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Sketch application with \textit {AgoraLocalAppHandler} module plus mARGOt autotuner integration\relax }}{46}{figure.caption.37}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
