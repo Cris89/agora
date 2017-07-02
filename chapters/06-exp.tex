@@ -360,18 +360,8 @@ Every couple of corresponding points in graphs of Figure \ref{fig::appBeh} repre
 
 
 
+
 \subsection{Swaptions application}
-
-We evaluate Agora on a real scenario. We use Face Centered Central Composite DoE with One Center Point as Design of Experiments and the 2nd version of implemented Generalized Linear Regression as Response Surface Methodology. Due to application computing kernel (Monte Carlo simulations), we have decided to collect, for each DoE configuration, a meaningful number of repetitions, setting this value to 15.
-
-
-\subsubsection{Model prediction quality}
-
-Figures \ref{fig::swaptions15spark2::intervals} and \ref{fig::swaptions15spark2::means} show results on predicted model using $deltaError$ measure, as done for synthetic application analysis (see \ref{deltaErrorExplanation}), for both $avg\_error$ and $avg\_throughput$ metrics.
-
-
-
-
 
 \begin{figure}[htb]
 
@@ -389,11 +379,14 @@ Figures \ref{fig::swaptions15spark2::intervals} and \ref{fig::swaptions15spark2:
     \caption{$deltaError$ mean values for both Swaptions metrics of interest}
     \label{fig::swaptions15spark2::means}
     
-\end{figure}
+\end{figure}	
+
+We evaluate Agora on a real scenario. We use Face Centered Central Composite DoE with One Center Point as Design of Experiments and the 2nd version of implemented Generalized Linear Regression as Response Surface Methodology. Due to application computing kernel (Monte Carlo simulations), we have decided to collect, for each DoE configuration, a meaningful number of repetitions, setting this value to 15.
 
 
+\subsubsection{Model prediction quality}
 
-
+Figures \ref{fig::swaptions15spark2::intervals} and \ref{fig::swaptions15spark2::means} show results on predicted model using $deltaError$ measure, as done for synthetic application analysis (see \ref{deltaErrorExplanation}), for both $avg\_error$ and $avg\_throughput$ metrics.
 
 We obtain an average $deltaError$ of around $11\%$ for $avg\_throughput$ and about $27\%$ for $avg\_error$, as it is shown in Figure \ref{fig::swaptions15spark2::means}. From Figure \ref{fig::swaptions15spark2::intervals} we can see that $70\%$ of $avg\_throughput$ predictions has a $deltaError$ below $15\%$, while this percentage increases to $30\%$ for $avg\_error$ metric.
 
