@@ -36,13 +36,13 @@ Inside a parallel architecture there can be heterogeneous nodes, with different 
 
 \begin{enumerate}
 
-    \item \textit{Single Instruction, Single Data (SISD)}: this is the original kind of computer, in which there is only one instruction stream that is managed by the Central Processing Unit (CPU) during clock cycles; this is serial, so non-parallel, computing;
+    \item \textit{Single Instruction, Single Data (SISD)}: this is the original kind of computer, in which there is only one instruction stream that is managed by the Central Processing Unit (CPU) during clock cycles. This is serial, so non-parallel, computing;
     
     \item \textit{Single Instruction, Multiple Data (SIMD)}: at any clock cycle, there is one instruction that is executed, but processing units can operate on different data elements of instruction;
     
     \item \textit{Multiple Instruction, Single Data (MISD)}: a single data stream is managed by multiple processing units, that can independently operate on data through separate instruction streams;
     
-    \item \textit{Multiple Instruction, Multiple Data (MIMD)}: every processing unit can execute different data and instruction streams;
+    \item \textit{Multiple Instruction, Multiple Data (MIMD)}: every processing unit can execute different data and instruction streams.
 
 \end{enumerate}
 
@@ -74,7 +74,7 @@ Multi-Objective Optimization problem has a lot of analogies into a wide variety 
 
 Since some objectives are in contrast with other objectives, a unique solution does not exist. For instance, in a microcontroller, an objective focused on performance would definitely confront against a goal related to power consumption: best solution for one of them would be the worst for the other and conversely. Therefore, the aim of Design Space Exploration is almost always to search for a trade off, among goals and requirements, that fulfills overall problem.
 
-Since the concept of unique optimal solution can't be applied, it is useful to introduce the notion of Pareto optimality; pareto optimal solutions are, essentially, those ones that can't be improved without degrading at least one objective function. So, a solution \textit{x\textsuperscript{1}} is said to \textit{(Pareto) dominate} a solution \textit{x\textsuperscript{2}} if:
+Since the concept of unique optimal solution can't be applied, it is useful to introduce the notion of Pareto optimality. Pareto optimal solutions are, essentially, those ones that can't be improved without degrading at least one objective function. So, a solution \textit{x\textsuperscript{1}} is said to \textit{(Pareto) dominate} a solution \textit{x\textsuperscript{2}} if:
 
 \begin{equation}
 \begin{cases}
@@ -117,7 +117,7 @@ Taking \cite{natrella2013nist} as reference, among various DoE techniques that g
     
     \{ $\langle$ 2, 1, 2K $\rangle$, $\langle$ 32, 1, 2K $\rangle$, $\langle$ 2, 8, 2K $\rangle$, $\langle$ 32, 8, 2K $\rangle$, \hbox{$\langle$ 2, 1, 32K $\rangle$}, \hbox{$\langle$ 32, 1, 32K $\rangle$}, $\langle$ 2, 8, 32K $\rangle$, $\langle$ 32, 8, 32K $\rangle$ \};
 
-    \item \textit{Face Centered Central Composite DoE with one Center Point}: also this DoE is appropriate for designs with two or more parameters; design point list can be split in three sets:
+    \item \textit{Face Centered Central Composite DoE with one Center Point}: also this DoE is appropriate for designs with two or more parameters. Design point list can be split in three sets:
     
      \begin{enumerate}
     
@@ -155,7 +155,7 @@ Taking \cite{natrella2013nist} as reference, among various DoE techniques that g
 
 When applications expose some configurable parameters (a.k.a. \textit{dynamic knobs}), the concept of Dynamic Autotuning is defined as the capability to find the best set of knob values, in an automatic and systematic way, that satisfies application goals and requirements at runtime, properly reacting to possible objective function change. For instance, a web video streaming application would be able to manage video quality according to the overload of its servers. In some situations, it could set up itself for the best possible resolution. Sometimes, it should reduce the quality in order to make still available its services to all connected clients.
 
-IBM research studies on \textit{Autonomic Computing} (\cite{kephart2003vision}, \cite{computing2006architectural}) made a breakthrough on the concept of self-adapting systems that are able to manage themselves and to dynamically optimize their execution configuration at runtime; \textit{Autonomic Computing} is based of the MAPE-K control loop, showed in Figure \ref{fig::mape-k}.
+IBM research studies on \textit{Autonomic Computing} (\cite{kephart2003vision}, \cite{computing2006architectural}) made a breakthrough on the concept of self-adapting systems that are able to manage themselves and to dynamically optimize their execution configuration at runtime. \textit{Autonomic Computing} is based of the MAPE-K control loop, showed in Figure \ref{fig::mape-k}.
 
 \begin{figure}[htb]
 
@@ -182,7 +182,7 @@ In this control loop we can identify four principal functions:
 
 Finally, \textit{Knowledge} source is composed of all data that is used by the four functions; it includes information such as, for instance, topology structure, historical logs, metrics and policies.
 
-Online autotuning, therefore, entrusts system management from people to technology, achieving self-configuration and self-op\-ti\-mi\-za\-tion objectives; application requirements may change during execution and the overall system is able to properly react and to re-adapt itself.
+Online autotuning, therefore, entrusts system management from people to technology, achieving self-configuration and self-op\-ti\-mi\-za\-tion objectives. Application requirements may change during execution and the overall system is able to properly react and to re-adapt itself.
 
 
 
@@ -190,7 +190,7 @@ Online autotuning, therefore, entrusts system management from people to technolo
 
 \section{MQTT messaging protocol}\label{mqtt}
 
-MQTT (Message Queue Telemetry Transport, \cite{banks2014mqtt}) is a light\-weight messaging protocol that gives the possibility to establish remote communications among subjects. Its main characteristics are the minimization of network bandwidth and devices requirements. This features make MQTT ideal for machine-to-machine (M2M) or Internet of Things (IoT) world of connected devices, but in general this protocol have a large use in different projects: for instance, famous Facebook Messenger is built on top of it (\cite{zhang2011building}).
+MQTT (Message Queue Telemetry Transport, \cite{banks2014mqtt}) is a light\-weight messaging protocol that gives the possibility to establish remote communications among subjects. Its main characteristics are the minimization of network bandwidth and devices requirements. This features make MQTT ideal for machine-to-machine (M2M) or Internet of Things (IoT) world of connected devices, but in general this protocol have a large use in different projects; for instance, famous Facebook Messenger is built on top of it (\cite{zhang2011building}).
 
 MQTT uses a client server publish\slash{}subscribe pattern. A client has the possibility to subscribe to topics and to publish messages on them (both topics and messages are strings). Another component, called \textit{broker} server, deals with the dispatch of messages to only clients that have subscribed to corresponding topic. Therefore, publishers (clients that sends messages) and subscribers (clients that receive messages) don't know about the existence of one another: the broker, which is known by every client, distribute messages accordingly. Figure \ref{fig::mqtt_example} shows a possible MQTT scenario with a sensor and two devices.
 
@@ -209,7 +209,7 @@ Topics are used by the broker to filter messages and to manage them in a correct
 
     \centering
     \includegraphics[width = \textwidth]{mqtt_toplevs}
-    \caption{MQTT topic example, taken from \cite{site:hivemq}}
+    \caption{A MQTT topic, taken from \cite{site:hivemq}}
     \label{fig::topic}
 
 \end{figure}
@@ -229,7 +229,7 @@ don't.
 
     \centering
     \includegraphics[width = 0.8\textwidth]{mqtt_singlew}
-    \caption{MQTT topic with single-level wildcard example, taken from \cite{site:hivemq}}
+    \caption{A MQTT topic with single-level wildcard, taken from \cite{site:hivemq}}
     \label{fig:mqtt_singlew}
 
 \end{figure}
@@ -247,12 +247,12 @@ don't.
 
     \centering
     \includegraphics[width = 0.8\textwidth]{mqtt_mulw}
-    \caption{MQTT topic with multi-level wildcard example, taken from \cite{site:hivemq}}
+    \caption{A MQTT topic with multi-level wildcard, taken from \cite{site:hivemq}}
     \label{fig:mqtt_mulw}
 
 \end{figure}
 
-Another interesting MQTT feature is the Last Will and Testament (LWT): each client can specify a normal MQTT message with topic and payload. When it connects to the broker, this message is stored; if client abruptly disconnects, broker sends corresponding LWT to all subscribed clients on related topic, notifying occurred disconnection.
+Another interesting MQTT feature is the Last Will and Testament (LWT). Each client can specify a normal MQTT message with topic and payload. When it connects to the broker, this message is stored; if client abruptly disconnects, broker sends corresponding LWT to all subscribed clients on related topic, notifying occurred disconnection.
 
 
 

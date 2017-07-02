@@ -24,17 +24,17 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {2.4}{\ignorespaces MQTT publish/subscribe example, taken from \cite {site:hivemq}\relax }}{13}{figure.caption.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.5}{\ignorespaces MQTT topic example, taken from \cite {site:hivemq}\relax }}{13}{figure.caption.14}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces A MQTT topic, taken from \cite {site:hivemq}\relax }}{13}{figure.caption.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.6}{\ignorespaces MQTT topic with single-level wildcard example, taken from \cite {site:hivemq}\relax }}{14}{figure.caption.15}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces A MQTT topic with single-level wildcard, taken from \cite {site:hivemq}\relax }}{14}{figure.caption.15}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.7}{\ignorespaces MQTT topic with multi-level wildcard example, taken from \cite {site:hivemq}\relax }}{14}{figure.caption.16}
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.7}{\ignorespaces A MQTT topic with multi-level wildcard, taken from \cite {site:hivemq}\relax }}{14}{figure.caption.16}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Parallel architecture with tunable applications example}}{22}{figure.caption.17}
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.1}{\ignorespaces An example of a parallel architecture with tunable applications}}{22}{figure.caption.17}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {4.2}{\ignorespaces A tunable application Z with the assistance of mARGOt autotuner\relax }}{23}{figure.caption.18}
 \defcounter {refsection}{0}\relax 
@@ -44,37 +44,37 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.1}{\ignorespaces AgoraRemoteDispatcher subscription\relax }}{31}{figure.caption.21}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces AgoraRemoteDispatcher MQTT subscription\relax }}{31}{figure.caption.21}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.2}{\ignorespaces New unknown application arrival example}}{31}{figure.caption.22}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces New unknown application arrival}}{31}{figure.caption.22}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.3}{\ignorespaces AgoraLocalAppHandler MQTT subscriptions example\relax }}{32}{figure.caption.23}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces AgoraLocalAppHandler MQTT subscriptions\relax }}{32}{figure.caption.23}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.4}{\ignorespaces AgoraRemoteAppHandler MQTT subscriptions example\relax }}{33}{figure.caption.24}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces AgoraRemoteAppHandler MQTT subscriptions\relax }}{33}{figure.caption.24}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.5}{\ignorespaces New known application arrival example}}{34}{figure.caption.25}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces New known application arrival}}{34}{figure.caption.25}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.6}{\ignorespaces AgoraLocalAppHandler request example\relax }}{34}{figure.caption.26}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces AgoraLocalAppHandler module request\relax }}{34}{figure.caption.26}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Application information request by \textit {AgoraRemoteAppHandler} example\relax }}{35}{figure.caption.27}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Application information request by \textit {AgoraRemoteAppHandler} module\relax }}{35}{figure.caption.27}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Configuration dispatch by \textit {AgoraRemoteAppHandler} example\relax }}{36}{figure.caption.28}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Configuration dispatch by \textit {AgoraRemoteAppHandler} module\relax }}{36}{figure.caption.28}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Partial model dispatch by \textit {AgoraRemoteAppHandler} example\relax }}{36}{figure.caption.29}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Partial model dispatch by \textit {AgoraRemoteAppHandler} module\relax }}{36}{figure.caption.29}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Complete model dispatch by \textit {AgoraRemoteAppHandler} example\relax }}{37}{figure.caption.30}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Complete model dispatch by \textit {AgoraRemoteAppHandler} module\relax }}{37}{figure.caption.30}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Application information dispatch by \textit {AgoraLocalAppHandler} module example\relax }}{42}{figure.caption.31}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Application information dispatch by \textit {AgoraLocalAppHandler} module\relax }}{42}{figure.caption.31}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Operating Point dispatch by \textit {AgoraLocalAppHandler} module example\relax }}{43}{figure.caption.32}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Operating Point dispatch by \textit {AgoraLocalAppHandler} module\relax }}{43}{figure.caption.32}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.13}{\ignorespaces AgoraLocalAppHandler module disconnection example\relax }}{44}{figure.caption.33}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces AgoraLocalAppHandler module disconnection\relax }}{44}{figure.caption.33}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Disconnection of \textit {AgoraLocalAppHandler} module that was sending application information example\relax }}{44}{figure.caption.34}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Disconnection of \textit {AgoraLocalAppHandler} module that was sending application information\relax }}{44}{figure.caption.34}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.15}{\ignorespaces AgoraRemoteAppHandler module disconnection example\relax }}{45}{figure.caption.35}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces AgoraRemoteAppHandler module disconnection\relax }}{45}{figure.caption.35}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.16}{\ignorespaces AgoraRemoteAppHandler module disconnection with A\discretionary {-}{}{}go\discretionary {-}{}{}ra\discretionary {-}{}{}Local\discretionary {-}{}{}App\discretionary {-}{}{}Handler internal state equal to \textit {DSE} example\relax }}{46}{figure.caption.36}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces AgoraRemoteAppHandler module disconnection with A\discretionary {-}{}{}go\discretionary {-}{}{}ra\discretionary {-}{}{}Local\discretionary {-}{}{}App\discretionary {-}{}{}Handler internal state equal to \textit {DSE}\relax }}{45}{figure.caption.36}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {5.17}{\ignorespaces Sketch application with \textit {AgoraLocalAppHandler} module plus mARGOt autotuner integration\relax }}{46}{figure.caption.37}
 \defcounter {refsection}{0}\relax 
@@ -100,9 +100,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {6.10}{\ignorespaces Design Space Exploration time by varying the number of executing applications\relax }}{61}{figure.caption.51}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.11}{\ignorespaces Execution time for different synthetic application version 2 settings\relax }}{62}{figure.caption.52}
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Overall execution time by varying synthetic application version 2 setting\relax }}{62}{figure.caption.52}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.12}{\ignorespaces Metric values by varying time\relax }}{63}{figure.caption.53}
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Metric values of synthetic application version 2 by varying time\relax }}{63}{figure.caption.53}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {6.13}{\ignorespaces $deltaError$ results for both Swaptions metrics of interest\relax }}{65}{figure.caption.54}
 \defcounter {refsection}{0}\relax 

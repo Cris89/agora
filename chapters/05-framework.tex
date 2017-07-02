@@ -5,9 +5,9 @@
 
 \section{Introduction}
 
-Agora makes use of the MQTT protocol (\cite{banks2014mqtt}) for the communications among components: it uses Eclipse Paho MQTT Python Client and Eclipse Paho MQTT C Client for managing message exchange (\cite{o2014paho}), while it uses Eclipse Mos\-quitto as broker (\cite{light2013mosquitto}). We take addvantage of the Machine Learning library MLlib by Apache Spark\textsuperscript{TM} (\cite{spark2015apache}) in order to predict application complete models.
+Agora makes use of the MQTT protocol (\cite{banks2014mqtt}) for the communications among components. It uses Eclipse Paho MQTT Python Client and Eclipse Paho MQTT C Client for managing message exchange (\cite{o2014paho}), while it uses Eclipse Mos\-quitto as broker (\cite{light2013mosquitto}). We take addvantage of the Machine Learning library MLlib by Apache Spark\textsuperscript{TM} (\cite{spark2015apache}) in order to predict application complete models.
 
-Next technical use case implementation makes use of application \textit{Swaptions} as reference, taken from the PARSEC benchmark suite (\cite{bienia2008parsec}). This application is a workload which prices a portfolio of swaptions through Monte Carlo simulations; it has two tunable parameters, the number of threads (variable \textit{num\_threads}, from 1 to 8) and the number of trials for the simulation (variable \textit{num\_trials}, from 100.000 to 1.000.000 with a step of 100.000); observed metrics of interest are: throughput (variable $avg\_throughput$) as the number of priced swaptions per second and error (variable $avg\_error$), computed as:
+Next technical use case implementation makes use of application \textit{Swaptions} as reference, taken from the PARSEC benchmark suite (\cite{bienia2008parsec}). This application is a workload which prices a portfolio of swaptions through Monte Carlo simulations. It has two tunable parameters, the number of threads (variable \textit{num\_threads}, from 1 to 8) and the number of trials for the simulation (variable \textit{num\_trials}, from 100.000 to 1.000.000 with a step of 100.000). Observed metrics of interest are: throughput (variable $avg\_throughput$) as the number of priced swaptions per second and error (variable $avg\_error$), computed as:
 
 \[
 avg\_error = \dfrac{\sum_{s \in pricedSwaptions} \left\vert StandDevRef(s) - StandDev(s) \right\vert}{\left\vert pricedSwaptions \right\vert}
@@ -15,7 +15,7 @@ avg\_error = \dfrac{\sum_{s \in pricedSwaptions} \left\vert StandDevRef(s) - Sta
 
 where $StandDevRef(s)$ is the reference standard deviation for swaption $s$, $StandDev(s)$ is the evaluated one and $pricedSwaptions$ represents the set of swaptions that are priced at each computing cycle; so, metric $avg\_error$ stands for the average of differences between standard deviation of priced swaptions using evaluated configuration with respect to the reference one (standard deviation for 1.000.000 trials).
 
-Agora has been interconnected to mARGOt autotuner (\cite{gadioli2015application}), that exploits design-time knowledge to dynamically adapt application behavior during execution; mARGOt represents this information as a list of Operating Points (OPs): an OP is made by a set of parameter values, also called software knobs, in union with the associated performance (metric of interest values), profiled at design-time; Agora improvement is to build application knowledge at runtime, with an online distributed Design Space Exploration phase in which a subset of OPs are collected, in order to predict the complete model, made by the entire Operating Point list.
+Agora has been interconnected to mARGOt autotuner (\cite{gadioli2015application}), that exploits design-time knowledge to dynamically adapt application behavior during execution. mARGOt represents this information as a list of Operating Points (OPs). An OP is made by a set of parameter values, also called software knobs, in union with the associated performance (metric of interest values), profiled at design-time. Agora improvement is to build application knowledge at runtime, with an online distributed Design Space Exploration phase in which a subset of OPs are collected, in order to predict the complete model, made by the entire Operating Point list.
 
 Agora could work in union with other autotuners that, using application knowledge in terms of configurations and associated performance, have the capability to dynamically adapt application behavior during execution.
 
@@ -36,13 +36,13 @@ Agora could work in union with other autotuners that, using application knowledg
 
 \subsection{AgoraRemoteDispatcher module creation}
 
-The starting point is the creation of the AgoraRemoteDispatcher module, that is in charge of managing the arrival of applications; it connects to the MQTT broker and it subscribes to topic "agora/apps" (Figure \ref{fig::dispSub}).
+The starting point is the creation of the AgoraRemoteDispatcher module, that is in charge of managing the arrival of applications. It connects to the MQTT broker and it subscribes to topic "agora/apps" (Figure \ref{fig::dispSub}).
 
 \begin{figure}[ht]
 
     \centering
     \includegraphics[width = \textwidth]{server_listener_subscription}
-    \caption{AgoraRemoteDispatcher subscription}
+    \caption{AgoraRemoteDispatcher MQTT subscription}
 
     \label{fig::dispSub}
     
@@ -58,13 +58,13 @@ An application can be already known by the Agora\-Remote\-Dis\-patch\-er module 
 
 \subsubsection{Unknown application}
 
-A node starts running a program; the related AgoraLocalAppHandler module notifies this event, publishing on topic "agora\slash{}apps" a string composed of application name and machine hostname plus Process IDentifier (PID), with format "\textit{[appName] [hostname]\_[PID]}", so that AgoraLocalAppHandler module can be univocally recognized in the future; the message is received by Agora\-Remote\-Dispatcher, that creates a dedicated AgoraRemoteAppHandler module for this application (Figure \ref{fig::unk}).
+A node starts running a program. The related AgoraLocalAppHandler module notifies this event, publishing on topic "agora\slash{}apps" a string composed of application name and machine hostname plus Process IDentifier (PID), with format "\textit{[appName] [hostname]\_[PID]}", so that AgoraLocalAppHandler module can be univocally recognized in the future. The message is received by Agora\-Remote\-Dispatcher, that creates a dedicated AgoraRemoteAppHandler module for this application (Figure \ref{fig::unk}).
 
 \begin{figure}[hb]
 
     \centering
     \includegraphics[width = \textwidth]{new_unknown}
-    \caption[New unknown application arrival example]{New unknown application arrival example; a dedicated AgoraRemoteAppHandler module is created by AgoraRemoteDispatcher}
+    \caption[New unknown application arrival]{New unknown application arrival. A dedicated AgoraRemoteAppHandler module is created by AgoraRemoteDispatcher}
 
     \label{fig::unk}
     
@@ -74,7 +74,7 @@ At the beginning, the Agora\-Local\-App\-Handler module subscribes to some topic
 
 \begin{enumerate}
 
-    \item "agora/\textit{[appName]}", in order to understand if AgoraRemoteAppHandler has asked application information and, therefore, to reply (see \ref{req_info}); this topic is also used to understand if Agora\-Remote\-App\-Handler has crashed and, so, to react properly (see \ref{handler_disc});
+    \item "agora/\textit{[appName]}", in order to understand if AgoraRemoteAppHandler has asked application information and, therefore, to reply (see \ref{req_info}). This topic is also used to understand if Agora\-Remote\-App\-Handler has crashed and, so, to react properly (see \ref{handler_disc});
     
     \item "agora/\textit{[appName]}/\textit{[hostname]\_[PID]}/conf", in order to receive configurations from AgoraRemoteAppHandler during Design Space Exploration phase (see \ref{dse_conf});
     
@@ -86,7 +86,7 @@ At the beginning, the Agora\-Local\-App\-Handler module subscribes to some topic
 
     \centering
     \includegraphics[width = \textwidth]{client_subs}
-    \caption{AgoraLocalAppHandler MQTT subscriptions example}
+    \caption{AgoraLocalAppHandler MQTT subscriptions}
 
     \label{fig::localSubs}
     
@@ -100,7 +100,7 @@ The AgoraRemoteAppHandler module subscribes to some topics in order to manage co
     
     \item "agora/\textit{[appName]}/req", in order to manage all the requests made by AgoraLocalAppHandler modules during program execution (see \ref{clientReq});
     
-    \item "agora/\textit{[appName]}/info/\#", in order to receive all available application information, such as parameter name and values (see \ref{client_info}); real topic is "agora\slash{}\textit{[appName]}\slash{}info\slash{}\textit{[host\-name]\_ [PID]}" (see MQTT multi-level wildcard, \ref{mqtt}), therefore Agora\-Remote\-App\-Handler can store the ID of the node that is sending application information, in order to react properly to node possible crash during this phase (see \ref{client_disc});
+    \item "agora/\textit{[appName]}/info/\#", in order to receive all available application information, such as parameter name and values (see \ref{client_info}). Real topic is "agora\slash{}\textit{[appName]}\slash{}info\slash{}\textit{[host\-name]\_ [PID]}" (see MQTT multi-level wildcard in Chapter \ref{mqtt}), therefore Agora\-Remote\-App\-Handler can store the ID of the node that is sending application information, in order to react properly to node possible crash during this phase (see \ref{client_disc});
     
     \item "agora/\textit{[appName]}/disconnection", in order to correctly react to a possible node disconnection (see \ref{client_disc});
     
@@ -112,7 +112,7 @@ The AgoraRemoteAppHandler module subscribes to some topics in order to manage co
 
     \centering
     \includegraphics[width = \textwidth]{handler_subs}
-    \caption{AgoraRemoteAppHandler MQTT subscriptions example}
+    \caption{AgoraRemoteAppHandler MQTT subscriptions}
 
     \label{fig::remotSubs}
     
@@ -127,7 +127,7 @@ When the AgoraRemoteDispatcher module is informed that a new node has started ru
 
     \centering
     \includegraphics[width = \textwidth]{new_known}
-    \caption[New known application arrival example]{New known application arrival example; node ID is sent by AgoraRemoteDispatcher to the corresponding AgoraRemoteAppHandler module}
+    \caption[New known application arrival]{New known application arrival. Node ID is sent by AgoraRemoteDispatcher to the corresponding AgoraRemoteAppHandler module}
 
     \label{fig::knownApp}
     
@@ -145,13 +145,13 @@ At each predetermined time interval, AgoraLocalAppHandler modules make a request
 
     \centering
     \includegraphics[width = \textwidth]{req}
-    \caption{AgoraLocalAppHandler request example}
+    \caption{AgoraLocalAppHandler module request}
 
     \label{fig::localReq}
     
 \end{figure}
 
-This kind of publication is repeated until the node receives the predicted complete Operating Point list; AgoraRemoteAppHandler replies to these requests according to its internal state, that can be one of the following:
+This kind of publication is repeated until the node receives the predicted complete Operating Point list. AgoraRemoteAppHandler replies to these requests according to its internal state, that can be one of the following:
 
 \begin{enumerate}
 
@@ -172,13 +172,13 @@ This kind of publication is repeated until the node receives the predicted compl
 
 \subsubsection{AgoraRemoteAppHandler internal state equal to \textit{unknown}}\label{req_info}
 
-AgoraRemoteAppHandler doesn't know anything about the application it is managing, except its name; it asks to AgoraLocalAppHandler modules all available information, making a publication with payload "info" on topic "agora/\textit{[appName]}" (Figure \ref{fig::remotInfoReq}).
+AgoraRemoteAppHandler doesn't know anything about the application it is managing, except related name. It asks to AgoraLocalAppHandler modules all available information, making a publication with payload "info" on topic "agora/\textit{[appName]}" (Figure \ref{fig::remotInfoReq}).
 
 \begin{figure}[ht]
 
     \centering
     \includegraphics[width = \textwidth]{info_req}
-    \caption{Application information request by \textit{AgoraRemoteAppHandler} example}
+    \caption{Application information request by \textit{AgoraRemoteAppHandler} module}
 
     \label{fig::remotInfoReq}
     
@@ -197,13 +197,13 @@ AgoraRemoteAppHandler, according to the received Design of Experiments type (see
 
 \subsubsection{AgoraRemoteAppHandler internal state equal to \textit{DSE}}\label{dse_conf}
 
-The AgoraRemoteAppHandler module has computed DoE configurations, so it is driving Design Space Exploration phase; it picks up the first element on top of the available configuration list and it sends, in lexicographic order, the associated software knob values on topic "agora\slash{}\textit{[appName]}\slash{}\textit{[hostname]\_[PID]}\slash{}conf", relative to the AgoraLocalAppHandler module that made the request (Figure \ref{fig:conf}). The configuration just sent is reinserted at the end of the mentioned list.
+The AgoraRemoteAppHandler module has computed DoE configurations, so it is driving Design Space Exploration phase. It picks up the first element on top of the available configuration list and it sends, in lexicographic order, the associated software knob values on topic "agora\slash{}\textit{[appName]}\slash{}\textit{[hostname]\_[PID]}\slash{}conf", relative to the AgoraLocalAppHandler module that made the request (Figure \ref{fig:conf}). The configuration just sent is reinserted at the end of the mentioned list.
 
 \begin{figure}[ht]
 
     \centering
     \includegraphics[width = \textwidth]{conf}
-    \caption{Configuration dispatch by \textit{AgoraRemoteAppHandler} example}
+    \caption{Configuration dispatch by \textit{AgoraRemoteAppHandler} module}
     \label{fig:conf}
     
 \end{figure}
@@ -213,13 +213,13 @@ As shown in Figure \ref{fig:conf}, AgoraLocalAppHandler receives a configuration
 
 \subsubsection{AgoraRemoteAppHandler internal state equal to \textit{building\-The\-Model}}\label{DoEModelSend}
 
-AgoraRemoteAppHandler has gathered all needed OPs related to DoE configurations and it is computing complete Operating Point list through Machine Learning techniques; from gathered Operating Points, a partial model is built, assembling to every DoE configuration the mean of metric values, taken from the corresponding Operating Points; this partial model in sent to the Agora\-Local\-App\-Handler module that made the request: each obtained OP is published on topic "agora\slash{}\textit{[appName]}\slash{}\textit{[hostname]\_[PID]}\slash{}mod\-el" with format "\textit{[configuration] [metric values]}"; both configuration and metric values follow lexicographic order; finally, AgoraRemoteAppHandler makes a final publication on same topic with payload "DoEModelDone" (Figure \ref{fig:doe_model}).
+AgoraRemoteAppHandler has gathered all needed OPs related to DoE configurations and it is computing complete Operating Point list through Machine Learning techniques. From gathered Operating Points, a partial model is built, assembling to every DoE configuration the mean of metric values, taken from the corresponding Operating Points. This partial model in sent to the Agora\-Local\-App\-Handler module that made the request. Each obtained OP is published on topic "agora\slash{}\textit{[appName]}\slash{}\textit{[hostname]\_[PID]}\slash{}mod\-el" with format "\textit{[configuration] [metric values]}". Both configuration and metric values follow lexicographic order. Finally, AgoraRemoteAppHandler makes a final publication on same topic with payload "DoEModelDone" (Figure \ref{fig:doe_model}).
 
 \begin{figure}[hb]
 
     \centering
     \includegraphics[width = \textwidth]{doe_model}
-    \caption{Partial model dispatch by \textit{AgoraRemoteAppHandler} example}
+    \caption{Partial model dispatch by \textit{AgoraRemoteAppHandler} module}
     \label{fig:doe_model}
     
 \end{figure}
@@ -229,13 +229,13 @@ Taking Figure \ref{fig:doe_model} as reference, the first sent OP has parameters
 
 \subsubsection{AgoraRemoteAppHandler internal state equal to \textit{autotuning}}\label{modelSend}
 
-The AgoraRemoteAppHandler module owns the complete OP list, obtained through the Generalized Linear Regression interface by A\-pach\-e Spark\textsuperscript{TM} MLlib library; similarly to the previous case (\ref{DoEModelSend}), every Operating Point is sent to AgoraLocalAppHandler on topic "agora\slash{}\textit{[app\-Name]}\slash{}\textit{[host\-name]\_[PID]}\slash{}model" with format "\textit{[configuration] [metrics values]}", respecting lexicographic order for both parameter and metric values; the final publication has payload "modelDone" (Figure \ref{fig:model}).
+The AgoraRemoteAppHandler module owns the complete OP list, obtained through the Generalized Linear Regression interface by A\-pach\-e Spark\textsuperscript{TM} MLlib library. Similarly to the previous case (\ref{DoEModelSend}), every Operating Point is sent to AgoraLocalAppHandler on topic "agora\slash{}\textit{[app\-Name]}\slash{}\textit{[host\-name]\_[PID]}\slash{}model" with format "\textit{[configuration] [metrics values]}", respecting lexicographic order for both parameter and metric values. The final publication has payload "modelDone" (Figure \ref{fig:model}).
 
 \begin{figure}[hb]
 
     \centering
     \includegraphics[width = \textwidth]{model}
-    \caption{Complete model dispatch by \textit{AgoraRemoteAppHandler} example}
+    \caption{Complete model dispatch by \textit{AgoraRemoteAppHandler} module}
     \label{fig:model}
     
 \end{figure}
@@ -250,23 +250,23 @@ From this point on, AgoraLocalAppHandler stops making requests to the AgoraRemot
 
 \subsection{Application information dispatch by AgoraLocalAppHandler}\label{client_info}
 
-It has been shown that, if an AgoraRemoteAppHandler module receives a request from a node but its internal state is \textit{unknown}, it requests application information (see \ref{req_info}); AgoraRemoteAppHandler saves both the identifier of the first AgoraLocalAppHandler module that replies and all data it receives; other possible replies from other AgoraLocalAppHandler modules are discarded.
+It has been shown that, if an AgoraRemoteAppHandler module receives a request from a node but its internal state is \textit{unknown}, it requests application information (see \ref{req_info}). AgoraRemoteAppHandler saves both the identifier of the first AgoraLocalAppHandler module that replies and all data it receives. Other possible replies from other AgoraLocalAppHandler modules are discarded.
 
 Mandatory information AgoraLocalAppHandler modules have to send is:
 
 \begin{enumerate}
 
-    \item metrics under examination: the keyword is \textit{metric}, followed by metric name; there is a publication for each metric; publications have to be in lexicographic order with respect to metric name;
+    \item metrics under examination: the keyword is \textit{metric}, followed by metric name. There is a publication for each metric. Publications have to be in lexicographic order with respect to metric name;
     
     e.g. payload: "metric avg\_throughput"
     
-    \item application parameters: the keyword is \textit{param}, followed by parameter name, the way in which it is transmitted and corresponding values; there is a publication for each parameter; also in this case, publications must follow lexicographic order with respect to parameter name; Agora makes available two ways to send values:
+    \item application parameters: the keyword is \textit{param}, followed by parameter name, the way in which it is transmitted and corresponding values. There is a publication for each parameter. Also in this case, publications must follow lexicographic order with respect to parameter name. Agora makes available two ways to send values:
     
     \begin{enumerate}
     
         \item by list: the keyword is \textit{enum} and, in this case, all possible values are listed;
         
-        \item by extreme values and step: the keyword is \textit{range} and, in this case, minimum value, maximum value and step are sent; AgoraRemoteAppHandler module, from this information, computes all possible parameter values.
+        \item by extreme values and step: the keyword is \textit{range} and, in this case, minimum value, maximum value and step are sent. AgoraRemoteAppHandler module, from this information, computes all possible parameter values.
     
     \end{enumerate}
     
@@ -280,11 +280,11 @@ There are some optional information that AgoraLocalAppHandler modules can send t
 
 \begin{enumerate}
 
-    \item number of required repetitions for each Operating Point: the keyword is \textit{numReps}, followed by a number; this value represents the number of Operating Points that the AgoraRemoteAppHandler has to gather for each Design of Experiments configuration, during Design Space Exploration phase;
+    \item number of required repetitions for each Operating Point: the keyword is \textit{numReps}, followed by a number. This value represents the number of Operating Points that the AgoraRemoteAppHandler has to gather for each Design of Experiments configuration, during Design Space Exploration phase;
     
     e.g. payload: "numReps 5"
     
-    \item Design of Experiments type: the keyword is \textit{DoE}, followed by the term that indicates the kind of Design of Experiments that has to be used; it can be:
+    \item Design of Experiments type: the keyword is \textit{DoE}, followed by the term that indicates the kind of Design of Experiments that has to be used. It can be:
     
     \begin{enumerate}
     
@@ -294,9 +294,9 @@ There are some optional information that AgoraLocalAppHandler modules can send t
         
         \item \textit{pbd}: it corresponds to the Plackett-Burman DoE;
         
-        \item \textit{lhd}: it corresponds to the Latin-Hypercube DoE; in this case, there is another optional information that can be sent to the AgoraRemoteAppHandler module: the number of configurations that have to be produced, with the word \textit{lhdSamples} followed by the desired value; if this information is not sent, the number of random configurations is equal to the number of application parameters;
+        \item \textit{lhd}: it corresponds to the Latin-Hypercube DoE. In this case, there is another optional information that can be sent to the AgoraRemoteAppHandler module: the number of configurations that have to be produced, with the word \textit{lhdSamples} followed by the desired value. If this information is not sent, the number of random configurations is equal to the number of application parameters;
         
-        \item \textit{fcccdExtra}: it corresponds to the Face Centered Central Composite DoE with one Center Point plus the addition of other configurations through the Latin-Hypercube DoE; as in the previous case, the optional keyword \textit{lhdSamples} is used to express the number of extra configurations, otherwise they are equal to the number of parameters;
+        \item \textit{fcccdExtra}: it corresponds to the Face Centered Central Composite DoE with one Center Point plus the addition of other configurations through the Latin-Hypercube DoE. As in the previous case, the optional keyword \textit{lhdSamples} is used to express the number of extra configurations, otherwise they are equal to the number of parameters;
         
         \item \textit{fullFact}: it corresponds to the Full-Factorial DoE.
     
@@ -308,7 +308,7 @@ There are some optional information that AgoraLocalAppHandler modules can send t
     
     e.g. payload: "lhdSamples 6"
     
-    \item Response Surface Modeling technique: the keyword is \textit{RSM}, followed by the term that indicates the Machine Learning technique that has to be used in order to predict application complete OP list; Agora implements two versions of the Apache Spark\textsuperscript{TM} Generalized Linear Regression, explained in detail in \ref{regrTransforms}:
+    \item Response Surface Methodology technique: the keyword is \textit{RSM}, followed by the term that indicates the Machine Learning technique that has to be used in order to predict application complete OP list. Agora implements two versions of the Apache Spark\textsuperscript{TM} Generalized Linear Regression, explained in detail in Chapter \ref{regrTransforms}:
     
     \begin{enumerate}
     
@@ -320,7 +320,7 @@ There are some optional information that AgoraLocalAppHandler modules can send t
     
     e.g. payload: "RSM sparkGenLinRegrPolyComb2"
     
-    \item parameter value transformations for the 1st implemented version of Apache Spark\textsuperscript{TM} Generalized Linear Regression RSM: the keyword is \textit{paramsTransforms}, followed by the involved metric name and the terms that indicate the kind of parameter transformations, the family distribution and the link function. Transformations must follow the same order of parameter information dispatch; they can be:
+    \item parameter value transformations for the 1st implemented version of Apache Spark\textsuperscript{TM} Generalized Linear Regression RSM: the keyword is \textit{paramsTransforms}, followed by the involved metric name and the terms that indicate the kind of parameter transformations, the family distribution and the link function. Transformations must follow the same order of parameter information dispatch. They can be:
     
     \begin{enumerate}
     
@@ -334,7 +334,7 @@ There are some optional information that AgoraLocalAppHandler modules can send t
     
     \end{enumerate}
     
-    Agora focuses on the prediction of continuous functions with normal distribution: corresponding family is the Gaussian one, indicated with word \textit{gaussian}. For Gaussian family, link function can be:
+    Agora focuses on the prediction of continuous functions with normal distribution; the corresponding family is the Gaussian one, indicated with word \textit{gaussian}. For Gaussian family, link function can be:
     
     \begin{enumerate}
     
@@ -350,7 +350,7 @@ There are some optional information that AgoraLocalAppHandler modules can send t
     
     e.g. payload: "paramsTransforms avg\_error id sqrt gaussian log"
     
-    \item number of application features: the keyword is \textit{numFeats}, followed by the corresponding number; in this case, a minimum number $n$ of feature value observations can be specified through the keyword \textit{minNumObsFeatValues}, followed by $n$: only those feature values that are observed at least $n$ times, during Design Space Exploration phase, contribute to the prediction of application complete OP list; if no feature value reaches $n$ observations, $n$ becomes the number of observations of the most observed feature value; if this last information is missing, $n = 1$.
+    \item number of application features: the keyword is \textit{numFeats}, followed by the corresponding number. In this case, a minimum number $n$ of feature value observations can be specified through the keyword \textit{minNumObsFeatValues}, followed by $n$. Only those feature values that are observed at least $n$ times, during Design Space Exploration phase, contribute to the prediction of application complete OP list. If no feature value reaches $n$ observations, $n$ becomes the number of observations of the most observed feature value. If this last information is missing, $n = 1$.
     
     e.g. payload: "numFeats 1"
     
@@ -358,17 +358,17 @@ There are some optional information that AgoraLocalAppHandler modules can send t
 
 \end{enumerate}
 
-If not specified, default Design of Experiments type is Face Centered Central Composite DoE with one Center Point, default number of repetitions for each OP is 1, default number of program features is 0 and default RSM technique is the \textit{"polynomial combinations of degree 2"} version of the Apache Spark\textsuperscript{TM} Generalized Linear Regression. If the chosen RSM technique is the \textit{"transformations by functions"} GLR version but there is no information about parameter value transformations, Agora tries every possible combination in union with all possible link functions, choosing the best result according to Akaike Information Criterion measure and the mean of the sum of coefficient standard errors (see \ref{regrTransforms}).
+If not specified, default Design of Experiments type is Face Centered Central Composite DoE with one Center Point, default number of repetitions for each OP is 1, default number of program features is 0 and default RSM technique is the \textit{"polynomial combinations of degree 2"} version of the Apache Spark\textsuperscript{TM} Generalized Linear Regression. If the chosen RSM technique is the \textit{"transformations by functions"} GLR version but there is no information about parameter value transformations, Agora tries every possible combination in union with all possible link functions, choosing the best result according to Akaike Information Criterion measure and the mean of the sum of coefficient standard errors (see Chapter \ref{regrTransforms}).
 
-All information is sent by AgoraLocalAppHandler modules on topic "agora\slash{}\textit{[appName]}\slash{}info\slash{}\textit{[hostname]\_[PID]}"; a final publication with message "done" specifies to the AgoraRemoteAppHandler that application information is finished. Taking Figure \ref{fig:info_send} as reference, the AgoraRemoteAppHandler pulls out, from topic, \textit{crisXPS15\_1897} and it saves this identifier as the AgoraLocalAppHandler that is sending program information; as we can see, \textit{Swaptions} application focuses on two metrics, $avg\_error$ and $avg\_throughput$; it has two parameters, $num\_threads$ and $num\_trials$; the former is sent with the complete list of values, while the latter is sent with the keyword \textit{range}, specifying its minimum value ($100.000$), its maximum one ($1.000.000$) and the step ($100.000$): the Agora\-Remote\-App\-Handler computes all values, that are therefore $100.000$, $200.000$, $300.000$, ..., $1.000.000$; the Design of Experiments that has to be used is the Face Centered DoE with one Center Point and the RSM technique is the 1st version of the Apache Spark\textsuperscript{TM} Generalized Linear Regression; parameter transformations are also specified so, e.g. for metric $avg\_error$, the first parameter ($num\_threads$) will not be transformed, while the second parameter ($num\_trials$) has to be transformed with the square root function, applying \textit{gaussian} as family distribution and \textit{log} as link function; it can be noticed that there is no information about the number of Operating Point repetitions to collect during DSE phase: in this case, default value is used (1 repetition for each OP); finally, there is no payload with keyword \textit{numFeats} either: \textit{Swaptions} does not have features.
+All information is sent by AgoraLocalAppHandler modules on topic "agora\slash{}\textit{[appName]}\slash{}info\slash{}\textit{[hostname]\_[PID]}". A final publication with message "done" specifies to the AgoraRemoteAppHandler that application information is finished. Taking Figure \ref{fig:info_send} as reference, the AgoraRemoteAppHandler pulls out, from topic, \textit{crisXPS15\_1897} and it saves this identifier as the AgoraLocalAppHandler that is sending program information. As we can see, \textit{Swaptions} application focuses on two metrics, $avg\_error$ and $avg\_throughput$. It has two parameters, $num\_threads$ and $num\_trials$; the former is sent with the complete list of values, while the latter is sent with the keyword \textit{range}, specifying its minimum value ($100.000$), its maximum one ($1.000.000$) and the step ($100.000$). The Agora\-Remote\-App\-Handler module computes all values, that are therefore $100.000$, $200.000$, $300.000$, ..., $1.000.000$. The Design of Experiments that has to be used is the Face Centered DoE with one Center Point and the RSM technique is the 1st version of the Apache Spark\textsuperscript{TM} Generalized Linear Regression. Parameter transformations are also specified so, e.g. for metric $avg\_error$, the first parameter ($num\_threads$) will not be transformed, while the second parameter ($num\_trials$) has to be transformed with the square root function, applying \textit{gaussian} as family distribution and \textit{log} as link function. It can be noticed that there is no information about the number of Operating Point repetitions to collect during DSE phase: in this case, default value is used (1 repetition for each OP). Finally, there is no payload with keyword \textit{numFeats} either: \textit{Swaptions} does not have features.
 
-The AgoraRemoteAppHandler module is now ready to compute Design of Experiments configurations; after that, it can start distributing them to nodes, driving the subsequent Design Space Exploration phase.
+The AgoraRemoteAppHandler module is now ready to compute Design of Experiments configurations. After that, it can start distributing them to nodes, driving the subsequent Design Space Exploration phase.
 
 \begin{figure}[t]
 
     \centering
     \includegraphics[width = \textwidth]{info_send}
-    \caption{Application information dispatch by \textit{AgoraLocalAppHandler} module example}
+    \caption{Application information dispatch by \textit{AgoraLocalAppHandler} module}
     \label{fig:info_send}
     
 \end{figure}
@@ -379,22 +379,22 @@ The AgoraRemoteAppHandler module is now ready to compute Design of Experiments c
 
 \subsection{Operating Point dispatch by AgoraLocalAppHandler module}\label{opSend}
 
-During DSE, AgoraLocalAppHandler modules store configurations that receive from AgoraRemoteAppHandler (see \ref{dse_conf}); every time a configuration is sent, if the one in use differs from the new one, AgoraLocalAppHandler communicates to mARGOt autotuner new parameter values, therefore next program computation is executed with new parameter values.
+During DSE, AgoraLocalAppHandler modules store configurations that receive from AgoraRemoteAppHandler (see \ref{dse_conf}). Every time a configuration is sent, if the one in use differs from the new one, AgoraLocalAppHandler communicates to mARGOt autotuner new parameter values, therefore next program computation is executed with new parameter values.
 
-When execution is finished, the AgoraLocalAppHandler module arranges the obtained Operating Point, composed by the set of parameter values and the observed metrics of interest; it publishes on topic "agora/\textit{[appName]}/OPs" a message in the form "\textit{[configuration]}:\textit{[metric values]}", in which both value lists have to follow lexicographic order with respect to parameter and metric name (Figure \ref{fig:op}). If there are application features, payload is in the form "\textit{[configuration]}:\textit{[ob\-served feature values]}:\textit{[metric values]}".
+When execution is finished, the AgoraLocalAppHandler module arranges the obtained Operating Point, composed by the set of parameter values and the observed metrics of interest. It publishes on topic "agora/\textit{[appName]}/OPs" a message in the form "\textit{[configuration]}:\textit{[metric values]}", in which both value lists have to follow lexicographic order with respect to parameter and metric name (Figure \ref{fig:op}). If there are application features, payload is in the form "\textit{[configuration]}:\textit{[ob\-served feature values]}:\textit{[metric values]}".
 
 \begin{figure}[htb]
 
     \centering
     \includegraphics[width = \textwidth]{op}
-    \caption{Operating Point dispatch by \textit{AgoraLocalAppHandler} module example}
+    \caption{Operating Point dispatch by \textit{AgoraLocalAppHandler} module}
     \label{fig:op}
     
 \end{figure}
 
-Taking Figure \ref{fig:op} as reference, \textit{Swaptions} has been just executed with\linebreak $num\_threads = 8$ and $num\_trials = 500.000$; monitored metric values are $avg\_error = 41,43726$ and $avg\_throughput = 7,312116$.
+Taking Figure \ref{fig:op} as reference, \textit{Swaptions} has been just executed with\linebreak $num\_threads = 8$ and $num\_trials = 500.000$. Monitored metric values are $avg\_error = 41,43726$ and $avg\_throughput = 7,312116$.
 
-When AgoraRemoteAppHandler receives an Operating Point, it decrements the corresponding number of needed OP repetitions: if the updated value is equal to zero, it means that there is no need of other related OPs, so the corresponding configuration is moved from the set of available ones to the set of accomplished ones.
+When AgoraRemoteAppHandler receives an Operating Point, it decrements the corresponding number of needed OP repetitions. If the updated value is equal to zero, it means that there is no need of other related OPs, so the corresponding configuration is moved from the set of available ones to the set of accomplished ones.
 
 Model prediction just starts when last needed Operating Point repetition related to last available configuration is received from a node.
 
@@ -404,25 +404,25 @@ Model prediction just starts when last needed Operating Point repetition related
 
 \subsection{AgoraLocalAppHandler module disconnection}\label{client_disc}
 
-If an AgoraLocalAppHandler module disconnects for some reason, related Agora\-Remote\-App\-Handler receives a message on topic "agora\slash{}\textit{[appName]}\slash{}dis\-con\-nec\-tion" with payload "\textit{[hostname]\_[PID]}", relative to disconnected AgoraLocalAppHandler; the AgoraRemote\-App\-Handler module removes node identifier from the list of machines it is managing (Figure \ref{fig::locDisc}).
+If an AgoraLocalAppHandler module disconnects for some reason, related Agora\-Remote\-App\-Handler receives a message on topic "agora\slash{}\textit{[appName]}\slash{}dis\-con\-nec\-tion" with payload "\textit{[hostname]\_[PID]}", relative to disconnected AgoraLocalAppHandler. The AgoraRemote\-App\-Handler module removes node identifier from the list of machines it is managing (Figure \ref{fig::locDisc}).
 
 \begin{figure}[ht]
 
     \centering
     \includegraphics[width = \textwidth]{client_disc}
-    \caption{AgoraLocalAppHandler module disconnection example}
+    \caption{AgoraLocalAppHandler module disconnection}
 
     \label{fig::locDisc}
     
 \end{figure}
 
-Particular attention has to be taken if the disconnected AgoraLocalAppHandler module is the one that, at the beginning, is sending application information (see \ref{client_info}): in this case, AgoraRemoteAppHandler has to remove disconnected machine, it has to reset partial data (received up to that moment) and it asks again all available application information to remaining connected Agora\-Local\-App\-Handler modules (Figure \ref{fig::locInfoDisc}).
+Particular attention has to be taken if the disconnected AgoraLocalAppHandler module is the one that, at the beginning, is sending application information (see \ref{client_info}); in this case, AgoraRemoteAppHandler has to remove disconnected machine, it has to reset partial data (received up to that moment) and it asks again all available application information to remaining connected Agora\-Local\-App\-Handler modules (Figure \ref{fig::locInfoDisc}).
 
 \begin{figure}[hb]
 
     \centering
     \includegraphics[width = \textwidth]{infoclient_disc}
-    \caption{Disconnection of \textit{AgoraLocalAppHandler} module that was sending application information example}
+    \caption{Disconnection of \textit{AgoraLocalAppHandler} module that was sending application information}
 
     \label{fig::locInfoDisc}
     
@@ -440,7 +440,7 @@ If the AgoraRemoteAppHandler module disconnects, related AgoraLocalAppHandler mo
 
     \centering
     \includegraphics[width = \textwidth]{server_disc}
-    \caption{AgoraRemoteAppHandler module disconnection example}
+    \caption{AgoraRemoteAppHandler module disconnection}
 
     \label{fig::remDisc}
     
@@ -463,18 +463,19 @@ Each AgoraLocalAppHandler reacts to this event according to its internal state, 
 
 \subsubsection{AgoraLocalAppHandler internal state equal to \textit{defaultStatus}}
 
-When a node starts running a program, the autotuner sets up application parameter values with a predetermined default configuration; if any Design Space Exploration phase has not been started yet, AgoraRemoteAppHandler disconnection does not affect application behavior.
+When a node starts running a program, the autotuner sets up application parameter values with a predetermined default configuration. If any Design Space Exploration phase has not been started yet, AgoraRemoteAppHandler disconnection does not affect application behavior.
 
 
 \subsubsection{AgoraLocalAppHandler internal state equal to \textit{DSE}}
 
-The AgoraRemoteAppHandler module is driving Design Space Exploration phase, sending configurations to AgoraLocalAppHandler modules; in this case, default configuration is restored and the application is executed with corresponding parameter values (Figure \ref{fig::remDiscDSE}).
+The AgoraRemoteAppHandler module is driving Design Space Exploration phase, sending configurations to AgoraLocalAppHandler modules. In this case, default configuration is restored and the application is executed with corresponding parameter values (Figure \ref{fig::remDiscDSE}).
 
 \begin{figure}[htb]
 
     \centering
     \includegraphics[width = \textwidth]{DSEinternal}
-    \caption{AgoraRemoteAppHandler module disconnection with A\-go\-ra\-Local\-App\-Handler internal state equal to \textit{DSE} example}
+
+    \caption{AgoraRemoteAppHandler module disconnection with A\-go\-ra\-Local\-App\-Handler internal state equal to \textit{DSE}}
 
     \label{fig::remDiscDSE}
     
@@ -483,7 +484,7 @@ The AgoraRemoteAppHandler module is driving Design Space Exploration phase, send
 
 \subsubsection{AgoraLocalAppHandler internal state equal to \textit{DoEModel}}
 
-AgoraLocalAppHandler has received a partial OP list, related to Design of Experiments configurations (see \ref{DoEModelSend}); in this case, available OP list is not deleted, therefore the autotuner continues to work with this information.
+AgoraLocalAppHandler has received a partial OP list, related to Design of Experiments configurations (see \ref{DoEModelSend}). In this case, available OP list is not deleted, therefore the autotuner continues to work with this information.
 
 
 \subsubsection{AgoraLocalAppHandler internal state equal to \textit{autotuning}}
@@ -500,20 +501,22 @@ The AgoraLocalAppHandler module has already received predicted complete OP list 
 
     \centering
     \includegraphics[width = \textwidth]{tesiCris_client_integration}
+
     \caption{Sketch application with \textit{AgoraLocalAppHandler} module plus mARGOt autotuner integration}
+
     \label{fig::sketchApp}
     
 \end{figure}
 
-Figure \ref{fig::sketchApp} shows a sketch application that, until \textit{loop\_con\-di\-tion()} is verified (line 12), is executed; computation depends on three parameters ($pa\-ram1, pa\-ram2, pa\-ram3$) that are set up by mARGOt autotuner at the beginning of every cycle (line 16), while two metrics of interest ($metric1, metric2$) are monitored (for mARGOt details, see related scientific publication \cite{gadioli2015application}).
+Figure \ref{fig::sketchApp} shows a sketch application that, until \textit{loop\_con\-di\-tion()} is verified (line 12), is executed. Computation depends on three parameters ($pa\-ram1, pa\-ram2, pa\-ram3$) that are set up by mARGOt autotuner at the beginning of every cycle (line 16), while two metrics of interest ($metric1, metric2$) are monitored (for mARGOt details, see related scientific publication \cite{gadioli2015application}).
 
-Integration code required to use Agora framework with mARGOt autotuner is written in bold red; main steps during program execution are three:
+Integration code required to use Agora framework with mARGOt autotuner is written in bold red. Main steps during program execution are three:
 
 \begin{enumerate}
 
-    \item AgoraLocalAppHandler module and mARGOt autotuner instantiation and initialization (lines 9-10): the AgoraLocalAppHandler module saves all application information and sets up mARGOt autotuner with a default Operating Point; if nothing happens, the application is executed with this configuration;
+    \item AgoraLocalAppHandler module and mARGOt autotuner instantiation and initialization (lines 9-10): the AgoraLocalAppHandler module saves all application information and sets up mARGOt autotuner with a default Operating Point. If nothing happens, the application is executed with this configuration;
     
-    \item Application knowledge update (line 14): the AgoraLocalAppHandler module updates, from time to time, its internal knowledge about application configurations that are sent by the AgoraRemoteAppHandler module; before mARGOt autotuner sets up application parameters (line 16), AgoraLocalAppHandler checks mARGOt knowledge with respect to its internal one: if they are different, mARGOt Operating Points are updated. In this way, for instance, if the AgoraLocalAppHandler module receives a new configuration during Design Space Exploration phase (see \ref{dse_conf}), mARGOt knowledge is set up with this data, so the application is forced to be executed with the corresponding parameter values; if, for instance, application complete model is received (see \ref{modelSend}), mARGOt internal knowledge is set up with all this information, so the autotuner can choose the best Operating Point that fulfills application current goals and requirements;
+    \item Application knowledge update (line 14): the AgoraLocalAppHandler module updates, from time to time, its internal knowledge about application configurations that are sent by the AgoraRemoteAppHandler module. Before mARGOt autotuner sets up application parameters (line 16), AgoraLocalAppHandler checks mARGOt knowledge with respect to its internal one: if they are different, mARGOt Operating Points are updated. In this way, for instance, if the AgoraLocalAppHandler module receives a new configuration during Design Space Exploration phase (see \ref{dse_conf}), mARGOt knowledge is set up with this data, so the application is forced to be executed with the corresponding parameter values. If, for instance, application complete model is received (see \ref{modelSend}), mARGOt internal knowledge is set up with all this information, so the autotuner can choose the best Operating Point that fulfills application current goals and requirements;
     
     \item Operating Point dispatch (line 21-22): after each computation has done, parameter values just used with the corresponding monitored metrics of interest are published on a predetermined MQTT topic, so the related AgoraRemoteAppHandler module can receive this information (see \ref{opSend}).
     

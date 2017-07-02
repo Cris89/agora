@@ -1,12 +1,13 @@
 \chapter{Proposed Methodology}\label{methodology}
 
-\lettrine{T}{}\textit{unable} applications are characterized by the presence of specific parameters, also known as \textit{knobs}, that influence program execution; their change generates different application results in terms of metric of interest values, as, for instance, throughput or power consumption. Figure \ref{fig::appDef} shows a typical parallel architecture with three nodes (node 1, 2 and 3) that are executing three tunable applications (application X, Y and Z respectively).
+\lettrine{T}{}\textit{unable} applications are characterized by the presence of specific parameters, also known as \textit{knobs}, that influence program execution. Their change generates different application results in terms of metric of interest values, as, for instance, throughput or power consumption. Figure \ref{fig::appDef} shows a typical parallel architecture with three nodes (node 1, 2 and 3) that are executing three tunable applications (application X, Y and Z respectively).
 
 \begin{figure}[htb]
 
     \centering
     \includegraphics[width = 0.8\textwidth]{Apps}
-    \caption[Parallel architecture with tunable applications example]{An example of a parallel architecture with three executing tunable applications: application X on node 1 and application Z on node 3 have three knobs, while application Y on node 2 has two knobs}
+
+    \caption[An example of a parallel architecture with tunable applications]{An example of a parallel architecture with three executing tunable applications. Application X on node 1 and application Z on node 3 have three knobs, while application Y on node 2 has two knobs}
     \label{fig::appDef}
     
 \end{figure}
@@ -35,7 +36,7 @@ The autotuner needs application knowledge, so there have to be a preceding offli
 
 This thesis focuses on the problem of managing concurrent executed by parallel architecture. Main objective of this work is to initially drive program execution with a subset of parameter configurations taken from their Design Space, in order to gather all metric of interest values associated to them. This list composes the training set for the prediction of application complete model through Machine Learning techniques. Agora can also correctly manage possible features, where a feature is a particular application element than cannot be set up like software knobs, but it contributes to the estimation of complete model. During the DSE phase, feature values are observed like metric values while, during model prediction, they are considered as parameters, so their observations take part to the estimation of metric of interest values.
 
-The typical architecture in which Agora works is parallel, where there are multiple nodes, potentially heterogeneous, that execute applications; the main Agora features are the following:
+The typical architecture in which Agora works is parallel, where there are multiple nodes, potentially heterogeneous, that execute applications. The main Agora features are the following:
 
 \begin{enumerate}
     
@@ -60,7 +61,7 @@ The typical architecture in which Agora works is parallel, where there are multi
     
 \end{figure}
 
-Figure \ref{fig::tesiCris_overview} shows all Agora components and a possible scenario with a parallel architecture in which six nodes are running three different types of tunable applications; for each type of application there exists a dedicated AgoraRemoteAppHandler module that manages it. The orange arrows represent the possible communications among modules, made possible through MQTT subscriptions and publications on predetermined topics.
+Figure \ref{fig::tesiCris_overview} shows all Agora components and a possible scenario with a parallel architecture in which six nodes are running three different types of tunable applications. For each type of application there exists a dedicated AgoraRemoteAppHandler module that manages it. The orange arrows represent the possible communications among modules, made possible through MQTT subscriptions and publications on predetermined topics.
 
 The main modules of Agora are:
 
@@ -108,16 +109,16 @@ Principal phases that define framework workflow and the interaction among compon
 
 \begin{enumerate}
 
-    \item application start of execution: when programs start running, related AgoraLocalAppHandler module notifies their existence to the AgoraDispatcher module; if the application is unknown, AgoraDispatcher creates a dedicated AgoraRemoteAppHandler module that is in charge of managing it, otherwise it communicates new node to the corresponding existing AgoraRemoteAppHandler module;
+    \item application start of execution: when programs start running, related AgoraLocalAppHandler module notifies their existence to the AgoraDispatcher module. If the application is unknown, AgoraDispatcher creates a dedicated AgoraRemoteAppHandler module that is in charge of managing it, otherwise it communicates new node to the corresponding existing AgoraRemoteAppHandler module;
     
     \item Design of Experiments computation: AgoraRemoteAppHandler module computes the subset of configurations, from the entire application Design Space, that compose the Design of Experiments; after that, it is ready to drive Design Space Exploration phase, distributing these configurations to requesting nodes;
     
-    \item configuration reception: AgoraLocalAppHandler module updates application knowledge with all the configurations that, from time to time, are sent by the AgoraRemoteAppHandler module; every time program computation is finished, it sends back to the AgoraRemoteAppHandler module a list of values, made by the configuration just used with the observed metrics of interest;
+    \item configuration reception: AgoraLocalAppHandler module updates application knowledge with all the configurations that, from time to time, are sent by the AgoraRemoteAppHandler module. Every time program computation is finished, it sends back to the AgoraRemoteAppHandler module a list of values, made by the configuration just used with the observed metrics of interest;
     
-    \item application configuration and related metric value collection: A\-go\-ra\-Remote\-App\-Handler module collects all the information it receives from running nodes; when it has all necessary data, it uses Machine Learning techniques in order to predict application complete model, made by all possible configurations associated with predicted metric values;
+    \item application configuration and related metric value collection: A\-go\-ra\-Remote\-App\-Handler module collects all the information it receives from running nodes. When it has all necessary data, it uses Machine Learning techniques in order to predict application complete model, made by all possible configurations associated with predicted metric values;
     
-    \item predicted model dispatch: application complete model is sent by AgoraRemoteAppHandler to associated running nodes; related AgoraLocalAppHandler modules update program knowledge with this information, so the dynamic autotuner can set up application knobs with the best configuration that fulfills current goals and requirements.
+    \item predicted model dispatch: application complete model is sent by AgoraRemoteAppHandler to associated running nodes. Related AgoraLocalAppHandler modules update program knowledge with this information, so the dynamic autotuner can set up application knobs with the best configuration that fulfills current goals and requirements.
 
 \end{enumerate}
 
-The interactions among Agora components are implemented in an asynchronous way: program executions are independent from MQTT message exchange and all modules properly react to these events, in order to not condition application workflow and to not steal execution time, making all process as flowing as possible.
+The interactions among Agora components are implemented in an asynchronous way; program executions are independent from MQTT message exchange and all modules properly react to these events, in order to not condition application workflow and to not steal execution time, making all process as flowing as possible.
