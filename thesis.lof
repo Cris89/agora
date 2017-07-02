@@ -22,11 +22,11 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {2.3}{\ignorespaces MAPE-K control loop design\relax }}{11}{figure.caption.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.4}{\ignorespaces MQTT publish/subscribe example, taken from \cite {site:hivemq}\relax }}{13}{figure.caption.13}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces MQTT publish/subscribe example, taken from \cite {site:hivemq}\relax }}{12}{figure.caption.13}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {2.5}{\ignorespaces A MQTT topic, taken from \cite {site:hivemq}\relax }}{13}{figure.caption.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.6}{\ignorespaces A MQTT topic with single-level wildcard, taken from \cite {site:hivemq}\relax }}{14}{figure.caption.15}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces A MQTT topic with single-level wildcard, taken from \cite {site:hivemq}\relax }}{13}{figure.caption.15}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {2.7}{\ignorespaces A MQTT topic with multi-level wildcard, taken from \cite {site:hivemq}\relax }}{14}{figure.caption.16}
 \defcounter {refsection}{0}\relax 
