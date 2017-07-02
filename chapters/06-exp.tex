@@ -40,7 +40,7 @@ error = \dfrac{1}{0.015 \cdot \sqrt{param_1} + 0.033 \cdot \ln{(param_2)} + 0.02
 
 Application parameters can assume these values:
 
-\begin{table}[h]
+\begin{table}[H]
 
     \centering
 
@@ -60,8 +60,6 @@ Application parameters can assume these values:
 
 \end{table}
 
-This application has 455 Operating Points. Figure \ref{fig::opListSynth1} shows complete OP distribution for $noisePercentage = 15\%$: every point stands for a particular configuration with an associated error value (on x-axis) and a throughput one (on y-axis). Since $noise$ in $executionTime$ is affected by $randomNumber$, this plot consider its expected value, equal to the mean of the chosen exponential distribution (0.3). The obtained OP list represents the reference model for this predetermined $noise\-Per\-cent\-age$ value. Other reference models are similar, since the only difference is the $noisePercentage$ value for the calculation of $executionTime$ variable.
-
 \begin{figure}[h]
 
     \centering
@@ -71,10 +69,21 @@ This application has 455 Operating Points. Figure \ref{fig::opListSynth1} shows 
     
 \end{figure}
 
+This application has 455 Operating Points. Figure \ref{fig::opListSynth1} shows complete OP distribution for $noisePercentage = 15\%$: every point stands for a particular configuration with an associated error value (on x-axis) and a throughput one (on y-axis). Since $noise$ in $executionTime$ is affected by $randomNumber$, this plot consider its expected value, equal to the mean of the chosen exponential distribution (0.3). The obtained OP list represents the reference model for this predetermined $noise\-Per\-cent\-age$ value. Other reference models are similar, since the only difference is the $noisePercentage$ value for the calculation of $executionTime$ variable.
+
 Concerning model prediction quality, therefore, for every application setting with a fixed $noisePercentage$, estimated OP list is compared with the corresponding reference one.
 
 
 \subsection{Synthetic application version 2}
+
+\begin{figure}[h	]
+
+    \centering
+    \includegraphics[width = \textwidth]{opGraphSynth2}
+    \caption{Throughput by varying the error for synthetic application version 2}
+    \label{fig::opListSynth2}
+    
+\end{figure}
 
 In the second synthetic application version, execution time is equal to:
 \[
@@ -89,7 +98,7 @@ error = \dfrac{1}{0.01 \cdot param_1 + 0.7 \cdot \ln{(param_2)} + 0.019 \cdot pa
 
 Parameter values are:
 
-\begin{table}[h]
+\begin{table}[H]
 
     \centering
 
@@ -111,15 +120,6 @@ Parameter values are:
 
 In this application the number of Operating Points is 364; Figure \ref{fig::opListSynth2} shows complete OP distribution of reference model with $noise\-Per\-cent\-age = 5\%$: every point stands for a particular configuration with an associated error value (on x-axis) and a throughput one (on y-axis).
 
-\begin{figure}[h]
-
-    \centering
-    \includegraphics[width = \textwidth]{opGraphSynth2}
-    \caption{Throughput by varying the error for synthetic application version 2}
-    \label{fig::opListSynth2}
-    
-\end{figure}
-
 Regarding model prediction goodness, same reasoning as previous application version is applied.
 
 
@@ -127,7 +127,7 @@ Regarding model prediction goodness, same reasoning as previous application vers
 
 As already stated in \ref{expSetup}, this application has two parameters: $num\_\-threads$ and $num\_\-trials$; their values are:
 
-\begin{table}[h]
+\begin{table}[H]
 
     \centering
 
@@ -146,9 +146,9 @@ As already stated in \ref{expSetup}, this application has two parameters: $num\_
 
 \end{table}
 
-The number of Operating Points is therefore 80; Figure \ref{fig::swaptionsOPs} shows complete OP distribution with respect $avg\_error$ and $avg\_throughput$ metrics of interest:
+The number of Operating Points is therefore 80; Figure \ref{fig::swaptionsOPs} shows complete OP distribution with respect $avg\_error$ and $avg\_throughput$ metrics of interest.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 
     \centering
     \includegraphics[width = \textwidth]{swaptionsOPgraph}
@@ -179,13 +179,13 @@ Concerning model prediction goodness, both synthetic application versions are ex
 deltaError(m) = \dfrac{\left\vert predictedValue(m) - referenceValue(m) \right\vert \cdot 100}{\left\vert referenceValue(m) \right\vert}
 \]
 
-where $predictedValue(m)$ and $referenceValue(m)$ have explicit meaning; so, $deltaError(m)$ stands for how much the predicted metric value $m$ distances itself from the corresponding value of the related reference model, in percentage. Figures from \ref{fig::synth1spark1::intervals} to \ref{fig::synth2spark2::means} summarize results:
+where $predictedValue(m)$ and $referenceValue(m)$ have explicit meaning; so, $deltaError(m)$ stands for how much the predicted metric value $m$ distances itself from the corresponding value of the related reference model, in percentage. Figures from \ref{fig::synth1spark1::intervals} to \ref{fig::synth2spark2::means} summarize results.
 
 
 
 
 
-\begin{figure}[h]
+\begin{figure}[htb]
 
     \centering
     
@@ -197,7 +197,7 @@ where $predictedValue(m)$ and $referenceValue(m)$ have explicit meaning; so, $de
     
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[htb]
 
     \centering
     
@@ -213,7 +213,7 @@ where $predictedValue(m)$ and $referenceValue(m)$ have explicit meaning; so, $de
 
 
 
-\begin{figure}[h]
+\begin{figure}[htb]
 
     \centering
     
@@ -225,7 +225,7 @@ where $predictedValue(m)$ and $referenceValue(m)$ have explicit meaning; so, $de
     
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[htb]
 
     \centering
     
@@ -241,7 +241,7 @@ where $predictedValue(m)$ and $referenceValue(m)$ have explicit meaning; so, $de
 
 
 
-\begin{figure}[h]
+\begin{figure}[htb]
 
     \centering
     
@@ -253,7 +253,7 @@ where $predictedValue(m)$ and $referenceValue(m)$ have explicit meaning; so, $de
     
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[htb]
 
     \centering
     
@@ -277,9 +277,9 @@ Figure \ref{fig::synth1spark2::intervals} shows that, for synthetic application 
 
 Concerning synthetic application version 2 with the 2nd version of implemented Generalized Linear Regression as RSM (Figure \ref{fig::synth2spark2::intervals}), results are very similar to the ones related to synthetic application version 1 with 1st version of implemented Generalized Linear Regression (Figure \ref{fig::synth1spark1::intervals}): quality of model prediction is generally very high, even with heavy noises but, in these cases, there is the need of more OP repetitions in order to mitigate this strong disturbance.
 
-For synthetic application version 1, as it can be understood, 1st implemented version of GLR works slightly better than the 2nd one, but their prediction times are very different, as shown in table \ref{tab::GLRtimes}:
+For synthetic application version 1, as it can be understood, 1st implemented version of GLR works slightly better than the 2nd one, but their prediction times are very different, as shown in table \ref{tab::GLRtimes}.
 
-\begin{table}[h]
+\begin{table}[htb]
 
     \centering
     
@@ -310,7 +310,7 @@ From last analyses, we can assert that Generalized Linear Regression with \texti
 
 Concerning execution times, we want to show the significant benefit of sharing Design Space Exploration phase among several nodes, running the same application: the 2nd version of synthetic application with $noise\-Percentage = 10\%$ is executed, using Face Centered Central Composite Desing of Experiments with one Center Point and collecting, for each configuration, 20 repetitions; for this application setting, the total number of configurations to be explored is 300. We accomplish this DSE phase with 1 up to 10 executing applications, collecting the overall executing time, represented by each bar chart in Figure \ref{fig::DSEtimes}.
 
-\begin{figure}[h]
+\begin{figure}[htb]
 
     \centering
     \includegraphics[width = \textwidth]{DSEtimes}
@@ -323,7 +323,7 @@ From Figure \ref{fig::DSEtimes} we can see that Agora takes about 23 minutes to 
 
 Now we want to show general Agora advantages, comparing a Full-Factorial, so exhaustive, application execution with the one supervised by this work; in Figure \ref{fig::full_cris}, first bar chart shows overall time needed to compute Full-Factorial run for synthetic application version 2 with $noisePercentage = 15\%$, analyzing every possible configuration one time; next stacked bar charts show overall time, divided by DSE phase and model prediction, for the same application setting using Agora and collecting 1, 5 and 10 OP repetitions for each DoE configuration:
 
-\begin{figure}[h]
+\begin{figure}[htb]
 
     \centering
     \includegraphics[width = \textwidth]{fullFactorial_tesiCris}
@@ -337,9 +337,7 @@ Figure \ref{fig::full_cris} shows that an exhaustive execution of analyzed appli
 
 \subsubsection{Application behavior over time}
 
-Figure \ref{fig::appBeh} wants to show application behavior during execution with the supervise of Agora and mARGOt autotuner; on x-axis there is time, while on y-axis there are observed metric of interest values during execution. We have run synthetic application version 2 with $noisePercentage = 15\%$, using Face Centered Central Composite Design of Experiments with one Center Point and the 2nd version of implemented GLR as RSM, collecting 5 repetitions for each Design of Experiments configuration during DSE phase. Objective functions have been set up to $Throughput > 3$ and $Error < 1$.
-
-\begin{figure}[h]
+\begin{figure}[htb]
 
     \centering
     \includegraphics[width = \textwidth]{appBehavior}
@@ -347,6 +345,8 @@ Figure \ref{fig::appBeh} wants to show application behavior during execution wit
     \label{fig::appBeh}
     
 \end{figure}
+
+Figure \ref{fig::appBeh} wants to show application behavior during execution with the supervise of Agora and mARGOt autotuner; on x-axis there is time, while on y-axis there are observed metric of interest values during execution. We have run synthetic application version 2 with $noisePercentage = 15\%$, using Face Centered Central Composite Design of Experiments with one Center Point and the 2nd version of implemented GLR as RSM, collecting 5 repetitions for each Design of Experiments configuration during DSE phase. Objective functions have been set up to $Throughput > 3$ and $Error < 1$.
 
 Every couple of corresponding points in graphs of Figure \ref{fig::appBeh} represents a configuration with which the application has been executed, obtaining certain throughput and error metric values; from a colored couple of points to the following one, the application has maintained parameter values corresponding to the former couple; grey empty couples of points indicate application execution with parameter values equal to the first previous colored couple. At the beginning, application runs with default configuration, corresponding to an error of around 0.5 and a throughput equal to about 0.75 (grey couple of points); Agora starts Design Space Exploration, sending DoE configurations: mARGOt, from time to time, sets application parameters with these values, so observed metric of interest values vary during all this phase (red couples of points); when DSE phase terminates, Agora sends a partial model (see \ref{DoEModelSend}) and it starts predicting the complete list of Operating Points: mARGOt chooses the best application configuration that fulfills objective functions, represented by dark green couple of points; throughput is around 4.25, so the first goal is respected, while error is about 5, so the second goal is not achieved (blue lines highlight boundaries of objective functions); when application receives the complete model (around at 6 and a half minutes after starting time), it is set with another configuration (light green couple of points): obtained throughput is approximately 3.25 and error is about 0.5, so all objective functions are fulfilled; of course, if objective functions don't change, program keeps running with this Operating Point.
 
@@ -360,13 +360,13 @@ We evaluate Agora on a real scenario; we use Face Centered Central Composite DoE
 
 \subsubsection{Model prediction quality}
 
-Figures \ref{fig::swaptions15spark2::intervals} and \ref{fig::swaptions15spark2::means} show results on predicted model using $deltaError$ measure, as done for synthetic application analysis (see \ref{deltaErrorExplanation}), for both $avg\_error$ and $avg\_throughput$ metrics:
+Figures \ref{fig::swaptions15spark2::intervals} and \ref{fig::swaptions15spark2::means} show results on predicted model using $deltaError$ measure, as done for synthetic application analysis (see \ref{deltaErrorExplanation}), for both $avg\_error$ and $avg\_throughput$ metrics.
 
 
 
 
 
-\begin{figure}[h]
+\begin{figure}[htb]
 
     \centering
     \includegraphics[width = \textwidth]{deltaErrorRangesSwaptions15Spark2}
@@ -375,7 +375,7 @@ Figures \ref{fig::swaptions15spark2::intervals} and \ref{fig::swaptions15spark2:
     
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[htb]
 
     \centering
     \includegraphics[width = \textwidth]{deltaErrorMeansSwaptions15Spark2}
@@ -393,9 +393,7 @@ We obtain an average $deltaError$ of around $11\%$ for $avg\_throughput$ and abo
 
 \subsubsection{Execution times}
 
-Regarding execution times, we compare analyzed run with a Full-Factorial, so exhaustive, execution in which we collect, for each configuration, 15 repetitions for each Operating Point, as shown in Figure \ref{fig::sw::execT}:
-
-\begin{figure}[h]
+\begin{figure}[htb]
 
     \centering
     
@@ -407,12 +405,12 @@ Regarding execution times, we compare analyzed run with a Full-Factorial, so exh
     
 \end{figure}
 
-Exhaustive execution takes around 28 minutes to finish, while the analyzed one less than 3 and a half minutes, so approximately 8 times less; of course, as explained before, we do not obtain precise predictions for each metric value; nevertheless, \textit{Swaptions} can be executed with the assistance of Agora plus mARGOt autotuner and, finally, prearranged objective functions are achieved, also because mARGOt is able to collect feedback information that corrects application model.
+Regarding execution times, we compare analyzed run with a Full-Factorial, so exhaustive, execution in which we collect, for each configuration, 15 repetitions for each Operating Point, as shown in Figure \ref{fig::sw::execT}. Exhaustive execution takes around 28 minutes to finish, while the analyzed one less than 3 and a half minutes, so approximately 8 times less; of course, as explained before, we do not obtain precise predictions for each metric value; nevertheless, \textit{Swaptions} can be executed with the assistance of Agora plus mARGOt autotuner and, finally, prearranged objective functions are achieved, also because mARGOt is able to collect feedback information that corrects application model.
 
 
 \subsubsection{Application behavior over time}
 
-\begin{figure}[h]
+\begin{figure}[htb]
 
     \centering
     
