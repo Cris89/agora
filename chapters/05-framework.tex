@@ -178,7 +178,7 @@ AgoraRemoteAppHandler doesn't know anything about the application it is managing
 
     \centering
     \includegraphics[width = \textwidth]{info_req}
-    \caption{Application information request by \textit{AgoraRemoteAppHandler} module}
+    \caption{Application information request by AgoraRemoteAppHandler module}
 
     \label{fig::remotInfoReq}
     
@@ -203,7 +203,7 @@ The AgoraRemoteAppHandler module has computed DoE configurations, so it is drivi
 
     \centering
     \includegraphics[width = \textwidth]{conf}
-    \caption{Configuration dispatch by \textit{AgoraRemoteAppHandler} module}
+    \caption{Configuration dispatch by AgoraRemoteAppHandler module}
     \label{fig:conf}
     
 \end{figure}
@@ -219,7 +219,7 @@ AgoraRemoteAppHandler has gathered all needed OPs related to DoE configurations 
 
     \centering
     \includegraphics[width = \textwidth]{doe_model}
-    \caption{Partial model dispatch by \textit{AgoraRemoteAppHandler} module}
+    \caption{Partial model dispatch by AgoraRemoteAppHandler module}
     \label{fig:doe_model}
     
 \end{figure}
@@ -235,7 +235,7 @@ The AgoraRemoteAppHandler module owns the complete OP list, obtained through the
 
     \centering
     \includegraphics[width = \textwidth]{model}
-    \caption{Complete model dispatch by \textit{AgoraRemoteAppHandler} module}
+    \caption{Complete model dispatch by AgoraRemoteAppHandler module}
     \label{fig:model}
     
 \end{figure}
@@ -312,9 +312,9 @@ There are some optional information that AgoraLocalAppHandler modules can send t
     
     \begin{enumerate}
     
-        \item the 1st version ("\textit{transformations by functions}"), that uses parameter values transformations, with associated word \textit{sparkGenLinRegrTransforms};
+        \item the 1st version ("transformations by functions"), that uses parameter values transformations, with associated word \textit{sparkGenLinRegrTransforms};
         
-        \item the 2nd version ("\textit{polynomial combinations of degree 2}"), that uses parameter polynomial combinations of degree 2, with associated word \textit{sparkGenLinRegrPolyComb2}.
+        \item the 2nd version ("polynomial combinations of degree 2"), that uses parameter polynomial combinations of degree 2, with associated word \textit{sparkGenLinRegrPolyComb2}.
     
     \end{enumerate}
     
@@ -358,9 +358,9 @@ There are some optional information that AgoraLocalAppHandler modules can send t
 
 \end{enumerate}
 
-If not specified, default Design of Experiments type is Face Centered Central Composite DoE with one Center Point, default number of repetitions for each OP is 1, default number of program features is 0 and default RSM technique is the \textit{"polynomial combinations of degree 2"} version of the Apache Spark\textsuperscript{TM} Generalized Linear Regression. If the chosen RSM technique is the \textit{"transformations by functions"} GLR version but there is no information about parameter value transformations, Agora tries every possible combination in union with all possible link functions, choosing the best result according to Akaike Information Criterion measure and the mean of the sum of coefficient standard errors (see Chapter \ref{regrTransforms}).
+If not specified, default Design of Experiments type is Face Centered Central Composite DoE with one Center Point, default number of repetitions for each OP is 1, default number of program features is 0 and default RSM technique is the "polynomial combinations of degree 2" version of the Apache Spark\textsuperscript{TM} Generalized Linear Regression. If the chosen RSM technique is the "transformations by functions" GLR version but there is no information about parameter value transformations, Agora tries every possible combination in union with all possible link functions, choosing the best result according to Akaike Information Criterion measure and the mean of the sum of coefficient standard errors (see Chapter \ref{regrTransforms}).
 
-All information is sent by AgoraLocalAppHandler modules on topic "agora\slash{}\textit{[appName]}\slash{}info\slash{}\textit{[hostname]\_[PID]}". A final publication with message "done" specifies to the AgoraRemoteAppHandler that application information is finished. Taking Figure \ref{fig:info_send} as reference, the AgoraRemoteAppHandler pulls out, from topic, \textit{crisXPS15\_1897} and it saves this identifier as the AgoraLocalAppHandler that is sending program information. As we can see, \textit{Swaptions} application focuses on two metrics, $avg\_error$ and $avg\_throughput$. It has two parameters, $num\_threads$ and $num\_trials$; the former is sent with the complete list of values, while the latter is sent with the keyword \textit{range}, specifying its minimum value ($100.000$), its maximum one ($1.000.000$) and the step ($100.000$). The Agora\-Remote\-App\-Handler module computes all values, that are therefore $100.000$, $200.000$, $300.000$, ..., $1.000.000$. The Design of Experiments that has to be used is the Face Centered DoE with one Center Point and the RSM technique is the 1st version of the Apache Spark\textsuperscript{TM} Generalized Linear Regression. Parameter transformations are also specified so, e.g. for metric $avg\_error$, the first parameter ($num\_threads$) will not be transformed, while the second parameter ($num\_trials$) has to be transformed with the square root function, applying \textit{gaussian} as family distribution and \textit{log} as link function. It can be noticed that there is no information about the number of Operating Point repetitions to collect during DSE phase: in this case, default value is used (1 repetition for each OP). Finally, there is no payload with keyword \textit{numFeats} either: \textit{Swaptions} does not have features.
+All information is sent by AgoraLocalAppHandler modules on topic "agora\slash{}\textit{[appName]}\slash{}info\slash{}\textit{[hostname]\_[PID]}". A final publication with message "done" specifies to the AgoraRemoteAppHandler that application information is finished. Taking Figure \ref{fig:info_send} as reference, the AgoraRemoteAppHandler pulls out, from topic, \textit{crisXPS15\_1897} and it saves this identifier as the AgoraLocalAppHandler that is sending program information. As we can see, Swaptions application focuses on two metrics, $avg\_error$ and $avg\_throughput$. It has two parameters, $num\_threads$ and $num\_trials$; the former is sent with the complete list of values, while the latter is sent with the keyword \textit{range}, specifying its minimum value ($100.000$), its maximum one ($1.000.000$) and the step ($100.000$). The Agora\-Remote\-App\-Handler module computes all values, that are therefore $100.000$, $200.000$, $300.000$, ..., $1.000.000$. The Design of Experiments that has to be used is the Face Centered DoE with one Center Point and the RSM technique is the 1st version of the Apache Spark\textsuperscript{TM} Generalized Linear Regression. Parameter transformations are also specified so, e.g. for metric $avg\_error$, the first parameter ($num\_threads$) will not be transformed, while the second parameter ($num\_trials$) has to be transformed with the square root function, applying \textit{gaussian} as family distribution and \textit{log} as link function. It can be noticed that there is no information about the number of Operating Point repetitions to collect during DSE phase: in this case, default value is used (1 repetition for each OP). Finally, there is no payload with keyword \textit{numFeats} either: Swaptions does not have features.
 
 The AgoraRemoteAppHandler module is now ready to compute Design of Experiments configurations. After that, it can start distributing them to nodes, driving the subsequent Design Space Exploration phase.
 
@@ -368,7 +368,7 @@ The AgoraRemoteAppHandler module is now ready to compute Design of Experiments c
 
     \centering
     \includegraphics[width = \textwidth]{info_send}
-    \caption{Application information dispatch by \textit{AgoraLocalAppHandler} module}
+    \caption{Application information dispatch by AgoraLocalAppHandler module}
     \label{fig:info_send}
     
 \end{figure}
@@ -387,12 +387,12 @@ When execution is finished, the AgoraLocalAppHandler module arranges the obtaine
 
     \centering
     \includegraphics[width = \textwidth]{op}
-    \caption{Operating Point dispatch by \textit{AgoraLocalAppHandler} module}
+    \caption{Operating Point dispatch by AgoraLocalAppHandler module}
     \label{fig:op}
     
 \end{figure}
 
-Taking Figure \ref{fig:op} as reference, \textit{Swaptions} has been just executed with\linebreak $num\_threads = 8$ and $num\_trials = 500.000$. Monitored metric values are $avg\_error = 41,43726$ and $avg\_throughput = 7,312116$.
+Taking Figure \ref{fig:op} as reference, Swaptions has been just executed with\linebreak $num\_threads = 8$ and $num\_trials = 500.000$. Monitored metric values are $avg\_error = 41,43726$ and $avg\_throughput = 7,312116$.
 
 When AgoraRemoteAppHandler receives an Operating Point, it decrements the corresponding number of needed OP repetitions. If the updated value is equal to zero, it means that there is no need of other related OPs, so the corresponding configuration is moved from the set of available ones to the set of accomplished ones.
 
@@ -422,7 +422,7 @@ Particular attention has to be taken if the disconnected AgoraLocalAppHandler mo
 
     \centering
     \includegraphics[width = \textwidth]{infoclient_disc}
-    \caption{Disconnection of \textit{AgoraLocalAppHandler} module that was sending application information}
+    \caption{Disconnection of AgoraLocalAppHandler module that was sending application information}
 
     \label{fig::locInfoDisc}
     
@@ -502,7 +502,7 @@ The AgoraLocalAppHandler module has already received predicted complete OP list 
     \centering
     \includegraphics[width = \textwidth]{tesiCris_client_integration}
 
-    \caption{Sketch application with \textit{AgoraLocalAppHandler} module plus mARGOt autotuner integration}
+    \caption{Sketch application with AgoraLocalAppHandler module plus mARGOt autotuner integration}
 
     \label{fig::sketchApp}
     
