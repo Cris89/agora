@@ -8,11 +8,9 @@
 Agora makes use of the MQTT protocol (\cite{banks2014mqtt}) for the communications among components. It uses Eclipse Paho MQTT Python Client and Eclipse Paho MQTT C Client for managing message exchange (\cite{o2014paho}), while it uses Eclipse Mos\-quitto as broker server (\cite{light2013mosquitto}). We take addvantage of the Machine Learning library MLlib by Apache Spark\textsuperscript{TM} (\cite{spark2015apache}) in order to predict application complete models.
 
 Next technical use case implementation makes use of application \textit{Swaptions} as reference, taken from the PARSEC benchmark suite (\cite{bienia2008parsec}). This application is a workload which prices a portfolio of swaptions through Monte Carlo simulations. It has two tunable parameters, the number of threads (variable \textit{num\_threads}, from 1 to 8) and the number of trials for the simulation (variable \textit{num\_trials}, from 100.000 to 1.000.000 with a step of 100.000). Observed metrics of interest are: throughput (variable $avg\_throughput$) as the number of priced swaptions per second and error (variable $avg\_error$), computed as:
-
 \[
 avg\_error = \dfrac{\sum_{s \in pricedSwaptions} \left\vert StandDevRef(s) - StandDev(s) \right\vert}{\left\vert pricedSwaptions \right\vert}
 \]
-
 where $StandDevRef(s)$ is the reference standard deviation for swaption $s$, $StandDev(s)$ is the evaluated one and $pricedSwaptions$ represents the set of swaptions that are priced at each computing cycle; so, metric $avg\_error$ stands for the average of differences between standard deviation of priced swaptions using evaluated configuration with respect to the reference one (standard deviation for 1.000.000 trials).
 
 Agora has been interconnected to mARGOt autotuner (\cite{gadioli2015application}), that exploits design-time knowledge to dynamically adapt application behavior during execution. mARGOt represents this information as a list of Operating Points (OPs). An OP is made by a set of parameter values, also called software knobs, in union with the associated performance (metric of interest values), profiled at design-time. Agora improvement is to build application knowledge at runtime, with an online distributed Design Space Exploration phase in which a subset of OPs are collected, in order to predict the complete model, made by the entire Operating Point list.

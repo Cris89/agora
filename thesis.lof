@@ -90,7 +90,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {6.2}{\ignorespaces Throughput by varying the error for synthetic application version 2\relax }}{52}{figure.caption.43}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Average throughput by varying the average error for Swaptions\relax }}{54}{figure.caption.46}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces $avg\_throughput$ by varying $avg\_error$ for Swaptions\relax }}{54}{figure.caption.46}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {6.4}{\ignorespaces $deltaError$ results for throughput metric of synthetic application version 1 by varying the noisePercentage and the number of OP repetitions. Used RSM: 1st version of implemented GLR ("transformations by functions")\relax }}{55}{figure.caption.47}
 \defcounter {refsection}{0}\relax 
