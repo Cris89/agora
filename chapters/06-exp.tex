@@ -8,6 +8,8 @@ We evaluate Agora in three different scenarios: two versions of a synthetic appl
 
 Synthetic application has three parameters: $param_1$, $param_2$ and $param_3$. A function of these three variables calculates the amount of milliseconds of an execution cycle ($executionTime$ variable), while another function sets up an error measure. This last variable is considered as metric, together with application throughput as number of jobs per second (so, approximately equal to $\dfrac{1000}{executionTime}$).
 
+\vspace*{2mm}
+
 For the real scenario, Swaptions application is used, taken from the PARSEC benchmark suite (\cite{bienia2008parsec}). This application solves partial differential equations through Monte Carlo simulations in order to price a portfolio of swaptions. Its tunable parameters are: the number of threads (variable $num\_threads$, from 1 to 8) and the number of trials for the simulation at every cycle (variable $num\_trials$, from 100.000 to 1.000.000 with a step of 100.000). Observed metrics of interest are: throughput (variable $avg\_throughput$) as the number of priced swaptions per second and error (variable $avg\_error$), computed as:
 
 \[

@@ -76,13 +76,13 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {5.13}{\ignorespaces AgoraLocalAppHandler module disconnection\relax }}{44}{figure.caption.36}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Disconnection of AgoraLocalAppHandler module that was sending application information\relax }}{44}{figure.caption.37}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Disconnection of AgoraLocalAppHandler module that is sending application information\relax }}{44}{figure.caption.37}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {5.15}{\ignorespaces AgoraRemoteAppHandler module disconnection\relax }}{45}{figure.caption.38}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {5.16}{\ignorespaces AgoraRemoteAppHandler module disconnection with A\discretionary {-}{}{}go\discretionary {-}{}{}ra\discretionary {-}{}{}Local\discretionary {-}{}{}App\discretionary {-}{}{}Handler internal state equal to \textit {DSE}\relax }}{45}{figure.caption.39}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.17}{\ignorespaces Sketch application with AgoraLocalAppHandler module plus mARGOt autotuner integration\relax }}{46}{figure.caption.40}
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Sketch application with AgoraLocalAppHandler module and mARGOt autotuner integration\relax }}{46}{figure.caption.40}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
