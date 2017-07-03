@@ -46,74 +46,76 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Agora overview in a parallel architecture\relax }}{25}{figure.caption.22}
 \defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.1}{\ignorespaces AgoraRemoteDispatcher MQTT subscription\relax }}{31}{figure.caption.23}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.2}{\ignorespaces New unknown application arrival}}{31}{figure.caption.24}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.3}{\ignorespaces AgoraLocalAppHandler MQTT subscriptions\relax }}{32}{figure.caption.25}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.4}{\ignorespaces AgoraRemoteAppHandler MQTT subscriptions\relax }}{33}{figure.caption.26}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.5}{\ignorespaces New known application arrival}}{34}{figure.caption.27}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.6}{\ignorespaces AgoraLocalAppHandler module request\relax }}{34}{figure.caption.28}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Application information request by AgoraRemoteAppHandler module\relax }}{35}{figure.caption.29}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Configuration dispatch by AgoraRemoteAppHandler module\relax }}{36}{figure.caption.30}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Partial model dispatch by AgoraRemoteAppHandler module\relax }}{36}{figure.caption.31}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Complete model dispatch by AgoraRemoteAppHandler module\relax }}{37}{figure.caption.32}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Application information dispatch by AgoraLocalAppHandler module\relax }}{42}{figure.caption.33}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Operating Point dispatch by AgoraLocalAppHandler module\relax }}{43}{figure.caption.34}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.13}{\ignorespaces AgoraLocalAppHandler module disconnection\relax }}{44}{figure.caption.35}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Disconnection of AgoraLocalAppHandler module that was sending application information\relax }}{44}{figure.caption.36}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.15}{\ignorespaces AgoraRemoteAppHandler module disconnection\relax }}{45}{figure.caption.37}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.16}{\ignorespaces AgoraRemoteAppHandler module disconnection with A\discretionary {-}{}{}go\discretionary {-}{}{}ra\discretionary {-}{}{}Local\discretionary {-}{}{}App\discretionary {-}{}{}Handler internal state equal to \textit {DSE}\relax }}{45}{figure.caption.38}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.17}{\ignorespaces Sketch application with AgoraLocalAppHandler module plus mARGOt autotuner integration\relax }}{46}{figure.caption.39}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Agora workflow\relax }}{27}{figure.caption.23}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Throughput by varying the error for synthetic application version 1\relax }}{51}{figure.caption.41}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces AgoraRemoteDispatcher MQTT subscription\relax }}{31}{figure.caption.24}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Throughput by varying the error for synthetic application version 2\relax }}{52}{figure.caption.42}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces New unknown application arrival}}{31}{figure.caption.25}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Average throughput by varying the average error for Swaptions\relax }}{54}{figure.caption.45}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces AgoraLocalAppHandler MQTT subscriptions\relax }}{32}{figure.caption.26}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.4}{\ignorespaces $deltaError$ results for throughput metric of synthetic application version 1 by varying the noisePercentage and the number of OP repetitions. Used RSM: 1st version of implemented GLR ("transformations by functions")\relax }}{55}{figure.caption.46}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces AgoraRemoteAppHandler MQTT subscriptions\relax }}{33}{figure.caption.27}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.5}{\ignorespaces $deltaError$ mean for throughput metric of synthetic application version 1 by varying the noisePercentage and the number of OP repetitions. Used RSM: 1st version of implemented GLR ("transformations by functions")\relax }}{56}{figure.caption.47}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces New known application arrival}}{34}{figure.caption.28}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.6}{\ignorespaces $deltaError$ results for throughput metric of synthetic application version 1 by varying the noisePercentage and the number of OP repetitions. Used RSM: 2nd version of implemented GLR ("polynomial combinations of degree 2")\relax }}{57}{figure.caption.48}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces AgoraLocalAppHandler module request\relax }}{34}{figure.caption.29}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.7}{\ignorespaces $deltaError$ mean for throughput metric of synthetic application version 1 by varying the noisePercentage and the number of OP repetitions. Used RSM: 2nd version of implemented GLR ("polynomial combinations of degree 2")\relax }}{58}{figure.caption.49}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Application information request by AgoraRemoteAppHandler module\relax }}{35}{figure.caption.30}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.8}{\ignorespaces $deltaError$ results for throughput metric of synthetic application version 2 by varying the noisePercentage and the number of OP repetitions. Used RSM: 2nd version of implemented GLR ("polynomial combinations of degree 2")\relax }}{59}{figure.caption.50}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Configuration dispatch by AgoraRemoteAppHandler module\relax }}{36}{figure.caption.31}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.9}{\ignorespaces $deltaError$ mean for throughput metric of synthetic application version 2 by varying the noisePercentage and the number of OP repetitions. Used RSM: 2nd version of implemented GLR ("polynomial combinations of degree 2")\relax }}{60}{figure.caption.51}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Partial model dispatch by AgoraRemoteAppHandler module\relax }}{36}{figure.caption.32}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.10}{\ignorespaces Design Space Exploration time by varying the number of executing applications\relax }}{61}{figure.caption.53}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Complete model dispatch by AgoraRemoteAppHandler module\relax }}{37}{figure.caption.33}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.11}{\ignorespaces Overall execution time by varying synthetic application version 2 setting\relax }}{62}{figure.caption.54}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Application information dispatch by AgoraLocalAppHandler module\relax }}{42}{figure.caption.34}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.12}{\ignorespaces Metric values of synthetic application version 2 by varying time\relax }}{63}{figure.caption.55}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Operating Point dispatch by AgoraLocalAppHandler module\relax }}{43}{figure.caption.35}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.13}{\ignorespaces $deltaError$ results for both Swaptions metrics of interest\relax }}{65}{figure.caption.56}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces AgoraLocalAppHandler module disconnection\relax }}{44}{figure.caption.36}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.14}{\ignorespaces $deltaError$ mean values for both Swaptions metrics of interest\relax }}{66}{figure.caption.57}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Disconnection of AgoraLocalAppHandler module that was sending application information\relax }}{44}{figure.caption.37}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.15}{\ignorespaces Swaptions execution times\relax }}{67}{figure.caption.58}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces AgoraRemoteAppHandler module disconnection\relax }}{45}{figure.caption.38}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.16}{\ignorespaces Swaptions metric values by varying time\relax }}{68}{figure.caption.59}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces AgoraRemoteAppHandler module disconnection with A\discretionary {-}{}{}go\discretionary {-}{}{}ra\discretionary {-}{}{}Local\discretionary {-}{}{}App\discretionary {-}{}{}Handler internal state equal to \textit {DSE}\relax }}{45}{figure.caption.39}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Sketch application with AgoraLocalAppHandler module plus mARGOt autotuner integration\relax }}{46}{figure.caption.40}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Throughput by varying the error for synthetic application version 1\relax }}{51}{figure.caption.42}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Throughput by varying the error for synthetic application version 2\relax }}{52}{figure.caption.43}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Average throughput by varying the average error for Swaptions\relax }}{54}{figure.caption.46}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.4}{\ignorespaces $deltaError$ results for throughput metric of synthetic application version 1 by varying the noisePercentage and the number of OP repetitions. Used RSM: 1st version of implemented GLR ("transformations by functions")\relax }}{55}{figure.caption.47}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.5}{\ignorespaces $deltaError$ mean for throughput metric of synthetic application version 1 by varying the noisePercentage and the number of OP repetitions. Used RSM: 1st version of implemented GLR ("transformations by functions")\relax }}{56}{figure.caption.48}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.6}{\ignorespaces $deltaError$ results for throughput metric of synthetic application version 1 by varying the noisePercentage and the number of OP repetitions. Used RSM: 2nd version of implemented GLR ("polynomial combinations of degree 2")\relax }}{57}{figure.caption.49}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.7}{\ignorespaces $deltaError$ mean for throughput metric of synthetic application version 1 by varying the noisePercentage and the number of OP repetitions. Used RSM: 2nd version of implemented GLR ("polynomial combinations of degree 2")\relax }}{58}{figure.caption.50}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.8}{\ignorespaces $deltaError$ results for throughput metric of synthetic application version 2 by varying the noisePercentage and the number of OP repetitions. Used RSM: 2nd version of implemented GLR ("polynomial combinations of degree 2")\relax }}{59}{figure.caption.51}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.9}{\ignorespaces $deltaError$ mean for throughput metric of synthetic application version 2 by varying the noisePercentage and the number of OP repetitions. Used RSM: 2nd version of implemented GLR ("polynomial combinations of degree 2")\relax }}{60}{figure.caption.52}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Design Space Exploration time by varying the number of executing applications\relax }}{61}{figure.caption.54}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Overall execution time by varying synthetic application version 2 setting\relax }}{62}{figure.caption.55}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Metric values of synthetic application version 2 by varying time\relax }}{63}{figure.caption.56}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.13}{\ignorespaces $deltaError$ results for both Swaptions metrics of interest\relax }}{65}{figure.caption.57}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.14}{\ignorespaces $deltaError$ mean values for both Swaptions metrics of interest\relax }}{66}{figure.caption.58}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.15}{\ignorespaces Swaptions execution times\relax }}{67}{figure.caption.59}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.16}{\ignorespaces Swaptions metric values by varying time\relax }}{68}{figure.caption.60}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
